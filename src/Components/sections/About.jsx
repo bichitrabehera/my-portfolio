@@ -5,7 +5,7 @@ function About() {
     <section id="about" className="py-20">
       <div className="containerabout">
         <h2 className="text-3xl font-bold text-[#06B6D4] ">About Me</h2>
-        <div className="underline bg-purple-700 h-1 mb-10 w-18"></div>
+        <div className="underline bg-orange-600 h-1 mb-10 w-18"></div>
         <p className="about-info text-1xl pb-5">
           Here you will find more information about me, what I do, and my
           current skills mostly in terms of programming and technology.
