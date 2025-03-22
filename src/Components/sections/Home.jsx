@@ -4,11 +4,11 @@ function Home() {
   return (
     <section id="home" className="py-20 h-full">
       <div className="homecontainer">
-        <h1 className="heading-about text-4xl font-bold text-[#06B6D4] pb-10">
+        <h1 className="heading-about text-3xl mt-5 font-bold text-[#06B6D4] pb-10 md:text-4xl">
           Code Wrangler & Pixel Perfectionist
         </h1>
 
-        <p className="homeabout text-1xl w-[80%] pb-10 text-[rgba(255, 255, 255, 0.664)] ">
+        <p className="homeabout text-1xl w-[90%] pb-10 text-[rgba(255, 255, 255, 0.664)] ">
           Hey, I’m Bichitra, a web developer on a mission to turn caffeine into
           clean code and ideas into stunning digital experiences. With a knack
           for problem-solving and a love for sleek, high-performing websites, I

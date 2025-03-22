@@ -2,9 +2,8 @@
 
 @import "tailwindcss";
 
-
-
-html, body {
+html,
+body {
   font-family: "Jost", sans-serif !important;
   background-color: #000000;
   color: #f3f4f6;
@@ -14,8 +13,6 @@ html, body {
   /* overflow-x: hidden; */
   letter-spacing: 1px;
 }
-
-
 
 nav {
   background-color: #27272a;
@@ -37,6 +34,7 @@ section {
   background: url("./assets/img.png");
   background-position: center;
   background-size: cover;
+  background-color: rgb(0, 0, 0);
 }
 
 p {
@@ -49,7 +47,7 @@ p {
 .homeabout {
   line-height: 1.8rem;
   word-spacing: 1px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.664);
 }
 
@@ -78,11 +76,12 @@ button {
 }
 
 .skill-icon {
-  background-color: rgb(31, 31, 31);
-  border-radius: 10px;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  display: inline-block;
-  padding: 20px;
+  background-color: #50505038;
+  border-radius: 10px;
+  padding: 30px 60px;
   @apply text-4xl md:text-4xl text-gray-300 transition-transform transform 
          hover:scale-110;
 }
@@ -94,10 +93,64 @@ button {
   font-size: 1rem;
 }
 
-#projects img{
-  opacity: 0.5;
+#projects img {
+  opacity: 0.7;
 }
 
-#projects img:hover{
+#projects img:hover {
   opacity: 1;
+}
+
+footer {
+  background: url("./assets/img.png");
+  background-position: center;
+  background-size: cover;
+  background-color: rgb(0, 0, 0);
+  width: 900px;
+  margin: 0px auto;
+}
+
+.social-links > a > i {
+  font-size: 25px;
+  padding: 10px;
+  background-color: rgb(31, 31, 31);
+  margin: 5px;
+  color: #d6d6d6;
+  border-radius: 10px;
+}
+
+input,textarea{
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  p {
+    font-size: 15px;
+  }
+  nav {
+    max-width: 350px;
+    padding: 0 10px;
+  }
+  section {
+    max-width: 350px;
+    margin: 20px auto;
+    /* height: 100vh; */
+    padding: 10px;
+  }
+  .homeabout {
+    font-size: 15px;
+  }
+  #projects p {
+    color: gray;
+    line-height: 1.3rem;
+    /* word-spacing: 1px; */
+    font-size: 15px;
+  }
+  footer {
+    max-width: 350px;
+    padding: 70px 10px;
+  }
+  .skill-icon {
+    padding: 30px;
+  }
 }

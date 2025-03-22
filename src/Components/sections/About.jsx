@@ -6,9 +6,8 @@ function About() {
       <div className="containerabout">
         <h2 className="text-3xl font-bold text-[#06B6D4] ">About Me</h2>
         <div className="underline bg-orange-600 h-1 mb-10 w-18"></div>
-        <p className="about-info text-1xl pb-5">
-          Here you will find more information about me, what I do, and my
-          current skills mostly in terms of programming and technology.
+        <p className="about-info text-sm pb-5">
+          Learn more about me, my work, and my tech skills.{" "}
         </p>
 
         <div className="about-container">
@@ -33,8 +32,6 @@ function About() {
               <a href="#contact">Contact</a>
             </button>
           </div>
-
-          
         </div>
       </div>
     </section>
