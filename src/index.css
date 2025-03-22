@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&family=Fira+Code:wght@300..700&display=swap");
+
+@import "tailwindcss";
+
+
+
+html, body {
+  font-family: "Jost", sans-serif !important;
+  background-color: #000000;
+  color: #f3f4f6;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  /* overflow-x: hidden; */
+  letter-spacing: 1px;
+}
+
+
+
+nav {
+  background-color: #27272a;
+  width: 900px;
+  margin: 20px auto;
+  padding: 0 10px;
+  backdrop-filter: blur(10);
+  border-radius: 10px;
+}
+
+section {
+  width: 900px;
+  margin: 20px auto;
+  /* height: 100vh; */
+  /* padding: 20px; */
+}
+
+#home {
+  background: url("./assets/img.png");
+  background-position: center;
+  background-size: cover;
+}
+
+p {
+  line-height: 1.8rem;
+  /* word-spacing: 1px; */
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.homeabout {
+  line-height: 1.8rem;
+  word-spacing: 1px;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.664);
+}
+
+.yellowcont {
+  color: rgb(46, 143, 199);
+}
+
+button {
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+.rowskill h2 {
+  padding: 10px;
+  background-color: #222222;
+  margin: 10px;
+  border-radius: 10px;
+  font-weight: bold;
+  line-height: 1.8rem;
+  word-spacing: 1px;
+  font-size: 1rem;
+}
+
+.rowskill > h2 > i {
+  font-size: 2rem;
+}
+
+.skill-icon {
+  background-color: rgb(31, 31, 31);
+  border-radius: 10px;
+  align-items: center;
+  display: inline-block;
+  padding: 20px;
+  @apply text-4xl md:text-4xl text-gray-300 transition-transform transform 
+         hover:scale-110;
+}
+
+#projects p {
+  color: gray;
+  line-height: 1.3rem;
+  /* word-spacing: 1px; */
+  font-size: 1rem;
+}
+
+#projects img{
+  opacity: 0.5;
+}
+
+#projects img:hover{
+  opacity: 1;
+}
