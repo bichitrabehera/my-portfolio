@@ -8,7 +8,7 @@ function Project() {
   return (
     <section id="projects" className="py-20">
   <h2 className="text-3xl font-bold text-[#06B6D4]">Projects</h2>
-  <div className="w-20 h-1 bg-purple-700 mt-2 mb-8 rounded"></div>
+  <div className="w-20 h-1 bg-orange-600 mt-2 mb-8 rounded"></div>
 
   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
     {/* Project 1 - My Blog */}
