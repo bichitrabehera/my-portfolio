@@ -93,7 +93,7 @@ function Contact() {
               </div>
             )}
             {error && (
-              <div className="bg-red-500 text-white text-center p-3 rounded-md mb-4">
+              <div className="bg-red-500 text-white text-center p-3 rounded-md mt-4 mb-4">
                 {error}
               </div>
             )}
