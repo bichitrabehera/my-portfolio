@@ -58,7 +58,33 @@ p {
 button {
   border-radius: 10px;
   font-weight: bold;
+  position: relative;
+
 }
+
+@keyframes neonBorderAnimation {
+  0% { border-image-source: linear-gradient(0deg, #ff7300, #ffeb00, #47ff00, #00ff99, #0077ff, #7700ff, #ff00c3, #ff0000); }
+  25% { border-image-source: linear-gradient(90deg, #ff7300, #ffeb00, #47ff00, #00ff99, #0077ff, #7700ff, #ff00c3, #ff0000); }
+  50% { border-image-source: linear-gradient(180deg, #ff7300, #ffeb00, #47ff00, #00ff99, #0077ff, #7700ff, #ff00c3, #ff0000); }
+  75% { border-image-source: linear-gradient(270deg, #ff7300, #ffeb00, #47ff00, #00ff99, #0077ff, #7700ff, #ff00c3, #ff0000); }
+  100% { border-image-source: linear-gradient(360deg, #ff7300, #ffeb00, #47ff00, #00ff99, #0077ff, #7700ff, #ff00c3, #ff0000); }
+}
+
+.neon-button {
+  font-size: 1rem;
+  color: #fff;
+  background: transparent;
+  border: 2px solid;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: 0.4s ease-in-out;
+  overflow: hidden;
+  border-image: linear-gradient(45deg, #ff0000, #ff7300, #ffeb00, #47ff00, #00ff99, #0077ff, #7700ff, #ff00c3, #ff0000) 1;
+  animation: neonBorderAnimation 3s infinite linear;
+}
+
+
 
 .rowskill h2 {
   padding: 10px;

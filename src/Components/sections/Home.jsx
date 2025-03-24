@@ -19,7 +19,7 @@ function Home() {
         <p className="pb-10">Crafting the Web, One Pixel at a Time ✨</p>
 
         <div className="heroo-btn">
-          <button className="px-6 py-4 bg-[#2091a5]">
+          <button className="px-6 py-3 neon-button">
             <a href="#projects" className="font-bold">Projects</a>
           </button>
         </div>

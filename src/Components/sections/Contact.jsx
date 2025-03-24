@@ -81,7 +81,7 @@ function Contact() {
 
             <button
               type="submit"
-              className="w-[30%] bg-[#2091a5] hover:bg-indigo-700 text-white py-2 rounded transition duration-200"
+              className="neon-button w-[30%] bg-[#2091a5] hover:bg-indigo-700 text-white py-2 rounded transition duration-200"
             >
               Send
             </button>
