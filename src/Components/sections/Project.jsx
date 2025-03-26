@@ -19,7 +19,7 @@ function Project() {
       {projects.map((project) => (
         <div
           key={project.id}
-          className="bg-[#111111] rounded-lg shadow-lg overflow-hidden transition-transform transform"
+          className="bg-[#222222] rounded-lg shadow-lg overflow-hidden transition-transform transform"
         >
           <img
             src={project.image}
