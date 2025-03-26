@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <a href="#home" className="text-xl font-bold text-[#06B6D4]">
+          <a href="https://bichitrabehera-blue.vercel.app/" className="text-xl font-bold text-[#06B6D4]">
             Bichitra Behera
           </a>
 
