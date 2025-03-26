@@ -2,7 +2,7 @@ import React from "react";
 import Blog from "/src/assets/blog.png";
 import News from "/src/assets/news-channel.png";
 import BetterDays from "/src/assets/betterdays.png";
-import ImageGen from "/src/assets/image-generator.png";
+import SpotifyCloneImage from "/src/assets/spotify_clone.png";
 
 function Project() {
   return (
@@ -16,31 +16,35 @@ function Project() {
       </p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      {projects.map((project) => (
-        <div
-          key={project.id}
-          className="bg-[#111111] rounded-lg shadow-lg overflow-hidden transition-transform transform"
-        >
-          <img
-            src={project.image}
-            alt={project.name}
-            className="w-full h-40 object-cover rounded-t-lg"
-          />
-          <div className="p-4">
-            <h3 className="text-lg font-bold text-[#dedede]">{project.name}</h3>
-            <p className="text-gray-300 text-sm mt-2">{project.description}</p>
-            <a
-              href={project.link}
-              target="_blank"
-              className="mt-4 items-center text-white font-semibold bg-gray-900 rounded-2xl inline-block p-2 hover:bg-gray-700"
-              rel="noopener noreferrer"
-            >
-              🔗
-            </a>
+        {projects.map((project) => (
+          <div
+            key={project.id}
+            className="bg-[#111111] rounded-lg shadow-lg overflow-hidden transition-transform transform"
+          >
+            <img
+              src={project.image}
+              alt={project.name}
+              className="w-full h-40 object-cover rounded-t-lg"
+            />
+            <div className="p-4">
+              <h3 className="text-lg font-bold text-[#dedede]">
+                {project.name}
+              </h3>
+              <p className="text-gray-300 text-sm mt-2">
+                {project.description}
+              </p>
+              <a
+                href={project.link}
+                target="_blank"
+                className="mt-4 items-center text-white font-semibold bg-gray-900 rounded-2xl inline-block p-2 hover:bg-gray-700"
+                rel="noopener noreferrer"
+              >
+                🔗
+              </a>
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
     </section>
   );
 }
@@ -50,6 +54,14 @@ export default Project;
 const projects = [
   {
     id: 1,
+    name: "Spotify Clone",
+    description:
+      "A frontend-only Spotify clone built using React with a simple music player that supports play and pause functionality. Designed to replicate Spotify's clean and responsive UI.",
+    image: SpotifyCloneImage, // Replace with the actual image reference
+    link: "https://github.com/bichitrabehera/spotify-clone.git",
+  },
+  {
+    id: 2,
     name: "My Blog",
     description:
       "A minimalist blog sharing valuable resources for developers—guides, tools, and insights. No clutter, just pure dev content. 🚀",
@@ -57,7 +69,7 @@ const projects = [
     link: "https://bichitra-blog.onrender.com/",
   },
   {
-    id: 2,
+    id: 3,
     name: "BetterDays",
     description:
       "Supporting mental health with self-assessments, valuable resources, and guidance to help take charge of your well-being.",
@@ -65,20 +77,11 @@ const projects = [
     link: "https://betterdayshealth.vercel.app/",
   },
   {
-    id: 3,
+    id: 4,
     name: "News Channel",
     description:
       "Stay updated with real-time news, important notices, and student highlights—all in one place!",
     image: News,
     link: "https://news-ni7g.onrender.com",
   },
-  {
-    id: 4,
-    name: "Image Generator",
-    description:
-      "Enter what you want to see, and we instantly display the perfect image for you. No extra steps—just search and view!",
-    image: ImageGen,
-    link: "https://image-generator-theta-five.vercel.app/",
-  },
 ];
-
