@@ -51,7 +51,7 @@ function Contact() {
               <input
                 type="text"
                 name="user_name"
-                className="w-full p-2 border text-white focus:border-indigo-500 focus:ring focus:ring-indigo-500"
+                className="w-full p-2 border text-white focus:border-indigo-500 focus:ring focus:ring-indigo-500 rounded"
                 placeholder="Your Name"
                 required
               />
@@ -62,7 +62,7 @@ function Contact() {
               <input
                 type="email"
                 name="user_email"
-                className="w-full p-2 border text-white focus:border-indigo-500 focus:ring focus:ring-indigo-500"
+                className="w-full p-2 border text-white focus:border-indigo-500 focus:ring focus:ring-indigo-500 rounded"
                 placeholder="Your Email"
                 required
               />
@@ -73,17 +73,22 @@ function Contact() {
               <textarea
                 name="message"
                 rows="4"
-                className="w-full p-2 border text-white focus:border-indigo-500 focus:ring focus:ring-indigo-500"
+                className="w-full p-2 border rounded text-white focus:border-indigo-500 focus:ring focus:ring-indigo-500"
                 placeholder="Your Message"
                 required
               ></textarea>
             </div>
 
-            <button
-              type="submit"
-              className="neon-button w-[30%] bg-[#2091a5] hover:bg-indigo-700 text-white py-2 rounded transition duration-200"
-            >
-              Send
+            <button type="submit" class="btn">
+              <strong>Send</strong>
+              <div id="container-stars">
+                <div id="stars"></div>
+              </div>
+
+              <div id="glow">
+                <div class="circle"></div>
+                <div class="circle"></div>
+              </div>
             </button>
 
             {/* Success & Error Alert Messages */}

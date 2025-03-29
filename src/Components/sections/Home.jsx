@@ -19,8 +19,20 @@ function Home() {
         <p className="pb-10">Crafting the Web, One Pixel at a Time ✨</p>
 
         <div className="heroo-btn">
-          <button className="px-6 py-3 neon-button">
-            <a href="#projects" className="font-bold">Projects</a>
+          <button type="button" class="btn">
+            <strong>
+              <a href="#projects" className="font-bold">
+                Projects
+              </a>
+            </strong>
+            <div id="container-stars">
+              <div id="stars"></div>
+            </div>
+
+            <div id="glow">
+              <div class="circle"></div>
+              <div class="circle"></div>
+            </div>
           </button>
         </div>
       </div>

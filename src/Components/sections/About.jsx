@@ -28,9 +28,20 @@ function About() {
               functionality with aesthetics. Let’s create something amazing! 🚀
             </p>
 
-            <button className="px-6 py-4 bg-[#2091a5] mt-10">
-              <a href="#contact">Contact</a>
-            </button>
+            
+            <button className="px-6 py-4 mt-10 btn" type="button">
+            <strong>
+            <a href="#contact">Contact</a>
+            </strong>
+            <div id="container-stars">
+              <div id="stars"></div>
+            </div>
+
+            <div id="glow">
+              <div class="circle"></div>
+              <div class="circle"></div>
+            </div>
+          </button>
           </div>
         </div>
       </div>

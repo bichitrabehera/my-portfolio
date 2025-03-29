@@ -6,7 +6,6 @@
   display: none;
 }
 
-
 html,
 body {
   font-family: "Jost", sans-serif !important;
@@ -66,103 +65,8 @@ button {
   position: relative;
 }
 
-@keyframes neonBorderAnimation {
-  0% {
-    border-image-source: linear-gradient(
-      0deg,
-      #ff7300,
-      #ffeb00,
-      #47ff00,
-      #00ff99,
-      #0077ff,
-      #7700ff,
-      #ff00c3,
-      #ff0000
-    );
-  }
-  25% {
-    border-image-source: linear-gradient(
-      90deg,
-      #ff7300,
-      #ffeb00,
-      #47ff00,
-      #00ff99,
-      #0077ff,
-      #7700ff,
-      #ff00c3,
-      #ff0000
-    );
-  }
-  50% {
-    border-image-source: linear-gradient(
-      180deg,
-      #ff7300,
-      #ffeb00,
-      #47ff00,
-      #00ff99,
-      #0077ff,
-      #7700ff,
-      #ff00c3,
-      #ff0000
-    );
-  }
-  75% {
-    border-image-source: linear-gradient(
-      270deg,
-      #ff7300,
-      #ffeb00,
-      #47ff00,
-      #00ff99,
-      #0077ff,
-      #7700ff,
-      #ff00c3,
-      #ff0000
-    );
-  }
-  100% {
-    border-image-source: linear-gradient(
-      360deg,
-      #ff7300,
-      #ffeb00,
-      #47ff00,
-      #00ff99,
-      #0077ff,
-      #7700ff,
-      #ff00c3,
-      #ff0000
-    );
-  }
-}
-
-.neon-button {
-  font-size: 1rem;
-  color: #fff;
-  background: transparent;
-  border: 2px solid;
-  border-radius: 10px;
-  cursor: pointer;
-  position: relative;
-  transition: 0.4s ease-in-out;
-  overflow: hidden;
-  border-image: linear-gradient(
-      45deg,
-      #ff0000,
-      #ff7300,
-      #ffeb00,
-      #47ff00,
-      #00ff99,
-      #0077ff,
-      #7700ff,
-      #ff00c3,
-      #ff0000
-    )
-    1;
-  animation: neonBorderAnimation 3s infinite linear;
-}
-
 .rowskill h2 {
   padding: 10px;
-  background-color: #222222;
   margin: 10px;
   border-radius: 10px;
   font-weight: bold;
@@ -179,7 +83,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #50505038;
+  background-color: #5353535b;
   border-radius: 10px;
   padding: 30px 60px;
   @apply text-4xl md:text-4xl text-gray-300 transition-transform transform 
@@ -211,7 +115,7 @@ footer {
   padding: 10px;
   background-color: rgb(31, 31, 31);
   margin: 5px;
-  color: #d6d6d6;
+  color: #e7e7e7;
   border-radius: 10px;
 }
 
@@ -231,7 +135,6 @@ textarea {
   section {
     max-width: 350px;
     margin: 20px auto;
-    /* height: 100vh; */
     padding: 10px;
   }
   .homeabout {
@@ -240,7 +143,6 @@ textarea {
   #projects p {
     color: gray;
     line-height: 1.3rem;
-    /* word-spacing: 1px; */
     font-size: 15px;
   }
   footer {
@@ -249,5 +151,178 @@ textarea {
   }
   .skill-icon {
     padding: 30px;
+  }
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 10px 15px;
+  background-size: 300% 300%;
+  cursor: pointer;
+  backdrop-filter: blur(1rem);
+  border-radius: 2rem;
+  transition: 0.5s;
+  animation: gradient_301 5s ease infinite;
+  border: double 2px transparent;
+  background-image: linear-gradient(#212121, #212121),
+  linear-gradient(
+    137.48deg,
+    
+    #5160ea 50%,  
+    #4b74ff 65%,  
+    #1e90ff 75%,  
+    #0044ff 87%,  
+    #0026a3 100% 
+  );
+  
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+#container-stars {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+}
+
+strong {
+  z-index: 2;
+  font-size: 18px;
+  color: #ffffff;
+  font-family: "Jost";
+}
+
+#glow {
+  position: absolute;
+  display: flex;
+  width: 12rem;
+}
+
+.circle {
+  width: 100%;
+  height: 30px;
+  filter: blur(2rem);
+  animation: pulse_3011 4s infinite;
+  z-index: -1;
+}
+
+.circle:nth-of-type(1) {
+  background: rgba(254, 83, 186, 0.636);
+}
+
+.circle:nth-of-type(2) {
+  background: rgba(142, 81, 234, 0.704);
+}
+
+.btn:hover #container-stars {
+  z-index: 1;
+  background-color: #212121;
+}
+
+.btn:active {
+  border: double 4px #fe53bb;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: none;
+}
+
+.btn:active .circle {
+  background: #fe53bb;
+}
+
+#stars {
+  position: relative;
+  background: transparent;
+  width: 200rem;
+  height: 200rem;
+}
+
+#stars::after {
+  content: "";
+  position: absolute;
+  top: -10rem;
+  left: -100rem;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 90s linear infinite;
+}
+
+#stars::after {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+}
+
+#stars::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 170%;
+  height: 500%;
+  animation: animStar 60s linear infinite;
+}
+
+#stars::before {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-135rem);
+  }
+}
+
+@keyframes animStarRotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes gradient_301 {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse_3011 {
+  0% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
   }
 }
