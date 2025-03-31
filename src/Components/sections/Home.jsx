@@ -1,25 +1,57 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 function Home() {
   return (
-    <section id="home" className="py-20 h-full">
-      <div className="homecontainer">
-        <h1 className="heading-about text-3xl mt-5 font-bold text-[#06B6D4] pb-10 md:text-4xl">
+    <section id="home" className="relative py-20 h-[80vh] text-white">
+      <div className="homecontainer relative">
+        {/* Animated Heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="heading-about text-3xl mt-4 font-bold text-[#06B6D4] pb-2 md:text-4xl"
+        >
           Code Wrangler & Pixel Perfectionist
-        </h1>
+        </motion.h1>
 
-        <p className="homeabout text-1xl w-[90%] pb-10 text-[rgba(255, 255, 255, 0.664)] ">
+        {/* Quote */}
+        <motion.p
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          className="mb-8 mt-8 w-[90%] italic border-l-4 border-[#06B6D4] pl-2"
+        >
+          "Jaya praptir dhairyavataam."
+          <span className="block text-gray-300 text-sm mt-1">
+            (Victory belongs to those who persevere with patience.)
+          </span>
+          <span className="block text-[#06B6D4] font-semibold">— Bhagavad Gita</span>
+        </motion.p>
+
+
+        {/* About Text */}
+        <motion.p
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2 }}
+          className="homeabout text-1xl w-[90%] pb-10 text-[rgba(255, 255, 255, 0.664)]"
+        >
           Hey, I’m Bichitra, a web developer on a mission to turn caffeine into
           clean code and ideas into stunning digital experiences. With a knack
           for problem-solving and a love for sleek, high-performing websites, I
           build with precision and a sprinkle of creativity. Always learning,
-          always debugging let’s make the web a better place!
-        </p>
+          always debugging—let’s make the web a better place!
+        </motion.p>
 
-        <p className="pb-10">Crafting the Web, One Pixel at a Time ✨</p>
-
-        <div className="heroo-btn">
-          <button type="button" class="btn">
+        {/* Call-to-Action Button */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="heroo-btn"
+        >
+          <button type="button" className="btn hover:scale-105 transition-transform duration-300">
             <strong>
               <a href="#projects" className="font-bold">
                 Projects
@@ -30,11 +62,11 @@ function Home() {
             </div>
 
             <div id="glow">
-              <div class="circle"></div>
-              <div class="circle"></div>
+              <div className="circle"></div>
+              <div className="circle"></div>
             </div>
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

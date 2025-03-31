@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import Blog from "/src/assets/blog.png";
 import News from "/src/assets/news-channel.png";
 import BetterDays from "/src/assets/betterdays.png";
@@ -40,20 +41,45 @@ const projects = [
 ];
 
 function Project() {
-  return (
-    <section id="projects" className="py-20">
-      <h2 className="text-3xl font-bold text-[#06B6D4]">Projects</h2>
-      <div className="w-20 h-1 bg-orange-600 mt-2 mb-8 rounded"></div>
+  const ref = useRef(null);
+  const isInView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
 
-      <p className="text-base leading-relaxed lg:w-full pb-5">
+  return (
+    <section id="projects" className="py-20" ref={ref}>
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.8 }}
+        className="text-3xl font-bold text-[#06B6D4]"
+      >
+        Projects
+      </motion.h2>
+
+      <motion.div
+        initial={{ scaleX: 0 }}
+        animate={isInView ? { scaleX: 1 } : {}}
+        transition={{ duration: 0.8 }}
+        className="w-20 h-1 bg-orange-600 mt-2 mb-8 rounded origin-left"
+      ></motion.div>
+
+      <motion.p
+        initial={{ opacity: 0, x: -20 }}
+        animate={isInView ? { opacity: 1, x: 0 } : {}}
+        transition={{ duration: 1 }}
+        className="text-base leading-relaxed lg:w-full pb-5"
+      >
         Here you will find some of my personal projects and group projects where
         I contributed as a frontend developer with GitHub and Website links.
-      </p>
+      </motion.p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project) => (
-          <div
+          <motion.div
             key={project.id}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.8, delay: project.id * 0.2 }}
+            whileHover={{ scale: 1.05 }}
             className="bg-[#222222] rounded-lg shadow-lg overflow-hidden transition-transform transform"
           >
             <img
@@ -73,7 +99,7 @@ function Project() {
                 🔗
               </a>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
