@@ -4,6 +4,7 @@ import Blog from "/src/assets/blog.png";
 import News from "/src/assets/news-channel.png";
 import BetterDays from "/src/assets/betterdays.png";
 import SpotifyCloneImage from "/src/assets/spotify_clone.png";
+import magmaCloneImage from "/src/assets/magma.png"
 
 const projects = [
   {
@@ -13,6 +14,14 @@ const projects = [
       "A frontend-only Spotify clone built using React with a simple music player that supports play and pause functionality. Designed to replicate Spotify's clean and responsive UI.",
     image: SpotifyCloneImage,
     link: "https://github.com/bichitrabehera/spotify-clone.git",
+  },
+  {
+    id: 2,
+    name: "Magma Clone",
+    description:
+      "A frontend-only Magma clone built with HTML, CSS, JavaScript, and GSAP, featuring a responsive UI and smooth animations.",
+    image: magmaCloneImage,
+    link: "https://magma-clone-rose.vercel.app/",
   },
   {
     id: 2,
