@@ -47,24 +47,21 @@ function About() {
             className="aboutcont w-[100%] pb-10"
           >
             <p className="text-gray-300">
-              Hey there! I’m <b className="text-[#06B6D4]">Bichitra Behera</b>, a passionate software developer with a solid foundation in{" "}
-              <b className="text-[#06B6D4]">computer science</b>. I thrive on turning ideas into sleek, high-performance applications that are both intuitive and enjoyable to use.
+              Hey there! I’m <b className="text-[#06B6D4]">Bichitra Behera</b>, a passionate software developer with a strong foundation in{" "}
+              <b className="text-[#06B6D4]">computer science</b>. I love transforming ideas into sleek, high-performance applications that are both intuitive and enjoyable to use. My core focus lies in{" "}
+              <b className="text-[#F97316]">frontend development</b>, where I bring designs to life through responsive, modern web experiences.
             </p>
 
             <p className="mt-3 text-gray-300">
-              My core focus is on{" "}
-              <b className="text-[#F97316]">frontend development</b> — I love transforming designs into responsive, modern web experiences using the latest technologies. I’m especially drawn to crafting smooth interfaces and optimizing{" "}
-              <b className="text-[#F97316]">user experience</b> down to the smallest detail.
+              I’m especially drawn to crafting smooth, user-centric interfaces and fine-tuning the{" "}
+              <b className="text-[#F97316]">user experience</b> down to the last pixel. I stay curious about emerging tools and trends, constantly exploring new technologies and collaborating on projects that push boundaries. Every line of code is an opportunity to learn, improve, and make an impact in the fast-moving world of{" "}
+              <b className="text-[#06B6D4]">web development</b>.
             </p>
 
             <p className="mt-3 text-gray-300">
-              I'm always eager to explore emerging tools, collaborate on innovative projects, and stay in sync with the fast-paced world of{" "}
-              <b className="text-[#06B6D4]">web development</b>. Every project is a new opportunity to learn, grow, and create something impactful.
+              Outside of coding, I’m into <b className="text-[#06B6D4]">chess</b> and <b className="text-[#06B6D4]">cricket</b> — I even played cricket professionally during high school. I also love unwinding with some <b className="text-[#10B981]">gaming</b>, vibing to <b className="text-[#A855F7]">music</b>, and occasionally diving into a little <b className="text-[#FACC15]">drawing</b> when inspiration strikes. These creative outlets keep me balanced, inspired, and always ready for the next challenge — whether it’s in the code, on the field, or through a fresh sketch.
             </p>
 
-            <p className="mt-3 text-gray-300">
-              Outside of coding, I’m a big fan of <b className="text-[#06B6D4]">chess</b>. I’m not a pro by any means, but I really enjoy the game — it sharpens my focus, fuels strategic thinking, and offers a great mental workout after a long day of coding.
-            </p>
 
 
             {/* Contact Button Animation */}
@@ -72,7 +69,7 @@ function About() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.6 }}
-              className="px-6 py-4 mt-10 btn hover:scale-105 transition-transform duration-300"
+              className="px-6 py-4 mt-5 btn hover:scale-105 transition-transform duration-300"
               type="button"
             >
               <strong>

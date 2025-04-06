@@ -3,39 +3,39 @@ import { motion } from "framer-motion";
 
 function Home() {
   return (
-    <section id="home" className="relative py-20 h-[80vh] text-white">
+    <section id="home" className="relative py-10 text-white">
       <div className="homecontainer relative">
         {/* Animated Heading */}
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="heading-about text-3xl mt-4 font-bold text-[#06B6D4] pb-2 md:text-4xl"
+          className="heading-about text-3xl mt-1 font-bold text-[#06B6D4] pb-2 md:text-4xl"
         >
           Code Wrangler & Pixel Perfectionist
         </motion.h1>
 
-        {/* Quote */}
+        {/* Quote with glow */}
         <motion.p
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className="mb-8 mt-8 w-[90%] italic border-l-4 border-[#06B6D4] pl-2"
+          className="mb-8 mt-8 w-[90%] italic border-l-4 border-[#06B6D4] pl-3 rounded-md shadow-lg bg-gradient-to-r from-[#0f172a]/30 to-[#0f172a]/10 backdrop-blur-sm"
         >
           "Jaya praptir dhairyavataam."
           <span className="block text-gray-300 text-sm mt-1">
             (Victory belongs to those who persevere with patience.)
           </span>
+          <br />
           <span className="block text-[#06B6D4] font-semibold">— Bhagavad Gita</span>
         </motion.p>
-
 
         {/* About Text */}
         <motion.p
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.2 }}
-          className="homeabout text-1xl w-[90%] pb-10 text-[rgba(255, 255, 255, 0.664)]"
+          className="homeabout text-1xl w-[90%] pb-2 text-[rgba(255, 255, 255, 0.664)]"
         >
           Hey, I’m Bichitra, a web developer on a mission to turn caffeine into
           clean code and ideas into stunning digital experiences. With a knack
@@ -44,14 +44,20 @@ function Home() {
           always debugging—let’s make the web a better place!
         </motion.p>
 
-        {/* Call-to-Action Button */}
+        {/* Call-to-Action Button + animated subtext */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           className="heroo-btn"
         >
-          <button type="button" className="btn hover:scale-105 transition-transform duration-300">
+          <p className="text-xs mb-2 text-[#A5F3FC] italic animate-pulse">
+            → Check out what I’ve been building
+          </p>
+          <button
+            type="button"
+            className="btn hover:scale-105 transition-transform duration-300"
+          >
             <strong>
               <a href="#projects" className="font-bold">
                 Projects
@@ -60,7 +66,6 @@ function Home() {
             <div id="container-stars">
               <div id="stars"></div>
             </div>
-
             <div id="glow">
               <div className="circle"></div>
               <div className="circle"></div>
@@ -68,6 +73,7 @@ function Home() {
           </button>
         </motion.div>
       </div>
+
     </section>
   );
 }
