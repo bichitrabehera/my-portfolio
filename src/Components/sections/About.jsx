@@ -47,26 +47,25 @@ function About() {
             className="aboutcont w-[100%] pb-10"
           >
             <p className="text-gray-300">
-              I’m <b className="text-[#06B6D4]">Bichitra Behera</b>, a dedicated and 
-              passionate software developer with a strong foundation in{" "}
-              <b className="text-[#06B6D4]">computer science</b>. I enjoy
-              building sleek, performant, and user-friendly applications that 
-              provide great experiences.
+              Hey there! I’m <b className="text-[#06B6D4]">Bichitra Behera</b>, a passionate software developer with a solid foundation in{" "}
+              <b className="text-[#06B6D4]">computer science</b>. I thrive on turning ideas into sleek, high-performance applications that are both intuitive and enjoyable to use.
             </p>
 
             <p className="mt-3 text-gray-300">
-              My expertise revolves around{" "}
-              <b className="text-[#F97316]">frontend development</b>, where I love
-              bringing designs to life with modern web technologies. I also have
-              a keen interest in optimizing performance and enhancing{" "}
-              <b className="text-[#F97316]">user experience</b>.
+              My core focus is on{" "}
+              <b className="text-[#F97316]">frontend development</b> — I love transforming designs into responsive, modern web experiences using the latest technologies. I’m especially drawn to crafting smooth interfaces and optimizing{" "}
+              <b className="text-[#F97316]">user experience</b> down to the smallest detail.
             </p>
 
             <p className="mt-3 text-gray-300">
-              Beyond coding, I enjoy collaborating on innovative projects, exploring new
-              technologies, and keeping up with the ever-evolving world of{" "}
-              <b className="text-[#06B6D4]">web development</b>.
+              I'm always eager to explore emerging tools, collaborate on innovative projects, and stay in sync with the fast-paced world of{" "}
+              <b className="text-[#06B6D4]">web development</b>. Every project is a new opportunity to learn, grow, and create something impactful.
             </p>
+
+            <p className="mt-3 text-gray-300">
+              Outside of coding, I’m a big fan of <b className="text-[#06B6D4]">chess</b>. I’m not a pro by any means, but I really enjoy the game — it sharpens my focus, fuels strategic thinking, and offers a great mental workout after a long day of coding.
+            </p>
+
 
             {/* Contact Button Animation */}
             <motion.button
