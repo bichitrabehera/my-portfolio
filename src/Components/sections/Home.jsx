@@ -20,7 +20,7 @@ function Home() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className="mb-8 mt-8 w-[90%] italic border-l-4 border-[#06B6D4] pl-3 rounded-md shadow-lg bg-gradient-to-r from-[#0f172a]/30 to-[#0f172a]/10 backdrop-blur-sm"
+          className="mb-2 mt-2 w-[100%] italic border-l-4 border-[#06B6D4] pl-3 rounded-md shadow-lg bg-gradient-to-r from-[#0f172a]/30 to-[#0f172a]/10 backdrop-blur-sm"
         >
           "Jaya praptir dhairyavataam."
           <span className="block text-gray-300 text-sm mt-1">
@@ -35,7 +35,7 @@ function Home() {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.2 }}
-          className="homeabout text-1xl w-[90%] pb-2 text-[rgba(255, 255, 255, 0.664)]"
+          className="homeabout text-1xl w-[100%] pb-2 text-[rgba(255, 255, 255, 0.664)]"
         >
           Hey, I’m Bichitra, a web developer on a mission to turn caffeine into
           clean code and ideas into stunning digital experiences. With a knack
