@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="navbar bg-[#101010] relative shadow-md w-full z-50">
+    <nav className="navbar bg-[#303030] relative shadow-md max-w-4xl mx-auto my-8 z-50">
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -48,9 +48,9 @@ const Navbar = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
-              className="md:hidden bg-[#111111] text-white rounded-lg absolute right-0 top-16 w-[40%] shadow-md"
+              className="md:hidden bg-[#131313] text-white rounded-lg absolute right-0 top-16 w-[100%] shadow-md"
             >
-              <ul className="flex flex-col items-center space-y-2 py-4">
+              <ul className="flex flex-col items-center space-y-8 py-10">
                 <a className="text-gray-300 font-semibold hover:text-[#06B6D4] transition-colors"
                   href="https://bichitrabehera-blue.vercel.app/">Home</a>
                 {["About", "Skills", "Projects", "Contact"].map(
@@ -59,7 +59,7 @@ const Navbar = () => {
                       <a
                         href={`#${item.toLowerCase()}`}
                         className="text-gray-300 font-semibold hover:text-[#06B6D4] transition-colors"
-                        onClick={() => setIsOpen(false)} // Close menu on click
+                        onClick={() => setIsOpen(false)}
                       >
                         {item}
                       </a>

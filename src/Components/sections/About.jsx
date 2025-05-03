@@ -6,7 +6,7 @@ function About() {
   const isInView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section id="about" className="py-15" ref={ref}>
+    <section id="about" className="pt-20" ref={ref}>
       <div className="containerabout">
         {/* Heading Animation */}
         <motion.h2
@@ -46,21 +46,19 @@ function About() {
             transition={{ duration: 1.2 }}
             className="aboutcont w-[100%] pb-10"
           >
-            <p className="text-gray-300">
-              Hey there! I’m <b className="text-[#06B6D4]">Bichitra Behera</b>, a passionate software developer with a strong foundation in{" "}
-              <b className="text-[#06B6D4]">computer science</b>. I love transforming ideas into sleek, high-performance applications that are both intuitive and enjoyable to use. My core focus lies in{" "}
-              <b className="text-[#F97316]">frontend development</b>, where I bring designs to life through responsive, modern web experiences.
-            </p>
+            <div className="space-y-4 text-gray-300">
+  <p>
+    I'm <span className="font-semibold text-[#06B6D4]">Bichitra Behera</span>, a software developer specializing in <span className="font-semibold text-[#06B6D4]">frontend development</span>. I build intuitive, high-performance web applications with pixel-perfect attention to detail.
+  </p>
 
-            <p className="mt-3 text-gray-300">
-              I’m especially drawn to crafting smooth, user-centric interfaces and fine-tuning the{" "}
-              <b className="text-[#F97316]">user experience</b> down to the last pixel. I stay curious about emerging tools and trends, constantly exploring new technologies and collaborating on projects that push boundaries. Every line of code is an opportunity to learn, improve, and make an impact in the fast-moving world of{" "}
-              <b className="text-[#06B6D4]">web development</b>.
-            </p>
+  <p>
+    Passionate about <span className="font-semibold text-[#F97316]">UX/UI design</span> and modern web technologies, I thrive on turning complex problems into elegant solutions. Constantly learning and adapting to stay at the forefront of <span className="font-semibold text-[#06B6D4]">web development</span>.
+  </p>
 
-            <p className="mt-3 text-gray-300">
-              Outside of coding, I’m into <b className="text-[#06B6D4]">chess</b> and <b className="text-[#06B6D4]">cricket</b> — I even played cricket professionally during high school. I also love unwinding with some <b className="text-[#10B981]">gaming</b>, vibing to <b className="text-[#A855F7]">music</b>, and occasionally diving into a little <b className="text-[#FACC15]">drawing</b> when inspiration strikes. These creative outlets keep me balanced, inspired, and always ready for the next challenge — whether it’s in the code, on the field, or through a fresh sketch.
-            </p>
+  <p>
+    When not coding, you'll find me playing <span className="font-semibold text-[#06B6D4]">chess</span>, reliving my high school <span className="font-semibold text-[#06B6D4]">cricket</span> days, or enjoying <span className="font-semibold text-[#10B981]">games</span> and <span className="font-semibold text-[#A855F7]">music</span>. I occasionally channel creativity through <span className="font-semibold text-[#FACC15]">sketching</span>.
+  </p>
+</div>
 
 
 
