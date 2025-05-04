@@ -36,17 +36,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="body-font relative pb-20 overflow-hidden" ref={sectionRef}>
-      {/* Abstract SVG Background */}
-      <div className="absolute top-[50px] left-0 w-full h-[400px] z-0 opacity-20">
-        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-          <path
-            fill="#06B6D4"
-            d="M437,308Q402,366,351,386.5Q300,407,250,402.5Q200,398,148.5,379.5Q97,361,68.5,305.5Q40,250,67,195.5Q94,141,141.5,123Q189,105,219.5,83Q250,61,307.5,68.5Q365,76,399.5,124.5Q434,173,451,211.5Q468,250,437,308Z"
-          />
-        </svg>
-      </div>
-
+    <section id="contact" className="body-font relative py-20 overflow-hidden" ref={sectionRef}>
       <motion.div
         className="container relative z-10"
         initial={{ opacity: 0, y: -30 }}
@@ -79,7 +69,7 @@ function Contact() {
         </div>
 
         <motion.div
-          className="max-w-lg bg-[#111111] p-5 rounded-lg shadow-lg mx-auto relative"
+          className="max-w-3xl bg-[#111111] p-5 rounded-lg shadow-lg mx-auto relative"
           initial={{ opacity: 0, x: 30 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1.2 }}

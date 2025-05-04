@@ -64,7 +64,7 @@ function Footer() {
         <p>
           &copy; {new Date().getFullYear()} - Made by{" "}
           <a
-            href="https://portfolio-gilt-seven-25.vercel.app/"
+            href="https://bichitrabehera-blue.vercel.app/"
             className="text-[#06B6D4] hover:underline"
           >
             Bichitra Behera

@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="navbar bg-[#303030] relative shadow-md max-w-4xl mx-auto my-8 z-50">
+    <nav className="navbar bg-[#e4e4e4] relative shadow-md max-w-4xl mx-auto my-8 z-50 border-1 border-[#06B6D4]">
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -18,13 +18,17 @@ const Navbar = () => {
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center space-x-8">
-            <a className="text-gray-300 font-semibold hover:text-[#06B6D4] transition-colors"
-              href="https://bichitrabehera-blue.vercel.app/">Home</a>
+            <a
+              className="text-gray-300 font-semibold hover:text-[#06B6D4] transition-colors hover:bg-gray-700 p-1 rounded-[8px]"
+              href="https://bichitrabehera-blue.vercel.app/"
+            >
+              Home
+            </a>
             {["About", "Skills", "Projects", "Contact"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-gray-300 font-semibold hover:text-[#06B6D4] transition-colors"
+                className="text-gray-300 font-semibold hover:text-[#06B6D4] transition-colors hover:bg-gray-700 p-1 rounded-[8px]"
               >
                 {item}
               </a>
@@ -51,21 +55,23 @@ const Navbar = () => {
               className="md:hidden bg-[#131313] text-white rounded-lg absolute right-0 top-16 w-[100%] shadow-md"
             >
               <ul className="flex flex-col items-center space-y-8 py-10">
-                <a className="text-gray-300 font-semibold hover:text-[#06B6D4] transition-colors"
-                  href="https://bichitrabehera-blue.vercel.app/">Home</a>
-                {["About", "Skills", "Projects", "Contact"].map(
-                  (item) => (
-                    <li key={item}>
-                      <a
-                        href={`#${item.toLowerCase()}`}
-                        className="text-gray-300 font-semibold hover:text-[#06B6D4] transition-colors"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item}
-                      </a>
-                    </li>
-                  )
-                )}
+                <a
+                  className="text-gray-300 font-semibold hover:text-[#06B6D4] transition-colors"
+                  href="https://bichitrabehera-blue.vercel.app/"
+                >
+                  Home
+                </a>
+                {["About", "Skills", "Projects", "Contact"].map((item) => (
+                  <li key={item}>
+                    <a
+                      href={`#${item.toLowerCase()}`}
+                      className="text-gray-300 font-semibold hover:text-[#06B6D4] transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </motion.div>
           )}

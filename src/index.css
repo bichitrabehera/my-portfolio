@@ -20,7 +20,7 @@ body {
 }
 
 nav {
-  background-color: #27272a;
+  background-color: rgba(5, 5, 5, 0.568);
   width: 900px;
   margin: 20px auto;
   padding: 0 10px;
