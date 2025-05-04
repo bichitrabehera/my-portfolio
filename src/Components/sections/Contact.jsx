@@ -69,7 +69,7 @@ function Contact() {
         </div>
 
         <motion.div
-          className="max-w-3xl bg-[#111111] p-5 rounded-lg shadow-lg mx-auto relative"
+          className="max-w-xl bg-[#111111] p-5 rounded-lg shadow-lg mx-auto relative"
           initial={{ opacity: 0, x: 30 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1.2 }}

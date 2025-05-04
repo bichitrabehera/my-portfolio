@@ -89,7 +89,7 @@ function Project() {
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: project.id * 0.2 }}
             whileHover={{ scale: 1.05 }}
-            className="bg-[#222222] rounded-lg shadow-lg overflow-hidden transition-transform transform"
+            className="bg-[#27272A] rounded-lg shadow-lg overflow-hidden transition-transform transform"
           >
             <img
               src={project.image}
@@ -98,7 +98,7 @@ function Project() {
             />
             <div className="p-4">
               <h3 className="text-lg font-bold text-[#dedede]">{project.name}</h3>
-              <p className="text-gray-300 text-sm mt-2">{project.description}</p>
+              <p className="text-[#ffffff] text-sm mt-2">{project.description}</p>
               <a
                 href={project.link}
                 target="_blank"

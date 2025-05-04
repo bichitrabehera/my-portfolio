@@ -1,15 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import "tailwindcss";
-
-/* ::-webkit-scrollbar {
-  display: none;
-} */
  
-
 html,
 body {
-  font-family:'Open Sans', sans-serif !important;
+  font-family:"Raleway","Lato",'Open Sans', sans-serif !important;
   background-color: #000000;
   color: #f3f4f6;
   margin: 0;
@@ -44,20 +39,20 @@ section {
 p {
   line-height: 1.8rem;
   /* word-spacing: 1px; */
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.76);
 }
 
 .containerabout{
   line-height: 1.8rem;
   word-spacing: 1.1px;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .homeabout {
   line-height: 1.8rem;
   word-spacing: 1.1px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: rgba(255, 255, 255, 0.664);
 }
 

@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="navbar bg-[#e4e4e4] relative shadow-md max-w-4xl mx-auto my-8 z-50 border-1 border-[#06B6D4]">
+    <nav className="navbar bg-[#e4e4e4] relative shadow-md max-w-4xl mx-auto my-8 z-50 border-1 border-[#fdfdfd40]">
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -17,9 +17,9 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-5">
             <a
-              className="text-gray-300 font-semibold hover:text-[#06B6D4] transition-colors hover:bg-gray-700 p-1 rounded-[8px]"
+              className="text-gray-300 font-semibold hover:transition-colors hover:bg-gray-500 py-1 px-2 rounded-[8px]"
               href="https://bichitrabehera-blue.vercel.app/"
             >
               Home
@@ -28,7 +28,7 @@ const Navbar = () => {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-gray-300 font-semibold hover:text-[#06B6D4] transition-colors hover:bg-gray-700 p-1 rounded-[8px]"
+                className="text-gray-300 font-semibold hover:transition-colors hover:bg-gray-500 py-1 px-2 rounded-[8px]"
               >
                 {item}
               </a>

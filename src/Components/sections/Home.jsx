@@ -13,7 +13,7 @@ function Home() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="heading-about text-3xl  font-bold text-[#06B6D4] pb-5 md:text-4xl"
+            className="heading-about text-[35px]  font-bold text-[#06B6D4] pb-5 md:text-5xl"
           >
             Code Wrangler & Pixel Perfectionist
           </motion.h1>

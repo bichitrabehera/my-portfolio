@@ -67,7 +67,7 @@ function Skills() {
         {skills.map((skill, index) => (
           <motion.div
             key={index}
-            className="flex flex-col items-center bg-[#222222] p-2 rounded-lg shadow-lg transition-transform transform hover:scale-110 w-24 h-24 sm:w-28 sm:h-28 md:w-28 md:h-28 justify-center"
+            className="flex flex-col items-center bg-[#222222] p-1 rounded-lg shadow-lg transition-transform transform hover:scale-110 w-24 h-24 sm:w-28 sm:h-28 md:w-28 md:h-28 justify-center"
             variants={{
               hidden: { opacity: 0, scale: 0.8 },
               visible: { opacity: 1, scale: 1 },
