@@ -44,111 +44,144 @@ function Contact() {
         transition={{ duration: 0.8 }}
       >
         <div className="mb-12 flex w-full flex-col">
-          <motion.h2
-            className="text-3xl font-bold text-[#06B6D4]"
-            initial={{ opacity: 0, y: -20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 1 }}
-          >
-            Contact
-          </motion.h2>
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={isInView ? { scaleX: 1 } : {}}
-            transition={{ duration: 0.8 }}
-            className="w-20 h-1 bg-orange-600 mt-2 mb-8 rounded origin-left"
-          ></motion.div>
+          <div className="relative text-center py-16">
+          <h2 className="absolute inset-0 text-6xl sm:text-8xl font-extrabold text-gray-500 opacity-5 uppercase select-none flex items-center justify-center">
+           Contact
+          </h2>
+
+          <h3 className="relative text-3xl sm:text-4xl font-semibold text-white z-10 mb-4">
+          Contact
+          </h3>
+
+          {/* Dot Divider */}
+          <div className="relative z-10 flex items-center justify-center mb-4">
+            <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>
+            <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+            <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>
+          </div>
+      </div>
+          
           <motion.p
-            className="text-base leading-relaxed lg:w-full"
+            className="text-lg text-center text-base text-gray-300"
             initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1 }}
           >
-            Feel free to reach out! Whether you have a question, feedback, or a collaboration proposal, we'd love to hear from you.
+            Have a project in mind or want to discuss opportunities? Drop me a message and I'll get back to you within 24 hours.
           </motion.p>
         </div>
 
         <motion.div
-          className="max-w-xl bg-[#111111] p-5 rounded-lg shadow-lg mx-auto relative"
-          initial={{ opacity: 0, x: 30 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 1.2 }}
+          className="max-w-2xl bg-[#111111] p-5 rounded-xl shadow-2xl mx-auto relative border border-gray-800"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1.2, type: "spring" }}
         >
-          <form ref={form} onSubmit={sendEmail}>
-            <div className="mb-4">
-              <label className="block text-gray-300 mb-1">Name</label>
+
+          <form ref={form} onSubmit={sendEmail} className="relative z-10">
+            <div className="mb-6">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">
+                Your Name
+              </label>
               <input
                 type="text"
+                id="name"
                 name="user_name"
-                className="w-full p-2 border border-gray-700 text-white focus:border-indigo-500 focus:ring focus:ring-indigo-500 rounded"
-                placeholder="Your Name"
+                className="w-full px-4 py-3 bg-[#1a1a1a] border border-gray-800 text-white rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                placeholder="John Doe"
                 required
               />
             </div>
 
-            <div className="mb-4">
-              <label className="block text-gray-300 mb-1">Email</label>
+            <div className="mb-6">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">
+                Email Address
+              </label>
               <input
                 type="email"
+                id="email"
                 name="user_email"
-                className="w-full p-2 border border-gray-700 text-white focus:border-indigo-500 focus:ring focus:ring-indigo-500 rounded"
-                placeholder="Your Email"
+                className="w-full px-4 py-3 bg-[#1a1a1a] border border-gray-800 text-white rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                placeholder="john@example.com"
                 required
               />
             </div>
 
-            <div className="mb-4">
-              <label className="block text-gray-300 mb-1">Message</label>
+            <div className="mb-8">
+              <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">
+                Your Message
+              </label>
               <textarea
+                id="message"
                 name="message"
-                rows="4"
-                className="w-full p-2 border rounded border-gray-700 text-white focus:border-indigo-500 focus:ring focus:ring-indigo-500"
-                placeholder="Your Message"
+                rows="5"
+                className="w-full px-4 py-3 bg-[#1a1a1a] border border-gray-800 text-white rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                placeholder="Tell me about your project..."
                 required
               ></textarea>
             </div>
 
-            <motion.button
-              type="submit"
-              className="btn"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <strong>Send</strong>
-              <div id="container-stars">
-                <div id="stars"></div>
-              </div>
-              <div id="glow">
-                <div className="circle"></div>
-                <div className="circle"></div>
-              </div>
-            </motion.button>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <motion.button
+                type="submit"
+                className="btn"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <strong className="font-light">Send</strong>
+                <div id="container-stars">
+                  <div id="stars"></div>
+                </div>
+                <div id="glow">
+                  <div className="circle"></div>
+                  <div className="circle"></div>
+                </div>
+              </motion.button>
+
+
+            </div>
 
             {isSent && (
               <motion.div
-                className="bg-green-600 text-white text-center p-3 rounded-md mt-4 mb-4"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
+                className="mt-6 p-4 bg-green-900/30 border border-green-500/50 text-green-400 rounded-lg flex items-center gap-3"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, type: "spring" }}
               >
-                Message sent successfully!
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                  <p className="font-medium">Message sent successfully!</p>
+                  <p className="text-sm text-green-300">I'll get back to you soon.</p>
+                </div>
               </motion.div>
             )}
+
             {error && (
               <motion.div
-                className="bg-red-500 text-white text-center p-3 rounded-md mt-4 mb-4"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
+                className="mt-6 p-4 bg-red-900/30 border border-red-500/50 text-red-400 rounded-lg flex items-center gap-3"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, type: "spring" }}
               >
-                {error}
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+                <div>
+                  <p className="font-medium">Error sending message</p>
+                  <p className="text-sm text-red-300">{error}</p>
+                </div>
               </motion.div>
             )}
           </form>
         </motion.div>
+
       </motion.div>
     </section>
   );
 }
 
 export default Contact;
+
+

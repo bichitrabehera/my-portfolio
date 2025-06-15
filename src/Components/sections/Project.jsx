@@ -55,27 +55,28 @@ function Project() {
 
   return (
     <section id="projects" className="py-20" ref={ref}>
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8 }}
-        className="text-3xl font-bold text-[#06B6D4]"
-      >
-        Projects
-      </motion.h2>
+      <div className="relative text-center py-16">
+          <h2 className="absolute inset-0 text-6xl sm:text-8xl font-extrabold text-gray-300 opacity-8 uppercase select-none flex items-center justify-center">
+           Projects
+          </h2>
 
-      <motion.div
-        initial={{ scaleX: 0 }}
-        animate={isInView ? { scaleX: 1 } : {}}
-        transition={{ duration: 0.8 }}
-        className="w-20 h-1 bg-orange-600 mt-2 mb-8 rounded origin-left"
-      ></motion.div>
+          <h3 className="relative text-3xl sm:text-4xl font-semibold text-white z-10 mb-4">
+          Projects
+          </h3>
+
+          {/* Dot Divider */}
+          <div className="relative z-10 flex items-center justify-center mb-4">
+            <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>
+            <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+            <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>
+          </div>
+      </div>
 
       <motion.p
         initial={{ opacity: 0, x: -20 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 1 }}
-        className="text-base leading-relaxed lg:w-full pb-5"
+        className="text-base text-center leading-relaxed lg:w-full pb-5"
       >
         Here you will find some of my personal projects and group projects where
         I contributed as a frontend developer with GitHub and Website links.
@@ -89,7 +90,7 @@ function Project() {
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.8, delay: project.id * 0.2 }}
             whileHover={{ scale: 1.05 }}
-            className="bg-[#27272A] rounded-lg shadow-lg overflow-hidden transition-transform transform"
+            className="bg-[#232629] rounded-lg shadow-lg overflow-hidden transition-transform transform"
           >
             <img
               src={project.image}
@@ -102,7 +103,7 @@ function Project() {
               <a
                 href={project.link}
                 target="_blank"
-                className="mt-4 items-center text-white font-semibold bg-gray-900 rounded-2xl inline-block p-2 hover:bg-gray-700"
+                className="mt-4 items-center text-white font-semibold bg-gray-700 rounded-2xl inline-block p-2 hover:bg-gray-700"
                 rel="noopener noreferrer"
               >
                 🔗

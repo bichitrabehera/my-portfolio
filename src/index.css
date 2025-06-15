@@ -1,60 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
 @import "tailwindcss";
  
 html,
 body {
-  font-family:"Raleway","Lato",'Open Sans', sans-serif !important;
+  font-family: "Jost","Lato",'Open Sans', sans-serif !important;
   background-color: #000000;
   color: #f3f4f6;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  /* overflow-x: hidden; */
   letter-spacing: 0.5px;
 }
 
 nav {
-  background-color: rgba(5, 5, 5, 0.568);
+  background-color: black;
   width: 900px;
-  margin: 20px auto;
-  padding: 0 10px;
+  /*margin: 20px auto;*/
   backdrop-filter: blur(10);
   border-radius: 10px;
 }
 
+.homeabout{
+  line-height: 1.8;
+}
 
 section {
   width: 900px;
-  margin: 20px auto;
+  margin: 10px auto;
 }
 
-/* #home {
-  background: url("./assets/img.png");
-  background-position: center;
-  background-size: cover;
-  background-color: rgb(0, 0, 0);
-} */
 
-p {
-  line-height: 1.8rem;
-  /* word-spacing: 1px; */
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.76);
-}
-
-.containerabout{
-  line-height: 1.8rem;
-  word-spacing: 1.1px;
-  font-size: 1rem;
-}
-
-.homeabout {
-  line-height: 1.8rem;
-  word-spacing: 1.1px;
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.664);
-}
 
 .yellowcont {
   color: rgb(46, 143, 199);
