@@ -13,13 +13,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-nav {
-  background-color: black;
-  width: 900px;
-  /*margin: 20px auto;*/
-  backdrop-filter: blur(10);
-  border-radius: 10px;
-}
 
 .homeabout{
   line-height: 1.8;
@@ -105,10 +98,7 @@ textarea {
   p {
     font-size: 15px;
   }
-  nav {
-    max-width: 350px;
-    padding: 0 10px;
-  }
+  
   section {
     max-width: 350px;
     margin: 20px auto;

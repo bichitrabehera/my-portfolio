@@ -6,7 +6,7 @@ function About() {
   const isInView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section id="about" className="pt-20 pb-24 bg-black text-white" ref={ref}>
+    <section id="about" className="pt-20 pb-24 bg-black text-white font-light" ref={ref}>
       <div className="max-w-4xl mx-auto px-6">
         {/* Heading */}
         <div className="relative text-center py-16">
@@ -47,7 +47,7 @@ function About() {
             transition={{ duration: 1.2 }}
             className="w-full"
           >
-            <div className="space-y-6 text-gray-300 text-center leading-relaxed">
+            <div className="space-y-6 text-gray-300 font-light text-center leading-relaxed">
               <p>
                 I'm <span className=" text-[#06B6D4]">Bichitra Behera</span>, a software developer specializing in{" "}
                 <span className="font-semibold text-[#06B6D4]">frontend development</span>. I build intuitive, high-performance

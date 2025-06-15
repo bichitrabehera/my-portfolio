@@ -36,7 +36,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="body-font relative py-20 overflow-hidden" ref={sectionRef}>
+    <section id="contact" className="body-font relative py-20 overflow-hidden font-light" ref={sectionRef}>
       <motion.div
         className="container relative z-10"
         initial={{ opacity: 0, y: -30 }}
@@ -67,7 +67,7 @@ function Contact() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1 }}
           >
-            Have a project in mind or want to discuss opportunities? Drop me a message and I'll get back to you within 24 hours.
+            Have a project in mind or want to discuss opportunities? Drop me a message <br/> and I'll get back to you within 24 hours.
           </motion.p>
         </div>
 

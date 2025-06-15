@@ -6,40 +6,38 @@ function Home() {
   return (
     <>
       <Navbar />
-      <section id="home" className="relative py-10 pt-12 text-white min-h-auto">
-        <div className="homecontainer relative m-1">
-          {/* Animated Heading */} 
+      <section
+        id="home"
+        className="relative min-h-screen pt-28 text-white flex items-center justify-center"
+      >
+        <div className="homecontainer relative mx-4 text-center max-w-3xl">
+          {/* Animated Heading */}
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="heading-about text-[32px] text-center font-bold text-purple-500 pb-5 md:text-5xl"
+            className="text-[30px] md:text-5xl font-light pb-5"
           >
             Code Wrangler & Pixel Perfectionist
           </motion.h1>
 
-          
-
-          {/* About Text */}
+          {/* Shorter About Text */}
           <motion.p
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2 }}
-            className="homeabout text-1xl pb-4 pt-5 pb-5 text-center text-[rgba(255, 255, 255, 0.664)] font-light"
+            className="text-[16px] text-[rgba(255, 255, 255, 0.75)] font-light mb-10"
           >
-            Hey, I’m Bichitra, a web developer on a mission to turn caffeine
-            into clean code and ideas into stunning digital experiences. With a
-            knack for problem-solving and a love for sleek, high-performing
-            websites, I build with precision and a sprinkle of creativity.
-            Always learning, always debugging—let’s make the web a better place!
+            I’m Bichitra — a frontend, backend, and mobile developer crafting clean,
+            efficient, and delightful digital experiences.
           </motion.p>
 
-          {/* Call-to-Action Button + animated subtext */}
+          {/* Call-to-Action Button */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="heroo-btn items-center justify-center flex flex-col"
+            className="flex flex-col items-center justify-center"
           >
             <p className="text-md mb-8 text-[#A5F3FC] italic animate-pulse">
               → Check out what I’ve been building

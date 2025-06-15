@@ -1,116 +1,83 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from 'react';
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
-    <nav className="navbar bg-[#e4e4e4] relative shadow-md max-w-4xl mx-auto my-8 z-50 border-1 border-[#fdfdfd40]">
-      <div className="mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <a
-            href="https://bichitrabehera-blue.vercel.app/"
-            className="text-xl font-semibold text-purple-500"
+    <>
+      {/* Main Navbar - Full width */}
+      <nav className="fixed top-0 left-0 w-full z-50 bg-black text-white shadow-lg">
+        <div className="w-full max-w-full mx-auto flex justify-between items-center p-4">
+          {/* Mobile Menu Button - Left aligned with larger click area */}
+           <button 
+            className="md:hidden focus:outline-none p-2 relative w-8 h-8"
+            onClick={toggleMenu}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
-            Bichitra Behera
-          </a>
+            <span className={`block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out ${isMenuOpen ? 'rotate-45' : '-translate-y-2'}`}></span>
+            <span className={`block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+            <span className={`block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out ${isMenuOpen ? '-rotate-45' : 'translate-y-2'}`}></span>
+          </button>
 
-          {/* Desktop Links */}
-          <div className="hidden md:flex items-center space-x-5">
-            <a
-              className="text-gray-300 font-semibold hover:transition-colors hover:bg-gray-500 py-1 px-2 rounded-[8px]"
-              href="https://bichitrabehera-blue.vercel.app/"
-            >
-              Home
-            </a>
-            {["About", "Skills", "Projects", "Contact"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-gray-300 font-semibold hover:transition-colors hover:bg-gray-500 py-1 px-2 rounded-[8px]"
-              >
-                {item}
-              </a>
-            ))}
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex space-x-10 mx-auto">
+            <a href="#home" className="px-3 py-2 hover:text-blue-300 transition-colors text-lg font-medium">Home</a>
+            <a href="#about" className="px-3 py-2 hover:text-blue-300 transition-colors text-lg font-medium">About</a>
+            <a href="#skills" className="px-3 py-2 hover:text-blue-300 transition-colors text-lg font-medium">Skills</a>
+            <a href="#projects" className="px-3 py-2 hover:text-blue-300 transition-colors text-lg font-medium">Projects</a>
+            <a href="#contact" className="px-3 py-2 hover:text-blue-300 transition-colors text-lg font-medium">Contact</a>
           </div>
 
-          {/* Mobile Menu Toggle Button */}
-          <div
-            className="md:hidden w-8 h-8 flex items-center justify-center cursor-pointer text-white"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? "✖" : "☰"}
-          </div>
+          {/* Spacer to balance the hamburger menu on desktop */}
+          <div className="md:hidden w-8"></div>
         </div>
+      </nav>
 
-
-        {/* Mobile Menu (Framer Motion for smooth animation) */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-50"
-            >
-              {/* Blurred backdrop */}
-              <motion.div
-                className="absolute inset-0 bg-black/70 backdrop-blur-sm"
-                onClick={() => setIsOpen(false)}
-              />
-
-              {/* Full-screen menu */}
-              <motion.div
-                initial={{ y: "-100%" }}
-                animate={{ y: 0 }}
-                exit={{ y: "-100%" }}
-                transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                className="relative h-screen w-full bg-[#111111]/95 backdrop-blur-lg flex flex-col justify-center"
-              >
-                <ul className="space-y-8 px-6">
-                  <a
-                    className="block text-2xl text-gray-200 font-medium hover:text-[#06B6D4] transition-colors py-3 text-center"
-                    href="https://bichitrabehera-blue.vercel.app/"
-                  >
-                    Home
-                  </a>
-                  {["About", "Skills", "Projects", "Contact"].map((item) => (
-                    <motion.li
-                      key={item}
-                      initial={{ x: -30, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      transition={{ delay: 0.1 * ["About", "Skills", "Projects", "Contact"].indexOf(item) }}
-                    >
-                      <a
-                        href={`#${item.toLowerCase()}`}
-                        className="block text-2xl text-gray-200 font-medium hover:text-[#06B6D4] transition-colors py-3 text-center"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item}
-                      </a>
-                    </motion.li>
-                  ))}
-                </ul>
-
-                {/* Close button */}
-                <motion.button
-                  onClick={() => setIsOpen(false)}
-                  className="absolute -top-100 left-3 text-gray-400 hover:text-white p-2"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </motion.button>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </nav>
+      {/* Mobile Menu - Full Screen Overlay */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-40 bg-black flex flex-col items-center justify-center space-y-4 text-white md:hidden">
+          <a 
+            href="#home" 
+            className="text-3xl hover:text-blue-300 transition-colors py-3 font-medium"
+            onClick={toggleMenu}
+          >
+            Home
+          </a>
+          <a 
+            href="#about" 
+            className="text-3xl hover:text-blue-300 transition-colors py-3 font-medium"
+            onClick={toggleMenu}
+          >
+            About
+          </a>
+          <a 
+            href="#skills" 
+            className="text-3xl hover:text-blue-300 transition-colors py-3 font-medium"
+            onClick={toggleMenu}
+          >
+            Skills
+          </a>
+          <a 
+            href="#projects" 
+            className="text-3xl hover:text-blue-300 transition-colors py-3 font-medium"
+            onClick={toggleMenu}
+          >
+            Projects
+          </a>
+          <a 
+            href="#contact" 
+            className="text-3xl hover:text-blue-300 transition-colors py-3 font-medium"
+            onClick={toggleMenu}
+          >
+            Contact
+          </a>
+        </div>
+      )}
+    </>
   );
 };
 

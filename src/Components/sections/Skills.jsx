@@ -5,25 +5,34 @@ function Skills() {
   const ref = useRef(null);
   const isInView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
 
-  const skills = [
-    { name: "HTML", icon: "html5-plain" },
-    { name: "CSS", icon: "css3-plain" },
-    { name: "JavaScript", icon: "javascript-plain" },
-    { name: "TypeScript", icon: "typescript-plain" },
-    { name: "ReactJS", icon: "react-original" },
-    { name: "NextJS", icon: "nextjs-original" },
-    { name: "Tailwind CSS", icon: "tailwindcss-plain" },
-    { name: "Framer Motion", icon: "framer-plain" },
-    { name: "NodeJS", icon: "nodejs-plain" },
-    { name: "ExpressJS", icon: "express-original" },
-    { name: "MongoDB", icon: "mongodb-plain" },
-    { name: "MySQL", icon: "mysql-plain" },
-    { name: "Git", icon: "git-plain" },
-    { name: "GitHub", icon: "github-original" },
-    { name: "Vercel", icon: "vercel-original" },
-    { name: "Postman", icon: "postman-plain" },
-    { name: "pnpm", icon: "npm-original" }, // Placeholder for pnpm
-  ];
+const skills = [
+  // Frontend
+  { name: "HTML", icon: "html5-plain" },
+  { name: "CSS", icon: "css3-plain" },
+  { name: "JavaScript", icon: "javascript-plain" },
+  { name: "TypeScript", icon: "typescript-plain" },
+  { name: "ReactJS", icon: "react-original" },
+  { name: "React Native", icon: "react-original" }, // Uses React icon
+  { name: "NextJS", icon: "nextjs-original" },
+  { name: "Tailwind CSS", icon: "tailwindcss-plain" },
+  { name: "Framer Motion", icon: "framer-plain" },
+
+  // Backend
+  { name: "NodeJS", icon: "nodejs-plain" },
+  { name: "ExpressJS", icon: "express-original" },
+  { name: "MongoDB", icon: "mongodb-plain" },
+  { name: "MySQL", icon: "mysql-plain" },
+
+  // Tools
+  { name: "Git", icon: "git-plain" },
+  { name: "GitHub", icon: "github-original" },
+  { name: "Postman", icon: "postman-plain" },
+  { name: "pnpm", icon: "npm-original" }, // Use npm icon for pnpm
+
+  // Deployment
+  { name: "Vercel", icon: "vercel-original" },
+];
+
 
   return (
     <section id="skills" className="py-20 bg-black text-white" ref={ref}>
