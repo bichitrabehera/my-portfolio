@@ -9,19 +9,9 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Main Navbar - Full width */}
+      {/* Main Navbar */}
       <nav className="fixed top-0 right-0 w-full z-50 bg-[#000000] text-white shadow-lg">
-        <div className="w-full max-w-full mx-auto flex justify-between items-center p-4">
-          {/* Mobile Menu Button - Left aligned with larger click area */}
-           <button 
-            className="md:hidden focus:outline-none p-2 relative w-8 h-8"
-            onClick={toggleMenu}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          >
-            <span className={`block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out ${isMenuOpen ? 'rotate-45' : '-translate-y-2'}`}></span>
-            <span className={`block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out ${isMenuOpen ? '-rotate-45' : 'translate-y-2'}`}></span>
-          </button>
-
+        <div className="w-full max-w-full mx-auto flex items-center justify-between p-4 relative">
           {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex space-x-10 mx-auto">
             <a href="#home" className="px-3 py-2 hover:text-blue-300 transition-colors text-lg font-medium">Home</a>
@@ -31,8 +21,15 @@ const Navbar = () => {
             <a href="#contact" className="px-3 py-2 hover:text-blue-300 transition-colors text-lg font-medium">Contact</a>
           </div>
 
-          {/* Spacer to balance the hamburger menu on desktop */}
-          <div className="md:hidden w-8"></div>
+          {/* Mobile Menu Button - Right aligned */}
+          <button 
+            className="md:hidden focus:outline-none p-2 relative w-8 h-8 ml-auto"
+            onClick={toggleMenu}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          >
+            <span className={`block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out ${isMenuOpen ? 'rotate-45' : '-translate-y-2'}`}></span>
+            <span className={`block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out ${isMenuOpen ? '-rotate-45' : 'translate-y-2'}`}></span>
+          </button>
         </div>
       </nav>
 
