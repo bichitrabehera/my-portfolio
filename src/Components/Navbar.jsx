@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <>
       {/* Main Navbar - Full width */}
-      <nav className="fixed top-0 left-0 w-full z-50 bg-[#000000] text-white shadow-lg">
+      <nav className="fixed top-0 right-0 w-full z-50 bg-[#000000] text-white shadow-lg">
         <div className="w-full max-w-full mx-auto flex justify-between items-center p-4">
           {/* Mobile Menu Button - Left aligned with larger click area */}
            <button 
