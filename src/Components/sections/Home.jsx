@@ -8,7 +8,7 @@ function Home() {
       <Navbar />
       <section
         id="home"
-        className="relative min-h-screen pt-28 bg-[#0a2435] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-lg"
+        className="relative min-h-screen pt-28 text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-lg"
 
       >
         <div className="homecontainer relative mx-4 text-center max-w-3xl">
