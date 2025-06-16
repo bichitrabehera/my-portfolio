@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 
 @import "tailwindcss";
- 
+
 html,
 body {
-  font-family: "Jost","Lato",'Open Sans', sans-serif !important;
+  font-family: "Jost", "Lato", "Open Sans", sans-serif !important;
   background-color: #000000;
   color: #f3f4f6;
   margin: 0;
@@ -13,8 +13,7 @@ body {
   letter-spacing: 0.5px;
 }
 
-
-.homeabout{
+.homeabout {
   line-height: 1.8;
 }
 
@@ -23,7 +22,9 @@ section {
   margin: 10px auto;
 }
 
-
+#home {
+  width: 100%;
+}
 
 .yellowcont {
   color: rgb(46, 143, 199);
@@ -98,11 +99,15 @@ textarea {
   p {
     font-size: 15px;
   }
-  
+
   section {
     max-width: 350px;
-    margin: 20px auto;
+    /* margin: 20px auto; */
     padding: 10px;
+  }
+
+  #home {
+    max-width: 380px;
   }
   .homeabout {
     font-size: 15px;
@@ -135,16 +140,15 @@ textarea {
   animation: gradient_301 5s ease infinite;
   border: double 2px transparent;
   background-image: linear-gradient(#212121, #212121),
-  linear-gradient(
-    137.48deg,
-    
-    #5160ea 50%,  
-    #4b74ff 65%,  
-    #1e90ff 75%,  
-    #0044ff 87%,  
-    #0026a3 100% 
-  );
-  
+    linear-gradient(
+      137.48deg,
+      #5160ea 50%,
+      #4b74ff 65%,
+      #1e90ff 75%,
+      #0044ff 87%,
+      #0026a3 100%
+    );
+
   background-origin: border-box;
   background-clip: content-box, border-box;
 }

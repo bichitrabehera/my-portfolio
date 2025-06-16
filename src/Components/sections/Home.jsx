@@ -8,31 +8,32 @@ function Home() {
       <Navbar />
       <section
         id="home"
-        className="relative min-h-screen pt-28 text-white flex items-center justify-center"
+        className="relative min-h-screen pt-28 bg-[#0a2435] text-white flex items-center justify-center backdrop-blur-md border border-white/20 shadow-lg"
+
       >
         <div className="homecontainer relative mx-4 text-center max-w-3xl">
-          {/* Animated Heading */}
+          <p className="text-[28px] uppercase tracking-widest text-cyan-300 mb-2">
+            Hi, I'm Bichitra Behera
+          </p>
+
           <motion.h1
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-[30px] md:text-5xl font-light pb-5"
+            className="text-[28px] md:text-5xl font-semibold pb-5"
           >
-            Code Wrangler & Pixel Perfectionist
+            Full-Stack Developer & Digital Craftsman
           </motion.h1>
 
-          {/* Shorter About Text */}
           <motion.p
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2 }}
             className="text-[16px] text-[rgba(255, 255, 255, 0.75)] font-light mb-10"
           >
-            I’m Bichitra — a frontend, backend, and mobile developer crafting clean,
-            efficient, and delightful digital experiences.
+            I design and build engaging, performant web and mobile applications using modern tech — from concept to deployment.
           </motion.p>
 
-          {/* Call-to-Action Button */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -40,7 +41,7 @@ function Home() {
             className="flex flex-col items-center justify-center"
           >
             <p className="text-md mb-8 text-[#A5F3FC] italic animate-pulse">
-              → Check out what I’ve been building
+              ↓ Check out what I’ve been building
             </p>
             <button
               type="button"
@@ -61,6 +62,7 @@ function Home() {
             </button>
           </motion.div>
         </div>
+
       </section>
     </>
   );
