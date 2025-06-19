@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <>
       {/* Main Navbar */}
-      <nav className="fixed top-0 right-0 w-full z-50 bg-[#000000] text-white shadow-lg">
+      <nav className="fixed top-0 right-0 w-full z-50 bg-black/30 backdrop-blur-md text-white shadow-lg">
         <div className="w-full max-w-full mx-auto flex items-center justify-between p-4 relative">
           {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex space-x-10 mx-auto">
