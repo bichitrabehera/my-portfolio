@@ -6,28 +6,31 @@ function About() {
   const isInView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section id="about" className="pt-20 pb-24 bg-black text-white font-light" ref={ref}>
+    <section
+      id="about"
+      className="pt-20 pb-24 bg-black text-white font-light"
+      ref={ref}
+    >
       <div className="max-w-4xl mx-auto px-6">
         {/* Heading */}
         <div className="relative text-center py-16">
-  {/* Background Title */}
-  <h2 className="absolute inset-0 text-6xl sm:text-8xl font-extrabold text-gray-300 opacity-8 uppercase select-none flex items-center justify-center">
-    About Me
-  </h2>
+          {/* Background Title */}
+          <h2 className="absolute inset-0 text-6xl sm:text-8xl font-extrabold text-gray-300 opacity-8 uppercase select-none flex items-center justify-center">
+            About Me
+          </h2>
 
-  {/* Foreground Title */}
-  <h3 className="relative text-3xl sm:text-4xl font-semibold text-white z-10 mb-4">
-    About Me
-  </h3>
+          {/* Foreground Title */}
+          <h3 className="relative text-3xl sm:text-4xl font-semibold text-white z-10 mb-4">
+            About Me
+          </h3>
 
-  {/* Dot Divider */}
-  <div className="relative z-10 flex items-center justify-center mb-4">
-    <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>
-    <div className="w-2 h-2 rounded-full bg-purple-500"></div>
-    <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>
-  </div>
-</div>
-
+          {/* Dot Divider */}
+          <div className="relative z-10 flex items-center justify-center mb-4">
+            <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>
+            <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+            <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>
+          </div>
+        </div>
 
         {/* Subtitle */}
         <motion.p
@@ -36,7 +39,7 @@ function About() {
           transition={{ duration: 1 }}
           className="text-center text-sm text-gray-400 uppercase mb-8"
         >
-          Learn more about me, my work, and my journey in tech.
+          App Developer | Problem Solver | Tech Enthusiast
         </motion.p>
 
         <div className="flex flex-col md:flex-row items-center gap-10">
@@ -49,34 +52,42 @@ function About() {
           >
             <div className="space-y-6 text-gray-300 font-light text-center leading-relaxed">
               <p>
-                I'm <span className=" text-[#06B6D4]">Bichitra Behera</span>, a software developer specializing in{" "}
-                <span className="font-semibold text-[#06B6D4]">frontend development</span>. I build intuitive, high-performance
-                web applications with pixel-perfect attention to detail.
+                I'm <span className="text-[#06B6D4]">Bichitra Behera</span>, a 
+                <span className="font-semibold text-[#06B6D4]"> full-stack developer</span> who 
+                <span className="text-[#F97316]"> builds apps</span> that solve real problems. From 
+                <span className="font-semibold"> mobile applications</span> to 
+                <span className="font-semibold"> complex web platforms</span>, I create solutions 
+                that are both powerful and user-friendly.
               </p>
 
               <p>
-                Passionate about <span className=" text-[#F97316]">UX/UI design</span> and modern web technologies,
-                I thrive on turning complex problems into elegant solutions. Constantly learning and adapting to stay at the
-                forefront of <span className="font-semibold text-[#06B6D4]">web development</span>.
+                My app development process focuses on <span className="text-[#10B981]">
+                clean architecture</span>, <span className="text-[#A855F7]">intuitive UX</span>, and 
+                <span className="text-[#FACC15]"> scalable backend systems</span>. Whether it's a 
+                startup MVP or an enterprise solution, I build with both 
+                <span className="font-semibold"> performance</span> and 
+                <span className="font-semibold"> maintainability</span> in mind.
               </p>
 
               <p>
-                When not coding, you'll find me playing <span className=" text-[#06B6D4]">chess</span>, reliving my
-                high school <span className="font-semibold text-[#06B6D4]">cricket</span> days, or enjoying{" "}
-                <span className="font-semibold text-[#10B981]">games</span> and <span className="font-semibold text-[#A855F7]">music</span>.
-                I occasionally channel creativity through <span className="font-semibold text-[#FACC15]">sketching</span>.
+                I specialize in <span className="text-[#06B6D4]">cross-platform development</span> 
+                using modern frameworks, ensuring my apps work seamlessly across 
+                devices. When I'm not coding, you'll find me analyzing 
+                <span className="font-semibold"> app architectures</span>, exploring new 
+                <span className="text-[#F97316]"> development tools</span>, or sketching 
+                <span className="text-[#A855F7]"> UI concepts</span>.
               </p>
             </div>
 
-            {/* Contact Button */}
-            <motion.button
+            {/* Contact Button - Keeping your original style */}
+            <motion.a
+              href="#contact"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6 }}
-              className="px-6 py-4 mt-8 mx-auto flex items-center justify-center btn hover:scale-105 transition-transform duration-300"
-              type="button"
+              className="px-6 py-4 mt-8 w-30 mx-auto flex items-center justify-center btn hover:scale-105 transition-transform duration-300 font-light relative"
             >
-                <a className="font-light" href="#contact">Contact</a>
+              Contact
               <div id="container-stars">
                 <div id="stars"></div>
               </div>
@@ -84,7 +95,7 @@ function About() {
                 <div className="circle"></div>
                 <div className="circle"></div>
               </div>
-            </motion.button>
+            </motion.a>
           </motion.div>
         </div>
       </div>
