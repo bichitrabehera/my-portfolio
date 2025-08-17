@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 import BetterDays from "/src/assets/betterdays.png";
 import magmaCloneImage from "/src/assets/magma.png";
 import SynapseImage from "/src/assets/synapse.jpg";
-import ClearSpend from "/src/assets/clear Spend.png";
+import ClearSpend from "/src/assets/clearspend.png";
 
 const projects = [
   {
