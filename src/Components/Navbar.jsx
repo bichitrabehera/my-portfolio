@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <>
       {/* Main Navbar */}
-      <nav className="fixed top-0 right-0 w-full z-50 bg-black/10 backdrop-blur-md text-white shadow-lg">
+      <nav className="fixed top-0 right-0 w-full z-50 backdrop-blur-md text-white">
         <div className="w-full max-w-7xl mx-auto flex items-center justify-between p-4 relative">
           {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex space-x-10 mx-auto">
@@ -68,7 +68,7 @@ const Navbar = () => {
 
       {/* Mobile Menu - Full Screen Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-black flex flex-col items-center justify-center space-y-4 text-white md:hidden">
+        <div className="fixed inset-0 z-40 bg-[#101010] flex flex-col items-center justify-center space-y-4 text-white md:hidden">
           <a
             href="#home"
             className="text-3xl hover:text-blue-300 transition-colors py-3 font-medium"

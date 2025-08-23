@@ -35,7 +35,7 @@ const skills = [
 
 
   return (
-    <section id="skills" className="py-20 bg-black text-white" ref={ref}>
+    <section id="skills" className="py-20 max-w-4xl mx-auto text-white" ref={ref}>
         <div className="relative text-center py-16">
           <h2 className="absolute inset-0 text-6xl sm:text-8xl font-extrabold text-gray-300 opacity-8 uppercase select-none flex items-center justify-center">
            Skills
@@ -77,7 +77,7 @@ const skills = [
         {skills.map((skill, index) => (
           <motion.div
             key={index}
-            className="flex items-center gap-2 px-4 py-1.5 m-1 rounded-[10px] bg-[#1f1f1f] text-gray-200 shadow-sm hover:scale-105 transition-transform"
+            className="flex items-center gap-2 px-3 py-1 m-1 rounded bg-[#1f1f1f] text-gray-200 shadow-sm hover:scale-105 transition-transform"
             variants={{
               hidden: { opacity: 0, scale: 0.9 },
               visible: { opacity: 1, scale: 1 },
@@ -85,7 +85,7 @@ const skills = [
             transition={{ duration: 0.3 }}
           >
             <i className={`devicon-${skill.icon} colored `}></i>
-            <span className="text-sm text-[16px] font-light ">{skill.name}</span>
+            <span className="text-[16px] md:text-[20px] font-light ">{skill.name}</span>
           </motion.div>
         ))}
       </motion.div>

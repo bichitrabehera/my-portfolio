@@ -54,7 +54,7 @@ function Project() {
   const isInView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section id="projects" className="py-20 bg-black" ref={ref}>
+    <section id="projects" className="py-20 max-w-4xl mx-auto" ref={ref}>
       <div className="max-w-6xl mx-auto px-2 sm:px-6 lg:px-2">
         {/* Section Heading */}
         <div className="relative text-center py-12">
@@ -72,54 +72,53 @@ function Project() {
             <div className="w-2 h-2 rounded-full bg-purple-500"></div>
             <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>
           </div>
-
-          <motion.p
-            initial={{ opacity: 0, x: -20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1 }}
-            className="text-base text-center text-gray-300 leading-relaxed max-w-3xl mx-auto"
-          >
-            Here you will find some of my personal and team projects where I
-            contributed as a frontend developer. Explore GitHub and live demo
-            links below.
-          </motion.p>
         </div>
 
+        <motion.p
+          initial={{ opacity: 0, x: -20 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 1 }}
+          className="text-base text-center text-gray-300 leading-relaxed max-w-3xl mx-auto"
+        >
+          Here you will find some of my personal and team projects where I
+          contributed as a frontend developer. Explore GitHub and live demo
+          links below.
+        </motion.p>
+
         {/* Projects Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-8 mt-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-10 mt-12 ">
           {projects.map((project) => (
             <motion.div
               key={project.id}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: project.id * 0.15 }}
-              whileHover={{ scale: 1.05 }}
-              className="bg-[#202020] rounded-lg shadow-lg overflow-hidden transform transition-transform"
+              className="bg-[#121212] m-5 rounded shadow-lg transform transition-transform border border-gray-700"
             >
               <img
                 src={project.image}
                 alt={project.name}
-                className="w-full h-50 object-cover rounded-t-lg"
+                className="w-full h-50 object-cover rounded-t-lg opacity-70"
               />
               <div className="p-5 flex flex-col h-full justify-between">
                 <div>
                   <h3 className="text-[18px] font-bold text-[#dedede]">
                     {project.name}
                   </h3>
-                  <p className="text-[#ffffff] text-[13px] mt-2">
+                  <p className="text-[#ffffff] text-[16px] mt-2">
                     {project.description}
                   </p>
 
                   {/* Tech Stack */}
                   {project.techStack && (
                     <div className="mt-3">
-                      <p className="text-xs text-gray-400 font-semibold mb-1">
+                      <p className=" text-gray-400 font-semibold mb-1">
                         Tech Stack:
                       </p>
                       <ul className="flex flex-wrap gap-2">
                         {project.techStack.map((tech, index) => (
                           <li
                             key={index}
-                            className="bg-gray-700 text-gray-200 text-xs px-2 py-1 rounded-full"
+                            className="bg-gray-700 text-gray-200 px-2 py-1 rounded mt-2"
                           >
                             {tech}
                           </li>
@@ -129,16 +128,12 @@ function Project() {
                   )}
 
                   {/* Team Info */}
-                  {project.team && (
-                    <p className="text-xs text-gray-400 mt-3 italic">
-                      👥 {project.team}
-                    </p>
-                  )}
+
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-block text-black font-semibold bg-[#c0c0c0] rounded-[10px] px-4 py-2 hover:bg-[#b0b0b0] transition-colors text-center"
+                    className="mt-4 inline-block text-black font-semibold bg-[#ffffff] rounded px-2 py-1 hover:bg-[#b0b0b0] transition-colors text-center"
                   >
                     ↗ View Project
                   </a>

@@ -36,7 +36,11 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="body-font relative py-20 overflow-hidden font-light" ref={sectionRef}>
+    <section
+      id="contact"
+      className="body-font relative py-20 font-light max-w-[350px] mx-auto sm:max-w-4xl"
+      ref={sectionRef}
+    >
       <motion.div
         className="container relative z-10"
         initial={{ opacity: 0, y: -30 }}
@@ -45,77 +49,86 @@ function Contact() {
       >
         <div className="mb-12 flex w-full flex-col">
           <div className="relative text-center py-16">
-          <h2 className="absolute inset-0 text-6xl sm:text-8xl font-extrabold text-gray-500 opacity-5 uppercase select-none flex items-center justify-center">
-           Contact
-          </h2>
+            <h2 className="absolute inset-0 text-6xl sm:text-8xl font-extrabold text-gray-500 opacity-5 uppercase select-none flex items-center justify-center">
+              Contact
+            </h2>
 
-          <h3 className="relative text-3xl sm:text-4xl font-semibold text-white z-10 mb-4">
-          Contact
-          </h3>
+            <h3 className="relative text-3xl sm:text-4xl font-semibold text-white z-10 mb-4">
+              Contact
+            </h3>
 
-          {/* Dot Divider */}
-          <div className="relative z-10 flex items-center justify-center mb-4">
-            <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>
-            <div className="w-2 h-2 rounded-full bg-purple-500"></div>
-            <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>
+            {/* Dot Divider */}
+            <div className="relative z-10 flex items-center justify-center mb-4">
+              <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>
+              <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+              <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>
+            </div>
           </div>
-      </div>
-          
+
           <motion.p
-            className="text-lg text-center text-base text-gray-300"
+            className="text-lg text-center text-gray-300"
             initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1 }}
           >
-            Have a project in mind or want to discuss opportunities? Drop me a message <br/> and I'll get back to you within 24 hours.
+            Have a project in mind or want to discuss opportunities? Drop me a
+            message <br /> and I'll get back to you within 24 hours.
           </motion.p>
         </div>
 
         <motion.div
-          className="max-w-2xl bg-[#111111] p-5 rounded-xl shadow-2xl mx-auto relative border border-gray-800"
+          className="max-w-2xl bg-[#111111] border border-[#2e2e2e] p-5 rounded mx-auto"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, type: "spring" }}
         >
-
-          <form ref={form} onSubmit={sendEmail} className="relative z-10">
+          <form ref={form} onSubmit={sendEmail} className="relative">
             <div className="mb-6">
-              <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-400 mb-2"
+              >
                 Your Name
               </label>
               <input
                 type="text"
                 id="name"
                 name="user_name"
-                className="w-full px-4 py-3 bg-[#1a1a1a] border border-gray-800 text-white rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 bg-[#1a1a1a] text-white rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
                 placeholder="John Doe"
                 required
               />
             </div>
 
             <div className="mb-6">
-              <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-400 mb-2"
+              >
                 Email Address
               </label>
               <input
                 type="email"
                 id="email"
                 name="user_email"
-                className="w-full px-4 py-3 bg-[#1a1a1a] border border-gray-800 text-white rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 bg-[#1a1a1a] text-white rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
                 placeholder="john@example.com"
                 required
               />
             </div>
 
             <div className="mb-8">
-              <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-400 mb-2"
+              >
                 Your Message
               </label>
               <textarea
                 id="message"
                 name="message"
                 rows="5"
-                className="w-full px-4 py-3 bg-[#1a1a1a] border border-gray-800 text-white rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 bg-[#1a1a1a] text-white rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
                 placeholder="Tell me about your project..."
                 required
               ></textarea>
@@ -125,20 +138,10 @@ function Contact() {
               <motion.button
                 type="submit"
                 className="btn"
-                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <strong className="font-light">Send</strong>
-                <div id="container-stars">
-                  <div id="stars"></div>
-                </div>
-                <div id="glow">
-                  <div className="circle"></div>
-                  <div className="circle"></div>
-                </div>
               </motion.button>
-
-
             </div>
 
             {isSent && (
@@ -148,12 +151,24 @@ function Contact() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, type: "spring" }}
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
                 </svg>
                 <div>
                   <p className="font-medium">Message sent successfully!</p>
-                  <p className="text-sm text-green-300">I'll get back to you soon.</p>
+                  <p className="text-sm text-green-300">
+                    I'll get back to you soon.
+                  </p>
                 </div>
               </motion.div>
             )}
@@ -165,8 +180,18 @@ function Contact() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, type: "spring" }}
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  ></path>
                 </svg>
                 <div>
                   <p className="font-medium">Error sending message</p>
@@ -176,12 +201,9 @@ function Contact() {
             )}
           </form>
         </motion.div>
-
       </motion.div>
     </section>
   );
 }
 
 export default Contact;
-
-

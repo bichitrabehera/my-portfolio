@@ -2,71 +2,50 @@ import React from "react";
 import { motion } from "framer-motion";
 import Navbar from "../Navbar";
 
+const rows = [
+  "Dev   •   Full Stack Developer   •   Creator   •   Coder   •",
+  "Engineer   •   Designer   •   Problem Solver   •   Thinker   •",
+  "React   •   Node.js   •   Tailwind   •   Framer Motion   •",
+  "JavaScript   •   TypeScript   •   MongoDB   •   Express   •",
+  "UI/UX   •   Responsive Design   •   Performance   •",
+  "Building Apps •  Websites • Digital Experiences   •",
+];
+
 function Home() {
   return (
     <>
       <Navbar />
       <section
         id="home"
-        className="relative min-h-screen pt-28 text-white flex items-center justify-center backdrop-blur-md"
+        className="relative min-h-screen w-full flex items-center justify-center backdrop-blur-md text-white overflow-hidden"
       >
-        <div className="homecontainer relative mx-4 text-center max-w-3xl py-24 px-4 bg-black">
-          {/* Greeting */}
-          <p className="text-[1.75rem] tracking-widest text-cyan-300 mb-4 md:mb-6">
-            Hi, I'm <span className="font-semibold">Bichitra Behera</span>
-          </p>
-
-          {/* Main Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-[1.75rem] md:text-[3rem] font-bold mb-4 md:mb-6"
-          >
-            Building Apps & Websites
-          </motion.h1>
-
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="text-[1rem] md:text-[1.125rem] text-[rgba(255, 255, 255, 0.75)] font-light mb-10 leading-relaxed"
-          >
-            I build web and mobile applications while exploring new technologies
-            and creative solutions. Always curious and learning, I enjoy turning
-            ideas into interactive, high-performance experiences.
-          </motion.p>
-
-          {/* Button Section */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col items-center justify-center"
-          >
-            <p className="text-md mb-8 text-[#A5F3FC] italic animate-pulse">
-              ↓ Check out what I’ve been building
-            </p>
-
-            <button
-              type="button"
-              className="btn hover:scale-105 transition-transform duration-300"
+        {/* Text Wall */}
+        <div className="absolute inset-0 flex flex-col gap-12">
+          {rows.map((text, i) => (
+            <motion.div
+              key={i}
+              className="whitespace-nowrap text-4xl md:text-6xl font-light opacity-10 mb-10"
+              animate={{
+                x: i % 2 === 0 ? ["100%", "-100%"] : ["-100%", "100%"],
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 30 + i * 10, // slightly different speeds
+                ease: "linear",
+              }}
             >
-              <strong>
-                <a href="#projects" className="font-light">
-                  Projects
-                </a>
-              </strong>
-              <div id="container-stars">
-                <div id="stars"></div>
-              </div>
-              <div id="glow">
-                <div className="circle"></div>
-                <div className="circle"></div>
-              </div>
-            </button>
-          </motion.div>
+              {text.repeat(10)}
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Center Content */}
+        <div className="relative z-10 text-center">
+          <p className="tracking-widest text-[#dadada] text-6xl mb-0 md:text-8xl">
+            <span className="font-semibold">
+              Bichitra <br /> Behera
+            </span>
+          </p>
         </div>
       </section>
     </>

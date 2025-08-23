@@ -4,19 +4,25 @@ import Home from "./Components/sections/Home";
 import About from "./Components/sections/About";
 import Skills from "./Components/sections/Skills";
 import Project from "./Components/sections/Project";
-import Contact from "./Components/sections/Contact"
+import Contact from "./Components/sections/Contact";
 import Footer from "./Components/sections/Footer";
+import CustomCursor from "./Components/CustomCursor";
+// import Backtotop from "./Components/backtotop";
 
 function App() {
   return (
-   <>
-   <Home/>
-   <About/>
-   <Skills/>
-   <Project/>
-   <Contact/>
-   <Footer/>
-   </>
+    <>
+      <div className="">
+        <Home />
+        {/* <Backtotop/> */}
+        <CustomCursor />
+        <About />
+        <Skills />
+        <Project />
+        <Contact />
+        <Footer />
+      </div>
+    </>
   );
 }
 

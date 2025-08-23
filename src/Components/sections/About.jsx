@@ -8,7 +8,7 @@ function About() {
   return (
     <section
       id="about"
-      className="pt-20 pb-24 bg-black text-white font-light"
+      className="py-20 text-white font-light"
       ref={ref}
     >
       <div className="max-w-4xl mx-auto px-6">
@@ -37,12 +37,12 @@ function About() {
           initial={{ opacity: 0, y: 10 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
-          className="text-center text-sm text-gray-400 uppercase mb-8"
+          className="text-center text-gray-400 uppercase mb-8"
         >
           App Developer | Problem Solver | Tech Enthusiast
         </motion.p>
 
-        <div className="flex flex-col md:flex-row items-center gap-10">
+        <div className="flex flex-col md:flex-row items-center gap-10 text-[16px] md:text-[20px]">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -50,7 +50,7 @@ function About() {
             transition={{ duration: 1.2 }}
             className="w-full"
           >
-            <div className="space-y-6 text-gray-300 font-light text-center leading-relaxed">
+            <div className="space-y-5 text-gray-300 font-light text-left leading-relaxed">
               <p>
                 I'm <span className="text-[#06B6D4]">Bichitra Behera</span>, a 
                 <span className="font-semibold text-[#06B6D4]"> full-stack developer</span> who 
@@ -70,7 +70,7 @@ function About() {
               </p>
 
               <p>
-                I specialize in <span className="text-[#06B6D4]">cross-platform development</span> 
+                I specialize in <span className="text-[#06B6D4]">cross-platform development </span> 
                 using modern frameworks, ensuring my apps work seamlessly across 
                 devices. When I'm not coding, you'll find me analyzing 
                 <span className="font-semibold"> app architectures</span>, exploring new 
@@ -85,16 +85,9 @@ function About() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6 }}
-              className="px-6 py-4 mt-8 w-30 mx-auto flex items-center justify-center btn hover:scale-105 transition-transform duration-300 font-light relative"
+              className="btn mt-10"
             >
               Contact
-              <div id="container-stars">
-                <div id="stars"></div>
-              </div>
-              <div id="glow">
-                <div className="circle"></div>
-                <div className="circle"></div>
-              </div>
             </motion.a>
           </motion.div>
         </div>
