@@ -13,7 +13,7 @@ function About() {
     >
       <div className="max-w-4xl mx-auto px-6">
         {/* Heading */}
-        <div className="relative text-center py-0">
+        <div className="relative text-center pb-12">
           {/* Background Title */}
           <h2 className="absolute inset-0 text-6xl sm:text-8xl font-extrabold text-gray-300 opacity-8 uppercase select-none flex items-center justify-center">
             About Me

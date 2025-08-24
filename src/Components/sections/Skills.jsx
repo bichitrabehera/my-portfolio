@@ -39,7 +39,7 @@ function Skills() {
       className="py-20 mx-auto text-white border-b border-[#ffffff50] md:border-[#ffffff10]"
       ref={ref}
     >
-      <div className="relative text-center py-0">
+      <div className="relative text-center pb-12">
         <h2 className="absolute inset-0 text-6xl sm:text-8xl font-extrabold text-gray-300 opacity-8 uppercase select-none flex items-center justify-center">
           Skills
         </h2>

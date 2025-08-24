@@ -56,22 +56,24 @@ function Project() {
   return (
     <section
       id="projects"
-      className="py-10 mx-auto border-b border-[#ffffff50] md:border-[#ffffff10]"
+      className="py-20 mx-auto border-b border-[#ffffff50] md:border-[#ffffff10]"
       ref={ref}
     >
       <div className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-2">
         {/* Section Heading */}
-        <div className="relative text-center py-12">
-          <h2 className="absolute inset-0 text-6xl sm:text-8xl font-extrabold text-gray-700 opacity-10 uppercase select-none flex items-center justify-center">
-            Projects
+        <div className="relative text-center pb-12">
+          {/* Background Title */}
+          <h2 className="absolute inset-0 text-6xl sm:text-8xl font-extrabold text-gray-300 opacity-8 uppercase select-none flex items-center justify-center">
+            projects
           </h2>
 
-        <h3 className="relative text-3xl sm:text-4xl font-semibold text-white z-10 mb-4">
+          {/* Foreground Title */}
+          <h3 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
             <code>~builds</code>
           </h3>
 
           {/* Dot Divider */}
-          <div className="relative z-10 flex items-center justify-center mb-6">
+          <div className="relative z-10 flex items-center justify-center mb-4">
             <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>
             <div className="w-2 h-2 rounded-full bg-purple-500"></div>
             <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>

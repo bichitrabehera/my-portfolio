@@ -38,7 +38,7 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="body-font border-b border-[#ffffff50] md:border-[#ffffff10] relative py-10 font-light mx-auto "
+      className="body-font border-b border-[#ffffff50] md:border-[#ffffff10] relative py-20 font-light mx-auto "
       ref={sectionRef}
     >
       <motion.div
@@ -48,13 +48,15 @@ function Contact() {
         transition={{ duration: 0.8 }}
       >
         <div className="mb-12 flex w-full flex-col">
-          <div className="relative text-center py-16">
-            <h2 className="absolute inset-0 text-6xl sm:text-8xl font-extrabold text-gray-500 opacity-5 uppercase select-none flex items-center justify-center">
-              Contact
+          <div className="relative text-center pb-12">
+            {/* Background Title */}
+            <h2 className="absolute inset-0 text-6xl sm:text-8xl font-extrabold text-gray-300 opacity-8 uppercase select-none flex items-center justify-center">
+              contact
             </h2>
 
-            <h3 className="relative text-3xl sm:text-4xl font-semibold text-white z-10 mb-4">
-              <code> ~say_hello</code>
+            {/* Foreground Title */}
+            <h3 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
+              <code>~say_hello</code>
             </h3>
 
             {/* Dot Divider */}
