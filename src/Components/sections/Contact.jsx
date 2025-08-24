@@ -139,7 +139,7 @@ function Contact() {
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <motion.button
                 type="submit"
-                className="btn"
+                className="btn mx-auto"
                 whileTap={{ scale: 0.95 }}
               >
                 <strong className="font-light">Send</strong>
