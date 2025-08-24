@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <>
       {/* Main Navbar */}
-      <nav className="fixed top-0 right-0 w-full z-50 backdrop-blur-md text-white">
+      <nav className="fixed top-0 right-0 w-full z-50 backdrop-blur-lg border-b border-[#ffffff50] md:border-[#ffffff10] text-white">
         <div className="w-full max-w-7xl mx-auto flex items-center justify-between p-4 relative">
           {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex space-x-10 mx-auto">
@@ -24,25 +24,25 @@ const Navbar = () => {
               href="#about"
               className="px-3 py-2 hover:text-blue-300 transition-colors text-lg font-medium"
             >
-              About
+              ~whoami
             </a>
             <a
               href="#skills"
               className="px-3 py-2 hover:text-blue-300 transition-colors text-lg font-medium"
             >
-              Skills
+              ~loadout
             </a>
             <a
               href="#projects"
               className="px-3 py-2 hover:text-blue-300 transition-colors text-lg font-medium"
             >
-              Projects
+              ~builds
             </a>
             <a
               href="#contact"
               className="px-3 py-2 hover:text-blue-300 transition-colors text-lg font-medium"
             >
-              Contact
+              ~say_hello
             </a>
           </div>
 
@@ -53,7 +53,7 @@ const Navbar = () => {
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             <span
-              className={`block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out ${
+              className={`block absolute h-0.5 w-5 bg-white transform transition duration-300 ease-in-out ${
                 isMenuOpen ? "rotate-45" : "-translate-y-2"
               }`}
             ></span>
@@ -68,7 +68,7 @@ const Navbar = () => {
 
       {/* Mobile Menu - Full Screen Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-[#101010] flex flex-col items-center justify-center space-y-4 text-white md:hidden">
+        <div className="fixed inset-0 z-40 bg-[#000] flex flex-col items-center justify-center space-y-4 text-white md:hidden">
           <a
             href="#home"
             className="text-3xl hover:text-blue-300 transition-colors py-3 font-medium"
@@ -81,28 +81,28 @@ const Navbar = () => {
             className="text-3xl hover:text-blue-300 transition-colors py-3 font-medium"
             onClick={toggleMenu}
           >
-            About
+            ~whoami
           </a>
           <a
             href="#skills"
             className="text-3xl hover:text-blue-300 transition-colors py-3 font-medium"
             onClick={toggleMenu}
           >
-            Skills
+            ~loadout
           </a>
           <a
             href="#projects"
             className="text-3xl hover:text-blue-300 transition-colors py-3 font-medium"
             onClick={toggleMenu}
           >
-            Projects
+            ~builds
           </a>
           <a
             href="#contact"
             className="text-3xl hover:text-blue-300 transition-colors py-3 font-medium"
             onClick={toggleMenu}
           >
-            Contact
+            ~say_hello
           </a>
         </div>
       )}

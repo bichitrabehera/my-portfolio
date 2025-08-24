@@ -38,11 +38,11 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="body-font relative py-20 font-light max-w-[350px] mx-auto sm:max-w-4xl"
+      className="body-font border-b border-[#ffffff50] md:border-[#ffffff10] relative py-10 font-light mx-auto "
       ref={sectionRef}
     >
       <motion.div
-        className="container relative z-10"
+        className="container relative z-10 max-w-[350px] mx-auto sm:max-w-4xl"
         initial={{ opacity: 0, y: -30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
@@ -54,7 +54,7 @@ function Contact() {
             </h2>
 
             <h3 className="relative text-3xl sm:text-4xl font-semibold text-white z-10 mb-4">
-              Contact
+              <code> ~say_hello</code>
             </h3>
 
             {/* Dot Divider */}

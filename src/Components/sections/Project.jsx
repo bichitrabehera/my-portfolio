@@ -54,16 +54,20 @@ function Project() {
   const isInView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section id="projects" className="py-20 max-w-4xl mx-auto" ref={ref}>
-      <div className="max-w-6xl mx-auto px-2 sm:px-6 lg:px-2">
+    <section
+      id="projects"
+      className="py-10 mx-auto border-b border-[#ffffff50] md:border-[#ffffff10]"
+      ref={ref}
+    >
+      <div className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-2">
         {/* Section Heading */}
         <div className="relative text-center py-12">
           <h2 className="absolute inset-0 text-6xl sm:text-8xl font-extrabold text-gray-700 opacity-10 uppercase select-none flex items-center justify-center">
             Projects
           </h2>
 
-          <h3 className="relative text-3xl sm:text-4xl font-semibold text-white z-10 mb-4">
-            Projects
+        <h3 className="relative text-3xl sm:text-4xl font-semibold text-white z-10 mb-4">
+            <code>~builds</code>
           </h3>
 
           {/* Dot Divider */}
@@ -92,7 +96,7 @@ function Project() {
               key={project.id}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: project.id * 0.15 }}
-              className="bg-[#121212] m-5 rounded shadow-lg transform transition-transform border border-gray-700"
+              className="bg-[#0f0f0f] m-5 rounded shadow-lg transform transition-transform border border-[#ffffff11]"
             >
               <img
                 src={project.image}
