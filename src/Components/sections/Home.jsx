@@ -41,18 +41,21 @@ function Home() {
 
         {/* Center Content */}
         <div className="relative z-10 text-center">
-          <p className="tracking-widest text-[#dadada] text-5xl mb-0 md:text-7xl">
+          <div className="tracking-widest text-[#dadada] text-5xl mb-0 md:text-7xl">
             <div className="text-center">
-              <span className="font-light text-4xl md:text-6xl leading-snug">
+              <span className="font-light text-4xl md:text-6xl">
                 Bichitra <br /> Behera
               </span>
               <div className="mt-4">
-                <span className="text-3xl md:text-5xl font-semibold">
-                  I am an Engineer
+                <span className="text-3xl md:text-5xl ">
+                  I am an{" "}
+                  <i className="font-bold underline">
+                    <code>Engineer</code>
+                  </i>
                 </span>
               </div>
             </div>
-          </p>
+          </div>
         </div>
       </section>
     </>
