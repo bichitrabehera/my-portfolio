@@ -39,10 +39,10 @@ function About() {
           transition={{ duration: 1 }}
           className="text-center text-gray-400 uppercase mb-8"
         >
-          App Developer | Problem Solver | Tech Enthusiast
+          Web  / App Developer | Problem Solver | Tech Enthusiast
         </motion.p>
 
-        <div className="flex flex-col md:flex-row items-center justify-center gap-10 text-[16px] md:text-[20px]">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-10 text-justify text-[16px] md:text-[20px]">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}

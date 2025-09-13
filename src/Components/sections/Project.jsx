@@ -26,7 +26,6 @@ const projects = [
     techStack: ["React Native", "Node.js", "Express", "Clerk", "Redis"], // adjust if needed
     team: "Solo", // or "Team" if applicable
   },
-
   {
     id: 2,
     name: "Magma Clone",
@@ -124,7 +123,7 @@ function Project() {
                         {project.techStack.map((tech, index) => (
                           <li
                             key={index}
-                            className="bg-gray-700 text-gray-200 px-2 py-1 rounded mt-2"
+                            className="bg-gray-700 text-gray-200 text-sm px-2 py-1 rounded mt-2"
                           >
                             {tech}
                           </li>
@@ -139,7 +138,7 @@ function Project() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-block text-black font-semibold bg-[#ffffff] rounded px-2 py-1 hover:bg-[#b0b0b0] transition-colors text-center"
+                    className="mt-4 inline-block text-black font-semibold bg-[#ffffff] rounded px-4 py-2 hover:bg-[#b0b0b0] transition-colors text-center"
                   >
                     ↗ View Project
                   </a>

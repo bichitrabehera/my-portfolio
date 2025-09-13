@@ -16,7 +16,7 @@ function App() {
       <div className="">
         <Home />
         {/* <Backtotop/> */}
-        <CustomCursor />
+        {/* <CustomCursor /> */}
         <About />
         <Skills />
         <Myresume/>

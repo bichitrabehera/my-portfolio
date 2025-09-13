@@ -21,13 +21,13 @@ function Skills() {
     { name: "NodeJS", icon: "nodejs-plain" },
     { name: "ExpressJS", icon: "express-original" },
     { name: "MongoDB", icon: "mongodb-plain" },
-    { name: "MySQL", icon: "mysql-plain" },
+    // { name: "MySQL", icon: "mysql-plain" },
 
     // Tools
     { name: "Git", icon: "git-plain" },
     { name: "GitHub", icon: "github-original" },
     { name: "Postman", icon: "postman-plain" },
-    { name: "pnpm", icon: "npm-original" }, // Use npm icon for pnpm
+    { name: "npm", icon: "npm-original" }, // Use npm icon for pnpm
 
     // Deployment
     { name: "Vercel", icon: "vercel-original" },
