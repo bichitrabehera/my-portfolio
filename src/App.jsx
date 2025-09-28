@@ -6,20 +6,23 @@ import Skills from "./Components/sections/Skills";
 import Project from "./Components/sections/Project";
 import Contact from "./Components/sections/Contact";
 import Footer from "./Components/sections/Footer";
-import CustomCursor from "./Components/CustomCursor";
 import Myresume from "./Components/sections/Myresume";
-// import Backtotop from "./Components/backtotop";
+import TargetCursor from "./Components/TargetCursor";
 
 function App() {
   return (
     <>
-      <div className="">
+      <div className="relative z-10">
+
         <Home />
-        {/* <Backtotop/> */}
-        {/* <CustomCursor /> */}
+        <TargetCursor
+          targetSelector="a, button, .cursor-target" // all links, buttons, and any custom elements
+          spinDuration={2}
+          hideDefaultCursor={true}
+        />
         <About />
         <Skills />
-        <Myresume/>
+        <Myresume />
         <Project />
         <Contact />
         <Footer />

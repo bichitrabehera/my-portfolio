@@ -1,8 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "@fortawesome/fontawesome-free/css/all.min.css";
 import { ArrowUp } from "lucide-react";
-
+import { Link } from "react-scroll";
 
 function Footer() {
   return (
@@ -12,46 +11,62 @@ function Footer() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      {/* Social Media Links */}
-      <motion.div
-        className="flex space-x-5 mb-5"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.2 }}
-      >
-        <a
-          href="https://www.instagram.com/imdaakuu?igsh=bmd0ZmwzeWZpdjJw"
-          target="_blank"
-          className="text-gray-400 hover:underline transition-transform transform hover:scale-110"
+      {/* Footer Interactive Elements */}
+      <div className="footer-cursor-area w-full flex flex-col items-center">
+        {/* Social Media Links */}
+        <motion.div
+          className="flex space-x-5 mb-5"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
         >
-          instagram
-        </a>
-        <a
-          href="https://www.linkedin.com/in/bichitra-behera-99b189291"
-          target="_blank"
-          className="text-gray-400 hover:underline transition-transform transform hover:scale-110"
+          <a
+            href="https://www.instagram.com/imdaakuu?igsh=bmd0ZmwzeWZpdjJw"
+            target="_blank"
+            className="footer-cursor-target text-gray-400 hover:underline transition-transform transform hover:scale-110"
+          >
+            instagram
+          </a>
+          <a
+            href="https://www.linkedin.com/in/bichitra-behera-99b189291"
+            target="_blank"
+            className="footer-cursor-target text-gray-400 hover:underline transition-transform transform hover:scale-110"
+          >
+            linkedin
+          </a>
+          <a
+            href="https://github.com/bichitrabehera"
+            target="_blank"
+            className="footer-cursor-target text-gray-400 hover:underline transition-transform transform hover:scale-110"
+          >
+            github
+          </a>
+          <a
+            href="mailto:bichitrabehera.amcec@gmail.com"
+            target="_blank"
+            className="footer-cursor-target text-gray-400 hover:underline transition-transform transform hover:scale-110"
+          >
+            email
+          </a>
+        </motion.div>
+
+        {/* Scroll-to-top */}
+        <Link
+          to="home"
+          smooth={true}
+          duration={600}
+          offset={-80}
+          className="footer-cursor-target absolute right-4 bottom-0 bg-black text-white p-3 rounded-full shadow-lg hover:bg-gray-800 transition"
         >
-          linkedin
-        </a>
-        <a
-          href="https://github.com/bichitrabehera"
-          target="_blank"
-          className="text-gray-400 hover:underline transition-transform transform hover:scale-110"
-        >
-          github{" "}
-        </a>
-        <a
-          href="mailto:bichitrabehera.amcec@gmail.com"
-          target="_blank"
-          className="text-gray-400 hover:underline transition-transform transform hover:scale-110"
-        >
-          email{" "}
-        </a>
-      </motion.div>
+          <ArrowUp size={20} />
+        </Link>
+
+
+      </div>
 
       {/* Copyright Info */}
       <motion.div
-        className="text-gray-400 text-sm"
+        className="text-gray-400 text-sm mt-6"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.4 }}
@@ -66,15 +81,6 @@ function Footer() {
           </a>
         </p>
       </motion.div>
-
-       <div>
-      <a
-        href="#home"
-        className="absolute right-4 bottom-0 bg-black text-white p-3 rounded-full shadow-lg hover:bg-gray-800 transition"
-      >
-        <ArrowUp size={20} />
-      </a>
-    </div>
     </motion.footer>
   );
 }

@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
+
 function Contact() {
   const form = useRef();
   const sectionRef = useRef(null);
@@ -38,11 +39,11 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="body-font border-b border-[#ffffff50] md:border-[#ffffff10] relative py-20 font-light mx-auto "
+      className="relative py-20 mx-auto border-b border-[#ffffff50] md:border-[#ffffff10] font-light body-font"
       ref={sectionRef}
     >
       <motion.div
-        className="container relative z-10 max-w-[350px] mx-auto sm:max-w-4xl"
+        className="container relative z-10 p-10 mx-auto sm:max-w-4xl"
         initial={{ opacity: 0, y: -30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}

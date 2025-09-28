@@ -35,13 +35,13 @@ function CustomCursor() {
         }}
       ></div>
 
-      {/* Inner dot */}
+      {/* Inner dot
       <div
         className="fixed top-0 left-0 w-1 h-1 rounded-full bg-white pointer-events-none"
         style={{
           transform: `translate(${position.x - 2}px, ${position.y - 2}px)`,
         }}
-      ></div>
+      ></div> */}
     </>
   );
 }

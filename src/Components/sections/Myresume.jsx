@@ -4,7 +4,7 @@ const Myresume = () => {
   return (
     <section
       id="resume"
-      className="relative py-10 w-full flex flex-col items-center border-b border-[#ffffff50] md:border-[#ffffff10] justify-center backdrop-blur-md text-white overflow-hidden"
+      className="py-10 w-full flex flex-col items-center border-b border-[#ffffff50] md:border-[#ffffff10] justify-center backdrop-blur-md text-white overflow-hidden"
     >
       <div className="relative text-center pb-12 max-w-2xl">
         {/* Background Title */}

@@ -1,16 +1,23 @@
 import React from "react";
 import { ArrowUp } from "lucide-react";
+import { Link } from "react-scroll"; // <-- import Link from react-scroll
 
 const Backtotop = () => {
   return (
     <div>
-      <a
-        href="#home"
-        className="fixed right-4 bottom-4 bg-black text-white p-3 rounded-full shadow-lg hover:bg-gray-800 transition"
+      <Link
+        key="home"
+        to="home"
+        smooth={true}
+        duration={600}
+        offset={-80} // Adjust offset to match navbar height
+        className="btn"
       >
+
         <ArrowUp size={20} />
-      </a>
-    </div>
+      </Link>
+
+    </div >
   );
 };
 
