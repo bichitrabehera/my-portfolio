@@ -41,7 +41,7 @@ function About() {
               I'm <span className="text-[#06B6D4]">Bichitra Behera</span>, a
               <span className="font-semibold text-[#06B6D4]"> full-stack developer</span>{" "}
               who <span className="text-[#F97316]">builds apps</span> that solve
-              real problems. From <span className="font-semibold">mobile applications</span>
+              real problems. From <span className="font-semibold">mobile applications </span>
               to <span className="font-semibold">complex web platforms</span>, I create
               solutions that are both powerful and user-friendly.
             </p>

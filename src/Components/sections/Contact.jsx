@@ -75,12 +75,12 @@ function Contact() {
             transition={{ duration: 1 }}
           >
             Have a project in mind or want to discuss opportunities? Drop me a
-            message <br /> and I'll get back to you within 24 hours.
+            message and I'll get back to you within 24 hours.
           </motion.p>
         </div>
 
         <motion.div
-          className="max-w-2xl bg-[#111111] border border-[#2e2e2e] p-5 rounded mx-auto"
+          className="md:max-w-2xl bg-[#111111] border border-[#474747] p-5 rounded mx-auto"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, type: "spring" }}

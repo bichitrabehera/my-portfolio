@@ -35,7 +35,7 @@ const Myresume = () => {
           rel="noopener noreferrer"
           className="btn mx-auto"
         >
-          <span className="relative z-10">Download</span>
+          <span className="relative z-10 hover:text-black">Download</span>
         </a>
       </div>
     </section>

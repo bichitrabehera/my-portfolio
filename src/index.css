@@ -10,6 +10,11 @@ body {
   scroll-behavior: smooth;
 }
 
+@font-face {
+  font-family: "Cursor";
+  src: url('./fonts/675b1d2a87da9195e8ccefb3_brockmann-regular-webfont.woff2');
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

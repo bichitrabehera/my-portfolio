@@ -71,20 +71,21 @@ function Skills() {
         {skills.map((skill, index) => (
           <motion.div
             key={index}
-            className="cursor-target flex flex-col items-center justify-center gap-3 px-6 py-6 rounded bg-[#111111] text-gray-200 shadow-lg relative overflow-hidden transform-gpu border-1 border-[#ffffff20]"
+            className="cursor-target flex flex-col items-center justify-center gap-3 px-6 py-6 rounded bg-[#111111] shadow-lg relative overflow-hidden transform-gpu border-1 border-[#ffffff20]"
             whileHover={{
               scale: 1.1,
               rotateX: -5,
               rotateY: 5,
               boxShadow: "0 20px 40px rgba(0,0,0,0.6)",
-              background:
-                "linear-gradient(135deg, #0ea5e9, #3b82f6, #2563eb, #1e40af)",
+              background: "linear-gradient(135deg, #0ea5e9)",
+              color: "#000" // 👈 this will affect all text inside
             }}
             transition={{ type: "spring", stiffness: 250, damping: 20 }}
           >
             <i className={`devicon-${skill.icon} colored text-4xl md:text-5xl z-10`} />
-            <span className="text-lg md:text-xl font-semibold text-[#bbbbbb] z-10">{skill.name}</span>
+            <span className="text-lg md:text-xl font-semibold z-10">{skill.name}</span>
           </motion.div>
+
         ))}
       </motion.div>
     </section>

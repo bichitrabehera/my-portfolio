@@ -44,24 +44,23 @@ function Home() {
         <div className="relative z-10 text-center">
           <div className="tracking-widest text-[#dadada] text-5xl mb-0 md:text-7xl">
             <div className="text-center">
-              <span className="font-light text-4xl md:text-6xl flex justify-center items-center">
+              <span className="font-[Cursor] text-3xl md:text-7xl flex justify-center items-center">
                 <span>
-                  <DecryptedText
+                  <i><DecryptedText
                     text="Bichitra Behera"
                     animateOn="view"
                     revealDirection="center"
-                  />
+                  /></i>
                 </span>
               </span>
 
               <div className="mt-7">
-                <span className="text-4xl md:text-6xl">
-
-                  <DecryptedText
+                <span className="text-2xl md:text-6xl font-[Cursor]">
+                  <u><DecryptedText
                     text="I am an ENGINEER"
                     animateOn="view"
                     revealDirection="center"
-                  />
+                  /></u>
                 </span>
               </div>
             </div>
