@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-scroll"; // <-- import Link from react-scroll
+import { Link } from "react-scroll";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,22 +17,24 @@ const Navbar = () => {
   return (
     <>
       {/* Main Navbar */}
-      <nav className="fixed top-0 right-0 w-full z-50 backdrop-blur-3xl border-b border-[#ffffff50] md:border-[#ffffff10] text-white">
-        <div className="w-full max-w-7xl mx-auto flex items-center justify-between p-4 relative">
+      <nav className="fixed top-0 right-0 w-full z-50 backdrop-blur-[30px] bg-[#00000060] p-3 md:p-0 border-b border-[#ffffff25] text-white">
+        <div className="w-full max-w-7xl mx-auto flex items-center justify-between relative">
           <div>
-            <h1 className="text-xl bg-[#002896b0] p-2 rounded-full border-1 border-[#ffffff20]">B <sup>2</sup> </h1>
+            <h1 className="text-2xl bg-[#002896b0] p-1 rounded-br-2xl rounded-tl-2xl border border-[#ffffff20]">
+              <a href="https://bichitrabehera-blue.vercel.app">B <sup>2</sup></a>
+            </h1>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-10 mx-auto">
-            {navLinks.map((link) => ( 
+          <div className="hidden md:flex mx-auto">
+            {navLinks.map((link) => (
               <Link
                 key={link.to}
                 to={link.to}
                 smooth={true}
                 duration={600}
-                offset={-80} // Adjust offset to match navbar height
-                className="px-2 py-1 border-[1px] rounded border-[#ffffff30] hover:bg-[#ffffff20] hover:text-blue-800 transition-colors text-lg font-medium cursor-pointer"
+                offset={-80}
+                className="px-8 py-4 border border-[#ffffff25] hover:bg-[#ffffff30] hover:text-blue-600 transition-colors text-lg hover:text-xl font-medium cursor-pointer"
               >
                 {link.name}
               </Link>
@@ -46,11 +48,11 @@ const Navbar = () => {
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             <span
-              className={`block absolute h-0.5 w-8 bg-white transform transition duration-300 ease-in-out ${isMenuOpen ? "rotate-45" : "-translate-y-2"
+              className={`block absolute h-0.5 w-5 bg-white transform transition duration-300 ease-in-out ${isMenuOpen ? "rotate-45" : "-translate-y-2"
                 }`}
             ></span>
             <span
-              className={`block absolute h-0.5 w-8 bg-current transform transition duration-300 ease-in-out ${isMenuOpen ? "-rotate-45" : "translate-y-2"
+              className={`block absolute h-0.5 w-5 bg-current transform transition duration-300 ease-in-out ${isMenuOpen ? "-rotate-45" : "translate-y-2"
                 }`}
             ></span>
           </button>
@@ -59,7 +61,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-[#000] flex flex-col items-center justify-center space-y-4 text-white md:hidden">
+        <div className="fixed inset-0 z-40 bg-[#000000] flex flex-col items-center justify-center space-y-4 text-white md:hidden">
           {navLinks.map((link) => (
             <Link
               key={link.to}

@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 export default function DecryptedText({
     text,
-    speed = 300,
+    speed = 100,
     maxIterations = 10,
     sequential = false,
     revealDirection = 'start',

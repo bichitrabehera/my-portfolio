@@ -58,7 +58,7 @@ function Project() {
       className="py-20 mx-auto border-b border-[#ffffff50] md:border-[#ffffff10]"
       ref={ref}
     >
-      <div className="max-w-4xl mx-auto px-2 sm:px-6 lg:px-2">
+      <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-2">
         {/* Section Heading */}
         <div className="relative text-center pb-12">
           {/* Background Title */}

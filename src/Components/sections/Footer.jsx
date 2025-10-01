@@ -56,7 +56,7 @@ function Footer() {
           smooth={true}
           duration={600}
           offset={-80}
-          className="footer-cursor-target absolute right-4 bottom-0 bg-black text-white p-3 rounded-full shadow-lg hover:bg-gray-800 transition"
+          className="footer-cursor-target absolute right-4 bottom-0 bg-[#111] text-white p-3 rounded-full hover:rounded hover:scale-120 shadow-lg hover:bg-gray-800 transition"
         >
           <ArrowUp size={20} />
         </Link>

@@ -328,7 +328,7 @@ const TargetCursor = ({
       spinTl.current = gsap
         .timeline({ repeat: -1 })
         .to(cursorRef.current, {
-          rotation: "+=360",
+          rotation: "+=60",
           duration: spinDuration,
           ease: "none",
         });

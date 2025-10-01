@@ -18,7 +18,7 @@ function Home() {
       <Navbar />
       <section
         id="home"
-        className="relative min-h-[70vh] mt-20 md:min-h-[80vh] w-full flex items-center border-b border-[#ffffff50] md:border-[#ffffff10] justify-center backdrop-blur-md text-white overflow-hidden"
+        className="relative min-h-[70vh] mt-20 md:min-h-[80vh] w-full flex items-center border-b border-[#ffffff50] md:border-[#ffffff10] justify-center text-white overflow-hidden"
       >
         {/* Text Wall */}
         <div className="absolute inset-0 flex flex-col gap-12">
@@ -45,10 +45,9 @@ function Home() {
           <div className="tracking-widest text-[#dadada] text-5xl mb-0 md:text-7xl">
             <div className="text-center">
               <span className="font-light text-4xl md:text-6xl flex justify-center items-center">
-                <span className="text-6xl md:text-9xl">B</span>
                 <span>
                   <DecryptedText
-                    text="ichitra Behera"
+                    text="Bichitra Behera"
                     animateOn="view"
                     revealDirection="center"
                   />

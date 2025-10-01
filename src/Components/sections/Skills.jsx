@@ -32,7 +32,7 @@ function Skills() {
       ref={ref}
       className="skills-cursor-area py-20 mx-auto text-white border-b border-[#ffffff50] md:border-[#ffffff10] relative"
     >
-  
+
       {/* Section heading */}
       <div className="relative text-center pb-12">
         <h2 className="absolute inset-0 text-6xl sm:text-8xl font-extrabold text-gray-500 opacity-10 uppercase select-none flex items-center justify-center">
@@ -71,7 +71,7 @@ function Skills() {
         {skills.map((skill, index) => (
           <motion.div
             key={index}
-            className="cursor-target flex flex-col items-center justify-center gap-3 px-6 py-6 rounded-2xl bg-[#101010 ] text-gray-200 shadow-lg relative overflow-hidden transform-gpu border-dotted border-1"
+            className="cursor-target flex flex-col items-center justify-center gap-3 px-6 py-6 rounded bg-[#111111] text-gray-200 shadow-lg relative overflow-hidden transform-gpu border-1 border-[#ffffff20]"
             whileHover={{
               scale: 1.1,
               rotateX: -5,
@@ -83,7 +83,7 @@ function Skills() {
             transition={{ type: "spring", stiffness: 250, damping: 20 }}
           >
             <i className={`devicon-${skill.icon} colored text-4xl md:text-5xl z-10`} />
-            <span className="text-lg md:text-xl font-semibold z-10">{skill.name}</span>
+            <span className="text-lg md:text-xl font-semibold text-[#bbbbbb] z-10">{skill.name}</span>
           </motion.div>
         ))}
       </motion.div>
