@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
-
 function Contact() {
   const form = useRef();
   const sectionRef = useRef(null);
@@ -19,9 +18,7 @@ function Contact() {
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form.current,
-        {
-          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-        }
+        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
       )
       .then(
         () => {
@@ -29,9 +26,8 @@ function Contact() {
           form.current.reset();
           setTimeout(() => setIsSent(false), 3000);
         },
-        (error) => {
+        () => {
           setError("Failed to send message. Try again later.");
-          console.error("EmailJS Error:", error);
         }
       );
   };
@@ -39,37 +35,38 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-20 mx-auto border-b border-[#ffffff50] md:border-[#ffffff10] font-light body-font"
       ref={sectionRef}
+      className="relative py-20 mx-auto font-light border-b max-w-5xl border-[#ffffff20] body-font"
     >
       <motion.div
-        className="container relative z-10 p-10 mx-auto sm:max-w-4xl"
+        className="container relative z-10 p-6 mx-auto"
         initial={{ opacity: 0, y: -30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
       >
-        <div className="mb-12 flex w-full flex-col">
-          <div className="relative text-center pb-12">
+        {/* ===== HEADER ===== */}
+        <div className="flex flex-col w-full mb-12 text-center">
+          <div className="relative pb-12">
             {/* Background Title */}
-            <h2 className="absolute inset-0 text-6xl sm:text-8xl font-extrabold text-gray-300 opacity-8 uppercase select-none flex items-center justify-center">
-              contact
+            <h2 className="absolute inset-0 flex items-center justify-center text-6xl font-extrabold uppercase text-gray-300 opacity-10 sm:text-8xl select-none">
+              Contact
             </h2>
 
             {/* Foreground Title */}
-            <h3 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
+            <h3 className="text-3xl font-semibold text-white sm:text-4xl mb-4">
               <code>~say_hello</code>
             </h3>
 
-            {/* Dot Divider */}
-            <div className="relative z-10 flex items-center justify-center mb-4">
-              <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>
-              <div className="w-2 h-2 rounded-full bg-purple-500"></div>
-              <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>
+            {/* Divider */}
+            <div className="flex items-center justify-center mb-4">
+              <div className="w-12 h-0.5 mx-2 bg-purple-500" />
+              <div className="w-2 h-2 rounded-full bg-purple-500" />
+              <div className="w-12 h-0.5 mx-2 bg-purple-500" />
             </div>
           </div>
 
           <motion.p
-            className="text-lg text-center text-gray-300"
+            className="text-lg text-gray-300"
             initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1 }}
@@ -79,51 +76,58 @@ function Contact() {
           </motion.p>
         </div>
 
+        {/* ===== FORM (max-w-6xl) ===== */}
         <motion.div
-          className="md:max-w-2xl bg-[#111111] border border-[#474747] p-5 rounded mx-auto"
+          className="p-6 mx-auto rounded border border-[#474747] bg-[#111111] max-w-5xl"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, type: "spring" }}
         >
           <form ref={form} onSubmit={sendEmail} className="relative">
-            <div className="mb-6">
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-400 mb-2"
-              >
-                Your Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="user_name"
-                className="w-full px-4 py-3 bg-[#1a1a1a] text-white rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
-                placeholder="John Doe"
-                required
-              />
+            {/* Inputs */}
+            <div className="flex flex-col md:flex-row gap-6 mb-8">
+              {/* Name */}
+              <div className="flex-1">
+                <label
+                  htmlFor="name"
+                  className="block mb-2 text-sm font-medium text-gray-400"
+                >
+                  Your Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="user_name"
+                  className="w-full px-4 py-3 text-white bg-[#1a1a1a] rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
+
+              {/* Email */}
+              <div className="flex-1">
+                <label
+                  htmlFor="email"
+                  className="block mb-2 text-sm font-medium text-gray-400"
+                >
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="user_email"
+                  className="w-full px-4 py-3 text-white bg-[#1a1a1a] rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all"
+                  placeholder="john@example.com"
+                  required
+                />
+              </div>
             </div>
 
-            <div className="mb-6">
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-400 mb-2"
-              >
-                Email Address
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="user_email"
-                className="w-full px-4 py-3 bg-[#1a1a1a] text-white rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
-                placeholder="john@example.com"
-                required
-              />
-            </div>
-
+            {/* Message */}
             <div className="mb-8">
               <label
                 htmlFor="message"
-                className="block text-sm font-medium text-gray-400 mb-2"
+                className="block mb-2 text-sm font-medium text-gray-400"
               >
                 Your Message
               </label>
@@ -131,25 +135,27 @@ function Contact() {
                 id="message"
                 name="message"
                 rows="5"
-                className="w-full px-4 py-3 bg-[#1a1a1a] text-white rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 text-white bg-[#1a1a1a] rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all"
                 placeholder="Tell me about your project..."
                 required
-              ></textarea>
+              />
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
+            {/* Submit Button */}
+            <div className="flex justify-center">
               <motion.button
                 type="submit"
-                className="btn mx-auto"
                 whileTap={{ scale: 0.95 }}
+                className="btn"
               >
-                <strong className="font-light">Send</strong>
+                Send
               </motion.button>
             </div>
 
+            {/* Success Message */}
             {isSent && (
               <motion.div
-                className="mt-6 p-4 bg-green-900/30 border border-green-500/50 text-green-400 rounded-lg flex items-center gap-3"
+                className="flex items-center gap-3 p-4 mt-6 text-green-400 border border-green-500/50 rounded-lg bg-green-900/30"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, type: "spring" }}
@@ -165,7 +171,7 @@ function Contact() {
                     strokeLinejoin="round"
                     strokeWidth="2"
                     d="M5 13l4 4L19 7"
-                  ></path>
+                  />
                 </svg>
                 <div>
                   <p className="font-medium">Message sent successfully!</p>
@@ -176,9 +182,10 @@ function Contact() {
               </motion.div>
             )}
 
+            {/* Error Message */}
             {error && (
               <motion.div
-                className="mt-6 p-4 bg-red-900/30 border border-red-500/50 text-red-400 rounded-lg flex items-center gap-3"
+                className="flex items-center gap-3 p-4 mt-6 text-red-400 border border-red-500/50 rounded-lg bg-red-900/30"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, type: "spring" }}
@@ -194,7 +201,7 @@ function Contact() {
                     strokeLinejoin="round"
                     strokeWidth="2"
                     d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  ></path>
+                  />
                 </svg>
                 <div>
                   <p className="font-medium">Error sending message</p>

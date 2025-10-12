@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+
 import BetterDays from "/src/assets/betterdays.png";
 import magmaCloneImage from "/src/assets/magma.png";
 import SynapseImage from "/src/assets/synapse.jpg";
@@ -10,7 +11,7 @@ const projects = [
     id: 6,
     name: "Synapse Landing Page",
     description:
-      "A landing page for Synapse, a digital identity platform that lets users share all their important links - social media and contact details — through a single dynamic QR code.",
+      "A landing page for Synapse, a digital identity platform that lets users share all their important links like social media and contact details through a single dynamic QR code.",
     image: SynapseImage,
     link: "https://synapseeee.vercel.app",
     techStack: ["Tailwind CSS", "JavaScript", "React"],
@@ -21,10 +22,10 @@ const projects = [
     name: "Expense Tracker App",
     description:
       "A React Native application to securely track income and expenses. Features email-verified authentication, a dashboard showing total balance, recent transactions, and fast performance using Redis caching.",
-    image: ClearSpend, // replace with actual import
-    link: "https://github.com/bichitrabehera/expense-tracker", // replace with actual link
-    techStack: ["React Native", "Node.js", "Express", "Clerk", "Redis"], // adjust if needed
-    team: "Solo", // or "Team" if applicable
+    image: ClearSpend,
+    link: "https://github.com/bichitrabehera/expense-tracker",
+    techStack: ["React Native", "Node.js", "Express", "Clerk", "Redis"],
+    team: "Solo",
   },
   {
     id: 2,
@@ -36,16 +37,16 @@ const projects = [
     techStack: ["HTML", "CSS", "JavaScript", "GSAP"],
     team: "Solo",
   },
-  {
-    id: 4,
-    name: "BetterDays",
-    description:
-      "Supporting mental health with self-assessments, valuable resources, and guidance to help take charge of your well-being.",
-    image: BetterDays,
-    link: "https://betterdays-theta.vercel.app/",
-    techStack: ["React", "Tailwind CSS", "JavaScript"],
-    team: "Solo",
-  },
+  // {
+  //   id: 4,
+  //   name: "BetterDays",
+  //   description:
+  //     "Supporting mental health with self-assessments, valuable resources, and guidance to help take charge of your well-being.",
+  //   image: BetterDays,
+  //   link: "https://betterdays-theta.vercel.app/",
+  //   techStack: ["React", "Tailwind CSS", "JavaScript"],
+  //   team: "Solo",
+  // },
 ];
 
 function Project() {
@@ -55,27 +56,23 @@ function Project() {
   return (
     <section
       id="projects"
-      className="py-20 mx-auto border-b border-[#ffffff50] md:border-[#ffffff10]"
       ref={ref}
+      className="py-20 mx-auto border-b border-[#ffffff50] md:border-[#ffffff10]"
     >
-      <div className="max-w-5xl mx-auto px-2 sm:px-6 lg:px-2">
-        {/* Section Heading */}
+      <div className="max-w-6xl mx-auto px-6 sm:px-6">
+        {/* ===== Heading ===== */}
         <div className="relative text-center pb-12">
-          {/* Background Title */}
-          <h2 className="absolute inset-0 text-6xl sm:text-8xl font-extrabold text-gray-300 opacity-8 uppercase select-none flex items-center justify-center">
-            projects
+          <h2 className="absolute inset-0 flex items-center justify-center text-6xl sm:text-8xl font-extrabold text-gray-300 opacity-10 uppercase select-none">
+            Projects
           </h2>
-
-          {/* Foreground Title */}
           <h3 className="text-3xl sm:text-4xl font-semibold text-white mb-4">
             <code>~builds</code>
           </h3>
 
-          {/* Dot Divider */}
-          <div className="relative z-10 flex items-center justify-center mb-4">
-            <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>
+          <div className="flex items-center justify-center mb-4">
+            <div className="w-12 h-0.5 mx-2 bg-purple-500"></div>
             <div className="w-2 h-2 rounded-full bg-purple-500"></div>
-            <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>
+            <div className="w-12 h-0.5 mx-2 bg-purple-500"></div>
           </div>
         </div>
 
@@ -90,61 +87,59 @@ function Project() {
           links below.
         </motion.p>
 
-        {/* Projects Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-10 mt-12 ">
-          {projects.map((project) => (
+        {/* ===== Projects ===== */}
+        <div className="mt-16 flex flex-col gap-16 max-w-5xl mx-auto">
+          {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.8, delay: project.id * 0.15 }}
-              className="bg-[#0f0f0f] m-5 rounded shadow-lg transform transition-transform border border-[#ffffff11]"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              className={`flex flex-col lg:flex-row items-center gap-8 bg-[#0f0f0f] border border-[#ffffff31] rounded-lg overflow-hidden shadow-lg ${index % 2 === 1 ? "lg:flex-row-reverse" : ""
+                }`}
             >
-              <img
-                src={project.image}
-                alt={project.name}
-                className="w-full h-50 object-cover rounded-t-lg opacity-70"
-              />
-              <div className="p-5 flex flex-col h-full justify-between">
-                <div>
-                  <h3 className="text-[18px] font-bold text-[#dedede]">
-                    {project.name}
-                  </h3>
-                  <p className="text-[#ffffff] text-[16px] mt-2">
-                    {project.description}
-                  </p>
+              {/* Image */}
+              <div className="w-full lg:w-1/2">
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="w-full h-64 p-3 lg:h-full object-cover opacity-80 rounded-lg"
+                />
+              </div>
 
-                  {/* Tech Stack */}
-                  {project.techStack && (
-                    <div className="mt-3">
-                      <p className=" text-gray-400 font-semibold mb-1">
-                        Tech Stack:
-                      </p>
-                      <ul className="flex flex-wrap gap-2">
-                        {project.techStack.map((tech, index) => (
-                          <li
-                            key={index}
-                            className="bg-gray-700 text-gray-200 text-sm px-2 py-1 rounded mt-2"
-                          >
-                            {tech}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+              {/* Description */}
+              <div className="w-full lg:w-1/2 p-6 lg:p-10">
+                <h3 className="text-2xl font-bold text-white mb-3">
+                  {project.name}
+                </h3>
+                <p className="text-gray-300 mb-4">{project.description}</p>
 
-                  {/* Team Info */}
+                {/* Tech Stack */}
+                {project.techStack && (
+                  <div className="mb-4">
 
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-block text-black font-semibold bg-[#ffffff] rounded px-4 py-2 hover:bg-[#b0b0b0] transition-colors text-center"
-                  >
-                    ↗ View Project
-                  </a>
-                </div>
+                    <ul className="flex flex-wrap gap-2">
+                      {project.techStack.map((tech, index) => (
+                        <li
+                          key={index}
+                          className="bg-blue-600 text-gray-100 text-sm px-2 py-1 rounded"
+                        >
+                          {tech}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
-                {/* View Project Button */}
+                {/* View Button */}
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-4 text-black font-semibold bg-white rounded px-4 py-2 hover:bg-gray-300 transition-colors"
+                >
+                  ↗ View Project
+                </a>
               </div>
             </motion.div>
           ))}

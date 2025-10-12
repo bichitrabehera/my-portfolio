@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 body {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "WebsiteFont", sans-serif;
   margin: 0;
   background-color: black;
   padding: 0;
@@ -15,11 +15,15 @@ body {
   src: url('./fonts/675b1d2a87da9195e8ccefb3_brockmann-regular-webfont.woff2');
 }
 
+@font-face {
+  font-family: "WebsiteFont";
+  src: url("./fonts/66f30814ff6d7cdf.p.woff2");
+}
+
 ::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide default cursor only on desktop */
 body {
   cursor: none;
 }

@@ -7,7 +7,7 @@ const Navbar = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const navLinks = [
-    { name: "Home", to: "home" },
+    { name: "~Home", to: "home" },
     { name: "~whoami", to: "about" },
     { name: "~loadout", to: "skills" },
     { name: "~builds", to: "projects" },
@@ -17,11 +17,11 @@ const Navbar = () => {
   return (
     <>
       {/* Main Navbar */}
-      <nav className="fixed top-0 right-0 w-full z-50 backdrop-blur-[30px] bg-[#00000060] p-3 md:p-0 border-b border-[#ffffff25] text-white">
-        <div className="w-full max-w-7xl mx-auto flex items-center justify-between relative">
+      <nav className="fixed top-0 right-0 w-full z-50 backdrop-blur-[30px] bg-[#00000060] py-1 md:p-4 border-b border-[#ffffff25] text-white">
+        <div className="w-full max-w-5xl px-4 md:px-0 py-2 mx-auto flex items-center justify-between relative">
           <div>
-            <h1 className="text-2xl bg-[#002896b0] p-1 rounded-br-2xl rounded-tl-2xl border border-[#ffffff20]">
-              <a href="https://bichitrabehera-blue.vercel.app">B <sup>2</sup></a>
+            <h1 className="text-2xl bg-[#002896b0] p-1 rounded-2xl border-[#ffffff20]">
+              <a href="https://bichitrabehera-blue.vercel.app">B<sup>2</sup></a>
             </h1>
           </div>
 
@@ -34,7 +34,7 @@ const Navbar = () => {
                 smooth={true}
                 duration={600}
                 offset={-80}
-                className="px-8 py-4 border border-[#ffffff25] hover:bg-[#ffffff30] hover:text-blue-600 transition-colors text-lg hover:text-xl font-medium cursor-pointer"
+                className="px-4 py-2 rounded-xl hover:bg-[#ffffff30] hover:text-blue-400 transition-colors text-lg font-medium cursor-pointer"
               >
                 {link.name}
               </Link>

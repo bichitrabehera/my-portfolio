@@ -12,7 +12,7 @@ function Footer() {
       transition={{ duration: 0.8 }}
     >
       {/* Footer Interactive Elements */}
-      <div className="footer-cursor-area w-full flex flex-col items-center">
+      <div className="footer-cursor-area w-full text-[12px] md:text-[14px]  flex flex-col items-center">
         {/* Social Media Links */}
         <motion.div
           className="flex space-x-5 mb-5"
@@ -26,6 +26,13 @@ function Footer() {
             className="footer-cursor-target text-gray-400 hover:underline transition-transform transform hover:scale-110"
           >
             instagram
+          </a>
+          <a
+            href="https://discord.com/users/1192891032220733510"
+            target="_blank"
+            className="footer-cursor-target text-gray-400 hover:underline transition-transform transform hover:scale-110"
+          >
+            discord
           </a>
           <a
             href="https://www.linkedin.com/in/bichitra-behera-99b189291"
