@@ -146,7 +146,7 @@ function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="skills-cursor-area py-20 mx-auto text-white border-b border-[#ffffff50] md:border-[#ffffff10] relative"
+      className="skills-cursor-area py-20 max-w-5xl mx-auto md:px-6 px-4 text-white relative"
     >
       {/* Section heading */}
       <div className="relative text-center pb-12">
@@ -168,14 +168,15 @@ function Skills() {
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
-        className="text-sm text-center text-gray-400 uppercase tracking-wider mb-10"
+        className="text-left mx-auto text-gray-400 mb-10"
       >
-        I constantly strive to improve
+        I constantly strive to improve exploring new technologies, solving challenges, and building meaningful projects that make an impact.
       </motion.p>
+
 
       {/* Render each category */}
       {skillCategories.map((cat, i) => (
-        <div key={i} className="mb-16 max-w-5xl mx-auto px-6 md:px-0">
+        <div key={i} className="mb-16 max-w-5xl mx-auto md:px-0">
           <h4 className="text-xl sm:text-2xl font-semibold mb-6">{cat.category}</h4>
           <motion.div
             initial="hidden"

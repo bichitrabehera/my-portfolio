@@ -12,7 +12,7 @@ function Footer() {
       transition={{ duration: 0.8 }}
     >
       {/* Footer Interactive Elements */}
-      <div className="footer-cursor-area w-full text-[12px] md:text-[14px]  flex flex-col items-center">
+      <div className="footer-cursor-area w-full text-[15px] md:text-[18px]  flex flex-col items-center">
         {/* Social Media Links */}
         <motion.div
           className="flex space-x-5 mb-5"

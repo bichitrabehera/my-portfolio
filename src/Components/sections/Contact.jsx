@@ -36,10 +36,10 @@ function Contact() {
     <section
       id="contact"
       ref={sectionRef}
-      className="relative py-20 mx-auto font-light border-b max-w-5xl border-[#ffffff20] body-font"
+      className="relative py-20 mx-auto font-light max-w-5xl body-font"
     >
       <motion.div
-        className="container relative z-10 p-6 mx-auto"
+        className="container relative z-10 px-4 md:px-6 mx-auto"
         initial={{ opacity: 0, y: -30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
@@ -66,7 +66,7 @@ function Contact() {
           </div>
 
           <motion.p
-            className="text-lg text-gray-300"
+            className=" text-gray-300 text-left "
             initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1 }}
@@ -78,7 +78,7 @@ function Contact() {
 
         {/* ===== FORM (max-w-6xl) ===== */}
         <motion.div
-          className="p-6 mx-auto rounded border border-[#474747] bg-[#111111] max-w-5xl"
+          className="p-2 mx-auto rounded border border-[#ffffff15] bg-[#111111] max-w-5xl"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, type: "spring" }}
@@ -92,7 +92,8 @@ function Contact() {
                   htmlFor="name"
                   className="block mb-2 text-sm font-medium text-gray-400"
                 >
-                  Your Name
+                  Your Name   <span title="This field is required" className="text-red-500 text-xl cursor-help">*</span>
+
                 </label>
                 <input
                   type="text"
@@ -110,7 +111,8 @@ function Contact() {
                   htmlFor="email"
                   className="block mb-2 text-sm font-medium text-gray-400"
                 >
-                  Email Address
+                  Email Address   <span title="This field is required" className="text-red-500 text-xl cursor-help">*</span>
+
                 </label>
                 <input
                   type="email"
@@ -129,12 +131,13 @@ function Contact() {
                 htmlFor="message"
                 className="block mb-2 text-sm font-medium text-gray-400"
               >
-                Your Message
+                Your Message   <span title="This field is required" className="text-red-500 text-xl cursor-help">*</span>
+
               </label>
               <textarea
                 id="message"
                 name="message"
-                rows="5"
+                rows="6"
                 className="w-full px-4 py-3 text-white bg-[#1a1a1a] rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all"
                 placeholder="Tell me about your project..."
                 required

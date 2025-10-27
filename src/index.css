@@ -1,35 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
 @import "tailwindcss";
 
 body {
-  font-family: "WebsiteFont", sans-serif;
+  font-family: "Jost", sans-serif;
   margin: 0;
-  background-color: black;
+  background-color: #020202;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
 @font-face {
+  font-family: "pixel";
+  src: url("./fonts/goksH6L8FkdnROln8XBjTEqi.woff2");
+}
+
+@font-face {
   font-family: "Cursor";
-  src: url('./fonts/675b1d2a87da9195e8ccefb3_brockmann-regular-webfont.woff2');
+  src: url("./fonts/675b1d2a87da9195e8ccefb3_brockmann-regular-webfont.woff2");
 }
 
 @font-face {
   font-family: "WebsiteFont";
-  src: url("./fonts/66f30814ff6d7cdf.p.woff2");
+  src: url("./fonts/797e433ab948586e-s.p.dbea232f.woff2");
 }
 
 ::-webkit-scrollbar {
   display: none;
 }
 
-body {
-  cursor: none;
-}
+/* body { */
+  /* cursor: none; */
+/* } */
 
 html {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 /* From Uiverse.io by vinodjangid07 */

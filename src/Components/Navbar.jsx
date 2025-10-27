@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-scroll";
+import logoBG from "../assets/me.jpg"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,11 +18,12 @@ const Navbar = () => {
   return (
     <>
       {/* Main Navbar */}
-      <nav className="fixed top-0 right-0 w-full z-50 backdrop-blur-[30px] bg-[#00000060] py-1 md:p-4 border-b border-[#ffffff25] text-white">
-        <div className="w-full max-w-5xl px-4 md:px-0 py-2 mx-auto flex items-center justify-between relative">
+      <nav className="fixed top-0 right-0 w-full z-50 backdrop-blur-[30px] bg-[#00000060] py-1 md:p-3 text-white">
+        <div className="w-full max-w-5xl px-4 md:px-6 py-2 mx-auto flex items-center justify-between relative">
           <div>
-            <h1 className="text-2xl bg-[#002896b0] p-1 rounded-2xl border-[#ffffff20]">
-              <a href="https://bichitrabehera-blue.vercel.app">B<sup>2</sup></a>
+            <h1 className="p-0 rounded-full flex gap-5 border-[#ffffff20]">
+              <a href="https://bichitrabehera-blue.vercel.app"><img src={logoBG} alt="" className="h-10 w-10 rounded-full " /></a>
+              <p className="font-[pixel] text-xl pt-2">Bichitra Behera</p>
             </h1>
           </div>
 
@@ -43,7 +45,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden focus:outline-none p-0 relative w-8 h-8 ml-auto"
+            className="md:hidden focus:outline-none p-0 relative w-6 h-6 font-[pixel]"
             onClick={toggleMenu}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
@@ -70,7 +72,7 @@ const Navbar = () => {
               duration={600}
               offset={-80}
               onClick={toggleMenu}
-              className="text-3xl hover:text-blue-300 transition-colors py-3 font-medium cursor-pointer"
+              className="text-xl hover:text-blue-300 transition-colors py-3 cursor-pointer"
             >
               {link.name}
             </Link>

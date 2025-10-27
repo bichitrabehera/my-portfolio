@@ -4,6 +4,7 @@ import ProfileCard from "../ProfileCard/ProfileCard";
 import meImg from "../../assets/me.jpg"
 import { Link } from "react-scroll"; // <-- import Link from react-scroll
 
+
 function About() {
   const ref = useRef(null);
   const isInView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
@@ -12,9 +13,9 @@ function About() {
     <section
       id="about"
       ref={ref}
-      className="py-20 text-white font-light border-b border-[#ffffff50] md:border-[#ffffff10]"
+      className="py-20 text-white font-light"
     >
-      <div className="max-w-5xl mx-auto px-6 md:px-0 flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-12">
+      <div className="max-w-5xl mx-auto px-4 md:px-6 flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-12">
 
         {/* Left Content */}
         <div className="flex-1">
@@ -35,7 +36,7 @@ function About() {
             initial={{ opacity: 0, x: 20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1.2 }}
-            className="space-y-5 text-gray-300 leading-relaxed text-[16px]"
+            className="space-y-5 text-gray-300 text-[16px] md:text-lg text-justify"
           >
             <p>
               I'm a <span className="text-[#06B6D4] font-semibold">full-stack developer</span>{" "}
@@ -86,9 +87,7 @@ function About() {
 
         {/* Right Content: ProfileCard */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 1 }}
+
           className="flex-shrink-0"
         >
           <ProfileCard
@@ -105,6 +104,8 @@ function About() {
           />
         </motion.div>
       </div>
+
+
     </section>
   );
 }
