@@ -36,7 +36,7 @@ function Contact() {
     <section
       id="contact"
       ref={sectionRef}
-      className="relative py-20 mx-auto font-light max-w-5xl body-font"
+      className="relative py-20 mx-auto font-light max-w-5xl body-font text-[16px]"
     >
       <motion.div
         className="container relative z-10 px-4 md:px-6 mx-auto"
@@ -66,7 +66,7 @@ function Contact() {
           </div>
 
           <motion.p
-            className=" text-gray-300 text-left "
+            className="text-gray-300 text-left leading-relaxed"
             initial={{ opacity: 0, x: -20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1 }}
@@ -76,30 +76,35 @@ function Contact() {
           </motion.p>
         </div>
 
-        {/* ===== FORM (max-w-6xl) ===== */}
+        {/* ===== FORM ===== */}
         <motion.div
-          className="p-2 mx-auto rounded border border-[#ffffff15] bg-[#111111] max-w-5xl"
+          className="p-4 mx-auto rounded border border-[#ffffff15] bg-[#111111] max-w-5xl"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1.2, type: "spring" }}
+          transition={{ duration: 1.2, type: 'spring' }}
         >
-          <form ref={form} onSubmit={sendEmail} className="relative">
+          <form ref={form} onSubmit={sendEmail} className="relative space-y-8">
             {/* Inputs */}
-            <div className="flex flex-col md:flex-row gap-6 mb-8">
+            <div className="flex flex-col md:flex-row gap-6">
               {/* Name */}
               <div className="flex-1">
                 <label
                   htmlFor="name"
                   className="block mb-2 text-sm font-medium text-gray-400"
                 >
-                  Your Name   <span title="This field is required" className="text-red-500 text-xl cursor-help">*</span>
-
+                  Your Name{" "}
+                  <span
+                    title="This field is required"
+                    className="text-red-500 text-xl cursor-help"
+                  >
+                    *
+                  </span>
                 </label>
                 <input
                   type="text"
                   id="name"
                   name="user_name"
-                  className="w-full px-4 py-3 text-white bg-[#1a1a1a] rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all"
+                  className="w-full px-4 py-2 text-white text-[16px] bg-[#1a1a1a] rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all"
                   placeholder="John Doe"
                   required
                 />
@@ -111,14 +116,19 @@ function Contact() {
                   htmlFor="email"
                   className="block mb-2 text-sm font-medium text-gray-400"
                 >
-                  Email Address   <span title="This field is required" className="text-red-500 text-xl cursor-help">*</span>
-
+                  Email Address{" "}
+                  <span
+                    title="This field is required"
+                    className="text-red-500 text-xl cursor-help"
+                  >
+                    *
+                  </span>
                 </label>
                 <input
                   type="email"
                   id="email"
                   name="user_email"
-                  className="w-full px-4 py-3 text-white bg-[#1a1a1a] rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all"
+                  className="w-full px-4 py-2 text-white text-[16px] bg-[#1a1a1a] rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all"
                   placeholder="john@example.com"
                   required
                 />
@@ -126,19 +136,24 @@ function Contact() {
             </div>
 
             {/* Message */}
-            <div className="mb-8">
+            <div>
               <label
                 htmlFor="message"
                 className="block mb-2 text-sm font-medium text-gray-400"
               >
-                Your Message   <span title="This field is required" className="text-red-500 text-xl cursor-help">*</span>
-
+                Your Message{" "}
+                <span
+                  title="This field is required"
+                  className="text-red-500 text-xl cursor-help"
+                >
+                  *
+                </span>
               </label>
               <textarea
                 id="message"
                 name="message"
                 rows="6"
-                className="w-full px-4 py-3 text-white bg-[#1a1a1a] rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-2 text-white text-[16px] bg-[#1a1a1a] rounded-lg focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all"
                 placeholder="Tell me about your project..."
                 required
               />
@@ -149,7 +164,7 @@ function Contact() {
               <motion.button
                 type="submit"
                 whileTap={{ scale: 0.95 }}
-                className="btn"
+                className="btn text-[16px]"
               >
                 Send
               </motion.button>
@@ -158,10 +173,10 @@ function Contact() {
             {/* Success Message */}
             {isSent && (
               <motion.div
-                className="flex items-center gap-3 p-4 mt-6 text-green-400 border border-green-500/50 rounded-lg bg-green-900/30"
+                className="flex items-center gap-3 p-4 mt-6 text-green-400 border border-green-500/50 rounded-lg bg-green-900/30 text-[16px]"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, type: "spring" }}
+                transition={{ duration: 0.5, type: 'spring' }}
               >
                 <svg
                   className="w-5 h-5"
@@ -188,10 +203,10 @@ function Contact() {
             {/* Error Message */}
             {error && (
               <motion.div
-                className="flex items-center gap-3 p-4 mt-6 text-red-400 border border-red-500/50 rounded-lg bg-red-900/30"
+                className="flex items-center gap-3 p-4 mt-6 text-red-400 border border-red-500/50 rounded-lg bg-red-900/30 text-[16px]"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, type: "spring" }}
+                transition={{ duration: 0.5, type: 'spring' }}
               >
                 <svg
                   className="w-5 h-5"

@@ -95,7 +95,7 @@ function Home() {
 
           {/* 🕒 Time & Location */}
           <motion.div
-            className="text-sm sm:text-base text-gray-400 mt-2 font-mono flex flex-col sm:flex-row justify-center gap-1 sm:gap-3"
+            className="text-sm sm:text-base uppercase text-gray-400 mt-2 font-mono flex flex-col sm:flex-row justify-center gap-1 sm:gap-3"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}

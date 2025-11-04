@@ -36,7 +36,7 @@ function About() {
             initial={{ opacity: 0, x: 20 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 1.2 }}
-            className="space-y-5 text-gray-300 text-[16px] md:text-lg text-justify"
+            className="space-y-5 text-gray-400"
           >
             <p>
               I'm a <span className="text-[#06B6D4] font-semibold">full-stack developer</span>{" "}

@@ -56,9 +56,9 @@ function Project() {
           </h3>
 
           <div className="flex items-center justify-center mb-4">
-            <div className="w-12 h-px mx-2 bg-gray-400"></div>
-            <div className="w-2 h-2 rounded-full bg-gray-400"></div>
-            <div className="w-12 h-px mx-2 bg-gray-400"></div>
+            <div className="w-12 h-px mx-2 bg-purple-400"></div>
+            <div className="w-2 h-2 rounded-full bg-purple-400"></div>
+            <div className="w-12 h-px mx-2 bg-purple-400"></div>
           </div>
         </div>
 
@@ -66,7 +66,7 @@ function Project() {
           initial={{ opacity: 0, x: -20 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1 }}
-          className="text-gray-300 text-left max-w-5xl mx-auto leading-relaxed"
+          className="text-gray-300 text-left max-w-5xl mx-auto text-[16px]"
         >
           Here you’ll find some of my featured projects — focused on frontend
           development, design precision, and clean user experiences.
@@ -95,10 +95,10 @@ function Project() {
 
               {/* Description */}
               <div className="w-full lg:w-1/2 p-4 lg:p-10">
-                <h3 className="text-2xl font-bold text-white mb-3">
+                <h3 className="text-xl font-bold text-white mb-3">
                   {project.name}
                 </h3>
-                <p className="text-gray-400 mb-4 leading-snug text-[16px] md:text-lg">
+                <p className="text-gray-400 mb-4 leading-snug text-[16px]">
                   {project.description}
                 </p>
 

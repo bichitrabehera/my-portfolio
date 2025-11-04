@@ -36,7 +36,7 @@ const Navbar = () => {
                 smooth={true}
                 duration={600}
                 offset={-80}
-                className="px-4 py-2 rounded-xl hover:bg-[#ffffff30] hover:text-blue-400 transition-colors text-lg font-medium cursor-pointer"
+                className="btn-shine px-3"
               >
                 {link.name}
               </Link>

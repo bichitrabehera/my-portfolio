@@ -168,7 +168,7 @@ function Skills() {
         initial={{ opacity: 0, y: 10 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
-        className="text-left mx-auto text-gray-400 mb-10"
+        className="text-left mx-auto text-gray-400 mb-10 fon"
       >
         I constantly strive to improve exploring new technologies, solving challenges, and building meaningful projects that make an impact.
       </motion.p>
