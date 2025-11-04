@@ -31,7 +31,7 @@ const Navbar = () => {
           <div className="hidden md:flex mx-auto">
             {navLinks.map((link) => (
               <Link
-                key={link.to}
+                key={link.to} 
                 to={link.to}
                 smooth={true}
                 duration={600}
