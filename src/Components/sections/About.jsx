@@ -15,7 +15,7 @@ function About() {
       ref={ref}
       className="py-20 text-white font-light"
     >
-      <div className="max-w-5xl mx-auto px-4 md:px-6 flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-12">
+      <div className="max-w-5xl mx-auto px-8 md:px-6 flex flex-col-reverse md:flex-row items-center md:items-start justify-between gap-12">
 
         {/* Left Content */}
         <div className="flex-1">

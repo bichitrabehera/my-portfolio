@@ -77,7 +77,7 @@ function Skills() {
         // { name: "Astro", icon: <SiAstro size={40} color="#0F172A" /> },
         // { name: "Electron", icon: <SiElectron size={40} color="#47848F" /> },
         { name: "Chakra UI", icon: <SiChakraui size={40} color="#319795" /> },
-        { name: "Styled Components", icon: <SiStyledcomponents size={40} color="#DB7093" /> },
+        // { name: "Styled Components", icon: <SiStyledcomponents size={40} color="#DB7093" /> },
         // { name: "React Query", icon: <SiReactquery size={40} color="#FF4154" /> },
         // { name: "React Hook Form", icon: <SiReacthookform size={40} color="#EC5990" /> },
         // { name: "Storybook", icon: <SiStorybook size={40} color="#FF4785" /> },
@@ -113,7 +113,7 @@ function Skills() {
         // { name: "Linux", icon: <DiLinux size={40} color="#FCC624" /> },
         // { name: "Ubuntu", icon: <SiUbuntu size={40} color="#E95420" /> },
         // { name: "Bash", icon: <SiBash size={40} color="#4EAA25" /> },
-        // { name: "Docker", icon: <DiDocker size={40} color="#2496ED" /> },
+        { name: "Docker", icon: <DiDocker size={40} color="#2496ED" /> },
         // { name: "Nginx", icon: <SiNginx size={40} color="#009639" /> },
         { name: "Vercel", icon: <SiVercel size={40} color="#000000" /> },
         { name: "Render", icon: <SiRender size={40} color="#FF3F3F" /> },
@@ -146,7 +146,7 @@ function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="skills-cursor-area py-20 max-w-5xl mx-auto md:px-6 px-4 text-white relative"
+      className="skills-cursor-area py-20 max-w-5xl mx-auto px-8 md:px-6 text-white relative"
     >
       {/* Section heading */}
       <div className="relative text-center pb-12">
@@ -190,7 +190,7 @@ function Skills() {
             {cat.skills.map((skill, index) => (
               <motion.div
                 key={index}
-                className="cursor-target flex flex-col items-center justify-center gap-3 px-4 py-4 rounded bg-[#111111] shadow-lg relative overflow-hidden transform-gpu border-1 border-[#ffffff20]"
+                className="cursor-target flex flex-col items-center justify-center gap-3 px-4 py-4 rounded-2xl bg-[#111111] shadow-lg relative overflow-hidden transform-gpu border-1 border-[#ffffff20]"
                 whileHover={{
                   scale: 1.1,
                   rotateX: -5,

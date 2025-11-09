@@ -78,7 +78,7 @@ function Home() {
       <section
         id="home"
         className="relative w-full min-h-screen flex flex-col items-center justify-center text-white
-                   px-4 md:px-8 lg:px-16 pt-24 sm:pt-28 md:pt-32"
+                   px-8 md:px-8 lg:px-16 pt-24 sm:pt-28 md:pt-32"
       >
         <motion.div
           className="text-center space-y-5 md:space-y-8 max-w-3xl"
@@ -115,7 +115,7 @@ function Home() {
               .map((item, idx) => (
                 <div
                   key={idx}
-                  className="text-center bg-gray-900 bg-opacity-30 px-5 py-4 rounded
+                  className="text-center bg-gray-900 bg-opacity-30 px-5 py-4 rounded-2xl
                              shadow-md backdrop-blur-md flex flex-col items-center justify-center"
                 >
                   <p className="font-bold text-xl">

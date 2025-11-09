@@ -39,7 +39,7 @@ function Contact() {
       className="relative py-20 mx-auto font-light max-w-5xl body-font text-[16px]"
     >
       <motion.div
-        className="container relative z-10 px-4 md:px-6 mx-auto"
+        className="container relative z-10 px-8 md:px-6 mx-auto"
         initial={{ opacity: 0, y: -30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
@@ -78,7 +78,7 @@ function Contact() {
 
         {/* ===== FORM ===== */}
         <motion.div
-          className="p-4 mx-auto rounded border border-[#ffffff15] bg-[#111111] max-w-5xl"
+          className="p-4 mx-auto rounded-xl border border-[#ffffff15] bg-[#111111] max-w-5xl"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1.2, type: 'spring' }}
