@@ -146,28 +146,18 @@ function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="skills-cursor-area py-20 max-w-5xl mx-auto px-8 md:px-6 text-white relative"
+      className="skills-cursor-area pt-20 max-w-4xl mx-auto px-8 md:px-6 text-white relative"
     >
       {/* Section heading */}
-      <div className="relative text-center pb-12">
-        <h2 className="absolute inset-0 text-6xl sm:text-8xl font-extrabold text-gray-500 opacity-10 uppercase select-none flex items-center justify-center">
-          Skills
-        </h2>
-        <h3 className="relative text-3xl sm:text-4xl font-semibold text-white z-10 mb-4">
-          <code>~loadout</code>
-        </h3>
-        <div className="relative z-10 flex items-center justify-center mb-4">
-          <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>
-          <div className="w-2 h-2 rounded-full bg-purple-500"></div>
-          <div className="w-12 h-0.5 bg-purple-500 mx-2"></div>
-        </div>
+      <div className="text-center mb-16">
+        <h2 className="text-3xl text-left underline">Skills</h2>
       </div>
 
       {/* Subtitle */}
       <motion.p
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8 }}
+        // initial={{ opacity: 0, y: 10 }}
+        // animate={isInView ? { opacity: 1, y: 0 } : {}}
+        // transition={{ duration: 0.8 }}
         className="text-left mx-auto text-gray-400 mb-10 fon"
       >
         I constantly strive to improve exploring new technologies, solving challenges, and building meaningful projects that make an impact.
@@ -185,27 +175,38 @@ function Skills() {
               hidden: { opacity: 0 },
               visible: { opacity: 1, transition: { staggerChildren: 0.05 } },
             }}
-            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6 "
+            className="flex flex-wrap gap-6"
           >
             {cat.skills.map((skill, index) => (
               <motion.div
                 key={index}
-                className="cursor-target flex flex-col items-center justify-center gap-3 px-4 py-4 rounded-2xl bg-[#111111] shadow-lg relative overflow-hidden transform-gpu border-1 border-[#ffffff20]"
+                className="relative group flex flex-col items-center justify-center
+                 rounded-xl bg-[#141414] border border-[#222]
+                 w-15 h-15 md:w-20 md:h-20
+                 "
                 whileHover={{
-                  scale: 1.1,
-                  rotateX: -5,
-                  rotateY: 5,
-                  boxShadow: "0 20px 40px rgba(0,0,0,0.6)",
-                  background: "linear-gradient(135deg, #777777)",
-                  color: "#000",
+                  scale: 1,
+                  boxShadow: "0 10px 25px rgba(0,0,0,0.5)",
                 }}
-                transition={{ type: "spring", stiffness: 250, damping: 20 }}
+                transition={{ type: "spring", stiffness: 200, damping: 18 }}
               >
-                {skill.icon}
-                <span className="z-10">{skill.name}</span>
+                {/* Icon */}
+                <div className="text-center">{skill.icon}</div>
+
+                {/* Tooltip */}
+                <span
+                  className="absolute top-[-33px] left-1/2 -translate-x-1/2
+                   opacity-0 group-hover:opacity-100 group-hover:translate-y-1
+                   text-xs px-3 py-1 rounded-md bg-white/10 backdrop-blur
+                   border border-white/20 text-white transition-all duration-300
+                   pointer-events-none whitespace-nowrap"
+                >
+                  {skill.name}
+                </span>
               </motion.div>
             ))}
           </motion.div>
+
         </div>
       ))}
     </section>

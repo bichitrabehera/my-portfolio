@@ -1,169 +1,155 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Navbar from "../Navbar";
+import meImg from "../../assets/me.jpg"; // your avatar
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
+
 import {
   FaLinkedin,
   FaGithub,
   FaInstagram,
   FaDiscord,
-  FaCodeBranch,
 } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import GitHubCalendar from "react-github-calendar";
+import TimeLocation from "../TimeLocation";
 
 const SOCIAL_LINKS = [
-  { icon: <FaLinkedin />, url: "https://www.linkedin.com/in/bichitra-behera-99b189291", color: "hover:text-blue-500" },
-  { icon: <FaGithub />, url: "https://github.com/bichitrabehera", color: "hover:text-gray-400" },
-  { icon: <FaDiscord />, url: "https://discord.com/users/1192891032220733510", color: "hover:text-indigo-400" },
-  { icon: <MdEmail />, url: "mailto:bichitrabehera.amcec@gmail.com", color: "hover:text-blue-400" },
-  { icon: <FaInstagram />, url: "https://www.instagram.com/imdaakuu?igsh=bmd0ZmwzeWZpdjJw", color: "hover:text-pink-500" },
+  { icon: <FaGithub />, url: "https://github.com/bichitrabehera", label: "GitHub" },
+  { icon: <FaLinkedin />, url: "https://www.linkedin.com/in/bichitra-behera-99b189291", label: "LinkedIn" },
+  { icon: <FaInstagram />, url: "https://www.instagram.com/imdaakuu?igsh=bmd0ZmwzeWZpdjJw", label: "Instagram" },
+  { icon: <FaDiscord />, url: "https://discord.com/users/1192891032220733510", label: "Discord" },
+  { icon: <MdEmail />, url: "mailto:bichitrabehera.amcec@gmail.com", label: "Email" },
 ];
 
-function Home() {
-  const [githubStats, setGithubStats] = useState({
-    repos: null,
-    recentCommits: null,
-  });
-  const [loading, setLoading] = useState(true);
-  const [time, setTime] = useState("");
-  const [location] = useState("Bangalore, India"); // You can make this dynamic later if you wish
-
-  // ⏰ Update time every second
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      const formatted = now.toLocaleTimeString("en-IN", {
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-      });
-      setTime(formatted);
-    };
-    updateTime();
-    const timer = setInterval(updateTime, 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-  // 🧠 Fetch GitHub stats
-  useEffect(() => {
-    async function fetchGithubStats() {
-      try {
-        const userRes = await fetch("https://api.github.com/users/bichitrabehera");
-        const userData = await userRes.json();
-
-        const [reposRes, eventsRes] = await Promise.all([
-          fetch(`${userData.repos_url}?per_page=100`),
-          fetch("https://api.github.com/users/bichitrabehera/events/public"),
-        ]);
-
-        const reposData = await reposRes.json();
-        const totalCommits = (await eventsRes.json()).filter((e) => e.type === "PushEvent").length;
-
-        setGithubStats({
-          repos: userData.public_repos,
-          recentCommits: totalCommits,
-        });
-      } catch (err) {
-        console.error("Failed to fetch GitHub stats:", err);
-      } finally {
-        setLoading(false);
-      }
-    }
-    fetchGithubStats();
-  }, []);
-
+export default function Home() {
   return (
     <>
       <Navbar />
+
       <section
         id="home"
-        className="relative w-full min-h-screen flex flex-col items-center justify-center text-white
-                   px-8 md:px-8 lg:px-16 pt-24 sm:pt-28 md:pt-32"
+        className="pt-32 md:px-6 max-w-4xl px-8 mx-auto text-black dark:text-white"
       >
         <motion.div
-          className="text-center space-y-5 md:space-y-8 max-w-3xl"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
+          className="flex-col items-start md:items-center gap-10"
         >
-          <h1 className="text-3xl sm:text-5xl md:text-6xl pt-10 font-extrabold tracking-tight leading-tight">
-            Bichitra Behera
-          </h1>
-          <h2 className="text-base sm:text-xl md:text-2xl text-gray-400">
-            Full Stack Developer • Problem Solver
-          </h2>
 
-          {/* 🕒 Time & Location */}
-          <motion.div
-            className="text-sm sm:text-base uppercase text-gray-400 mt-2 font-mono flex flex-col sm:flex-row justify-center gap-1 sm:gap-3"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
-          >
-            <span>{location}</span>
-            <span className="hidden sm:inline">•</span>
-            <span>{time}</span>
-          </motion.div>
 
-          {/* 📊 GitHub Stats */}
-          <div
-            className="mt-8 grid grid-cols-2 sm:grid-cols-2 gap-4 text-gray-300
-                       max-w-md sm:max-w-2xl mx-auto"
-          >
-            {[{ label: "Repos", value: githubStats.repos, icon: <FaCodeBranch /> },
-            { label: "Recent Commits", value: githubStats.recentCommits }]
-              .map((item, idx) => (
-                <div
-                  key={idx}
-                  className="text-center bg-gray-900 bg-opacity-30 px-5 py-4 rounded-2xl
-                             shadow-md backdrop-blur-md flex flex-col items-center justify-center"
-                >
-                  <p className="font-bold text-xl">
-                    {loading ? "..." : item.value ?? "--"}
-                  </p>
-                  <p className="text-sm flex items-center justify-center gap-1 mt-1">
-                    {item.icon} {item.label}
-                  </p>
+          {/* Profile Pic */}
+          <div className="relative flex-shrink-0 group w-fit">
+            {/* Profile Image */}
+            <img
+              src={meImg}
+              alt="profile"
+              className="w-28 h-28 rounded-full shadow-lg mb-10 object-cover"
+            />
+
+            {/* Discord-style Online Dot */}
+            <span
+              className="absolute bottom-2 right-2 w-4 h-4 bg-green-500 rounded-full
+               border-4 border-[#0d0d0d]  /* same as bg to blend cleanly */
+               transition-all duration-300 group-hover:scale-110"
+            ></span>
+
+            {/* Tooltip */}
+            <span
+              className="absolute bottom-12 right-0 opacity-0 group-hover:opacity-100
+               group-hover:-translate-y-1 transition-all duration-300
+               bg-white/10 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-md
+               border border-white/20 pointer-events-none"
+            >
+              Online
+            </span>
+          </div>
+
+          <TimeLocation />
+
+          {/* Text Content */}
+          <div className="flex-1 space-y-5">
+
+            {/* Heading */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug text-white">
+              Hi, I'm <span className="text-gray-100 dark:text-gray-200">Bichitra</span> — <br />
+              <span className="text-gray-600 dark:text-gray-300">
+                A Full Stack web developer.
+              </span>
+            </h1>
+
+            {/* Sub intro */}
+            <p className="text-gray-400 text-lg leading-relaxed max-w-2xl">
+              I build modern digital experiences across{" "}
+              <span className="font-semibold text-white">web</span> and{" "}
+              <span className="font-semibold text-white">mobile</span>, and I experiment with{" "}
+              <span className="font-semibold text-white">AI agents</span> and automation systems.
+              <br />
+              With a focus on <span className="font-semibold text-white">clean UI</span>,{" "}
+              <span className="font-semibold text-white">smooth interactions</span>, and{" "}
+              <span className="font-semibold text-white">high-performance engineering</span>.
+            </p>
+
+
+            {/* Buttons */}
+
+
+            {/* Social Icons */}
+            <div className="flex gap-6 pt-4 text-[22px] text-gray-700 dark:text-gray-300">
+              {SOCIAL_LINKS.map((s, i) => (
+                <div key={i} className="relative group flex items-center justify-center">
+                  <a
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="
+        text-gray-400
+        transition-all duration-300
+        hover:text-white
+        hover:scale-[1.15]
+        hover:-translate-y-1
+        hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.35)]
+      "
+                  >
+                    {s.icon}
+                  </a>
+
+                  {/* Tooltip */}
+                  <span
+                    className="
+        absolute -top-8 left-1/2 -translate-x-1/2
+        opacity-0 group-hover:opacity-100
+        translate-y-1 group-hover:translate-y-0
+        bg-white/10 px-2 py-1 text-xs rounded-md
+        text-white border border-white/20
+        backdrop-blur
+        transition-all duration-300
+        pointer-events-none
+        whitespace-nowrap
+      "
+                  >
+                    {s.label}
+                  </span>
                 </div>
               ))}
-          </div>
 
-          {/* 🌐 Social Icons */}
-          <div className="mt-10 grid grid-cols-5 gap-6 text-2xl sm:text-3xl place-items-center">
-            {SOCIAL_LINKS.map(({ icon, url, color }, idx) => (
-              <a
-                key={idx}
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${color} transition transform hover:scale-110`}
+
+            </div>
+
+            <div className="mt-8">
+              <Link
+                key='contact'
+                to="contact"
+                smooth={true}
+                duration={600}
+                offset={-80}
+                className="btn px-3"
               >
-                {icon}
-              </a>
-            ))}
+                Contact
+              </Link>            </div>
           </div>
-        </motion.div>
-
-        {/* 📅 GitHub Calendar */}
-        <motion.div
-          className="mt-10 sm:mt-14 w-full max-w-[90vw] sm:max-w-3xl flex justify-center overflow-x-auto"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-        >
-          <GitHubCalendar
-            username="bichitrabehera"
-            colorScheme="dark"
-            blockSize={13}
-            blockMargin={4}
-            fontSize={12}
-            hideTotalCount
-            hideColorLegend
-          />
         </motion.div>
       </section>
     </>
   );
 }
-
-export default Home;

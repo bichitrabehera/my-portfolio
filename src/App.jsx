@@ -5,9 +5,6 @@ import Skills from "./Components/sections/Skills";
 import Project from "./Components/sections/Project";
 import Contact from "./Components/sections/Contact";
 import Footer from "./Components/sections/Footer";
-import Myresume from "./Components/sections/Myresume";
-import TargetCursor from "./Components/TargetCursor";
-// import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 
 function App() {
@@ -36,18 +33,11 @@ function App() {
   return (
     <>
       <div className="relative z-10">
-
-        <Home />
-        {/* <TargetCursor
-          targetSelector="a, button, .cursor-target" // all links, buttons, and any custom elements
-          spinDuration={2}
-          hideDefaultCursor={true}
-        /> */}
-        <About />
-        <Skills />
-        {/* <Myresume /> */}
-        <Project />
-        <Contact />
+        <Home />      {/* Intro + what you do → FIRST */}
+        <Skills />    {/* Core skills → recruiters want this early */}
+        <Project />   {/* Your proof of ability → MUST be early */}
+        <About />     {/* More detail → AFTER projects */}
+        <Contact />   {/* Easy CTA */}
         <Footer />
       </div>
     </>

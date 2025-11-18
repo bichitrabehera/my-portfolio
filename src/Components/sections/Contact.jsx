@@ -36,40 +36,25 @@ function Contact() {
     <section
       id="contact"
       ref={sectionRef}
-      className="relative py-20 mx-auto font-light max-w-5xl body-font text-[16px]"
+      className="relative py-20 mx-auto font-light max-w-4xl body-font text-[16px]"
     >
       <motion.div
         className="container relative z-10 px-8 md:px-6 mx-auto"
-        initial={{ opacity: 0, y: -30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8 }}
+        // initial={{ opacity: 0, y: -30 }}
+        // animate={isInView ? { opacity: 1, y: 0 } : {}}
+        // transition={{ duration: 0.8 }}
       >
         {/* ===== HEADER ===== */}
         <div className="flex flex-col w-full mb-12 text-center">
-          <div className="relative pb-12">
-            {/* Background Title */}
-            <h2 className="absolute inset-0 flex items-center justify-center text-6xl font-extrabold uppercase text-gray-300 opacity-10 sm:text-8xl select-none">
-              Contact
-            </h2>
-
-            {/* Foreground Title */}
-            <h3 className="text-3xl font-semibold text-white sm:text-4xl mb-4">
-              <code>~say_hello</code>
-            </h3>
-
-            {/* Divider */}
-            <div className="flex items-center justify-center mb-4">
-              <div className="w-12 h-0.5 mx-2 bg-purple-500" />
-              <div className="w-2 h-2 rounded-full bg-purple-500" />
-              <div className="w-12 h-0.5 mx-2 bg-purple-500" />
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl text-left underline text-white">Contact</h2>
           </div>
 
           <motion.p
             className="text-gray-300 text-left leading-relaxed"
-            initial={{ opacity: 0, x: -20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 1 }}
+            // initial={{ opacity: 0, x: -20 }}
+            // animate={isInView ? { opacity: 1, x: 0 } : {}}
+            // transition={{ duration: 1 }}
           >
             Have a project in mind or want to discuss opportunities? Drop me a
             message and I'll get back to you within 24 hours.
@@ -79,9 +64,9 @@ function Contact() {
         {/* ===== FORM ===== */}
         <motion.div
           className="p-4 mx-auto rounded-xl border border-[#ffffff15] bg-[#111111] max-w-5xl"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1.2, type: 'spring' }}
+          // initial={{ opacity: 0, y: 30 }}
+          // animate={isInView ? { opacity: 1, y: 0 } : {}}
+          // transition={{ duration: 1.2, type: 'spring' }}
         >
           <form ref={form} onSubmit={sendEmail} className="relative space-y-8">
             {/* Inputs */}
@@ -204,9 +189,9 @@ function Contact() {
             {error && (
               <motion.div
                 className="flex items-center gap-3 p-4 mt-6 text-red-400 border border-red-500/50 rounded-lg bg-red-900/30 text-[16px]"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, type: 'spring' }}
+                // initial={{ opacity: 0, y: 20 }}
+                // animate={{ opacity: 1, y: 0 }}
+                // transition={{ duration: 0.5, type: 'spring' }}
               >
                 <svg
                   className="w-5 h-5"

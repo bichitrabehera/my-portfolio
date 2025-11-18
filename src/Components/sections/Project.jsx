@@ -68,29 +68,17 @@ function Project() {
   const isInView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section id="projects" ref={ref} className="py-20 mx-auto bg-black">
-      <div className="max-w-5xl mx-auto px-8 md:px-6">
-        {/* ===== Heading ===== */}
-        <div className="relative text-center pb-12">
-          <h2 className="absolute inset-0 flex items-center justify-center text-6xl sm:text-8xl font-extrabold text-gray-700 opacity-10 uppercase select-none">
-            Projects
-          </h2>
-          <h3 className="text-3xl sm:text-4xl font-semibold text-white mb-4 tracking-wide">
-            <code>~builds</code>
-          </h3>
+    <section id="projects" ref={ref} className="py-0 mx-auto bg-black">
+      <div className="max-w-4xl mx-auto px-8 md:px-6">
 
-          <div className="flex items-center justify-center mb-4">
-            <div className="w-12 h-px mx-2 bg-purple-400"></div>
-            <div className="w-2 h-2 rounded-full bg-purple-400"></div>
-            <div className="w-12 h-px mx-2 bg-purple-400"></div>
-          </div>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl text-left underline text-white">Projects</h2>
         </div>
 
-        {/* ===== Intro Text ===== */}
         <motion.p
-          initial={{ opacity: 0, x: -20 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 1 }}
+          // initial={{ opacity: 0, x: -20 }}
+          // animate={isInView ? { opacity: 1, x: 0 } : {}}
+          // transition={{ duration: 1 }}
           className="text-gray-300 text-left max-w-5xl mx-auto text-[16px]"
         >
           Here you’ll find some of my featured projects — focused on frontend
@@ -98,76 +86,78 @@ function Project() {
         </motion.p>
 
         {/* ===== Projects List ===== */}
-        <div className="mt-16 flex flex-col gap-16 max-w-5xl mx-auto">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              className={`flex flex-col lg:flex-row items-center gap-8
-                bg-[#202020] border border-[#222] rounded-2xl overflow-hidden shadow-[0_0_20px_rgba(255,255,255,0.03)]
-                ${index % 2 === 1 ? "lg:flex-row-reverse" : ""}`}
+              // initial={{ opacity: 0, y: 30 }}
+              // animate={isInView ? { opacity: 1, y: 0 } : {}}
+              // transition={{ duration: 0.8, delay: index * 0.2 }}
+              className="flex flex-col bg-[#202020] border border-[#222] rounded-2xl overflow-hidden
+                 shadow-[0_0_20px_rgba(255,255,255,0.03)]"
             >
-              {/* === Image Section === */}
-              <div className="relative w-full lg:w-1/2 group overflow-hidden">
+              {/* === Image Section (always on top) === */}
+              <div className="relative w-full group overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.name}
-                  className="w-full h-full sm:h-80 lg:h-full object-cover lg:rounded-none transition-transform duration-700 ease-out group-hover:scale-105"
+                  className="w-full h-52 sm:h-54 object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-                {/* Project name overlay (mobile only) */}
-                <div className="absolute bottom-3 left-4 text-white text-lg font-semibold block lg:hidden">
-                  {project.name}
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent
+                        opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
 
+              {/* === Description Section === */}
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-white mb-3">{project.name}</h3>
 
-              {/* Description */}
-              <div className="w-full lg:w-1/2 p-4 lg:p-10">
-                <h3 className="text-xl font-bold text-white mb-3">
-                  {project.name}
-                </h3>
-                <p className="text-gray-400 mb-4 leading-snug text-[16px]">
+                <p className="text-gray-400 mb-4 leading-snug text-[15px]">
                   {project.description}
                 </p>
 
-                {/* Tech Stack Icons */}
-                {project.techStack && (
-                  <div className="mb-4">
-                    <ul className="flex flex-wrap gap-3 items-center">
-                      {project.techStack.map((tech, i) => (
-                        <li
-                          key={i}
-                          className="flex items-center justify-center bg-[#1a1a1a] border border-[#333] rounded-lg p-2 w-10 h-10 hover:scale-110 transition-transform duration-200"
-                          title={tech}
-                        >
-                          {iconMap[tech] || (
-                            <span className="text-gray-300 text-xs">{tech}</span>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
+                {/* Tech Icons */}
+                <div className="mb-4 flex flex-wrap gap-3">
+                  {project.techStack.map((tech, i) => (
+                    <div
+                      key={i}
+                      className="relative group flex items-center justify-center bg-[#1a1a1a] border border-[#333]
+             rounded-lg p-2 w-10 h-10 hover:scale-110 transition-transform duration-200 cursor-pointer"
+                    >
+                      {/* Icon */}
+                      {iconMap[tech] || <span className="text-gray-300 text-xs">{tech}</span>}
 
-                {/* View Button */}
+                      {/* Tooltip */}
+                      <span
+                        className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100
+               bg-black text-white text-xs px-2 py-1 rounded-md shadow-lg
+               transition-all duration-300 whitespace-nowrap pointer-events-none
+               border border-white/10"
+                      >
+                        {tech}
+                      </span>
+                    </div>
+
+                  ))}
+                </div>
+
+                {/* Button */}
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-4 text-white text-[14px] px-5 py-2 rounded hover:bg-white hover:text-black transition-all duration-200"
+                  className="inline-flex items-center gap-2 mt-2
+                     text-white px-5 py-2 rounded hover:bg-white hover:text-black
+                     transition-all duration-200"
                 >
                   <FaTerminal className="text-gray-300 text-lg" />
-                  <span className="text-[12px] font-medium tracking-wide">View Project</span>
+                  <span className="text-sm tracking-wide">View Project</span>
                 </a>
-
               </div>
             </motion.div>
           ))}
         </div>
+
+
       </div>
     </section>
   );
