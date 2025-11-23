@@ -69,7 +69,7 @@ function Project() {
 
   return (
     <section id="projects" ref={ref} className="py-0 mx-auto bg-black">
-      <div className="max-w-4xl mx-auto px-8 md:px-6">
+      <div className="max-w-4xl mx-auto px-6 md:px-6">
 
         <div className="text-center mb-16">
           <h2 className="text-3xl text-left underline text-white">Projects</h2>

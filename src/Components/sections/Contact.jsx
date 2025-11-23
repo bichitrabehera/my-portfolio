@@ -39,10 +39,10 @@ function Contact() {
       className="relative py-20 mx-auto font-light max-w-4xl body-font text-[16px]"
     >
       <motion.div
-        className="container relative z-10 px-8 md:px-6 mx-auto"
-        // initial={{ opacity: 0, y: -30 }}
-        // animate={isInView ? { opacity: 1, y: 0 } : {}}
-        // transition={{ duration: 0.8 }}
+        className="container relative z-10 px-6 md:px-6 mx-auto"
+      // initial={{ opacity: 0, y: -30 }}
+      // animate={isInView ? { opacity: 1, y: 0 } : {}}
+      // transition={{ duration: 0.8 }}
       >
         {/* ===== HEADER ===== */}
         <div className="flex flex-col w-full mb-12 text-center">
@@ -52,9 +52,9 @@ function Contact() {
 
           <motion.p
             className="text-gray-300 text-left leading-relaxed"
-            // initial={{ opacity: 0, x: -20 }}
-            // animate={isInView ? { opacity: 1, x: 0 } : {}}
-            // transition={{ duration: 1 }}
+          // initial={{ opacity: 0, x: -20 }}
+          // animate={isInView ? { opacity: 1, x: 0 } : {}}
+          // transition={{ duration: 1 }}
           >
             Have a project in mind or want to discuss opportunities? Drop me a
             message and I'll get back to you within 24 hours.
@@ -64,9 +64,9 @@ function Contact() {
         {/* ===== FORM ===== */}
         <motion.div
           className="p-4 mx-auto rounded-xl border border-[#ffffff15] bg-[#111111] max-w-5xl"
-          // initial={{ opacity: 0, y: 30 }}
-          // animate={isInView ? { opacity: 1, y: 0 } : {}}
-          // transition={{ duration: 1.2, type: 'spring' }}
+        // initial={{ opacity: 0, y: 30 }}
+        // animate={isInView ? { opacity: 1, y: 0 } : {}}
+        // transition={{ duration: 1.2, type: 'spring' }}
         >
           <form ref={form} onSubmit={sendEmail} className="relative space-y-8">
             {/* Inputs */}
@@ -189,9 +189,9 @@ function Contact() {
             {error && (
               <motion.div
                 className="flex items-center gap-3 p-4 mt-6 text-red-400 border border-red-500/50 rounded-lg bg-red-900/30 text-[16px]"
-                // initial={{ opacity: 0, y: 20 }}
-                // animate={{ opacity: 1, y: 0 }}
-                // transition={{ duration: 0.5, type: 'spring' }}
+              // initial={{ opacity: 0, y: 20 }}
+              // animate={{ opacity: 1, y: 0 }}
+              // transition={{ duration: 0.5, type: 'spring' }}
               >
                 <svg
                   className="w-5 h-5"

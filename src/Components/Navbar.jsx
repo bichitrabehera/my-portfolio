@@ -19,7 +19,7 @@ const Navbar = () => {
     <>
       {/* Main Navbar */}
       <nav className="fixed top-0 right-0 w-full z-50 backdrop-blur-[30px] bg-[#00000060] py-1 md:p-3 text-white">
-        <div className="w-full max-w-4xl px-8 md:px-6 py-3 mx-auto flex items-center justify-between relative">
+        <div className="w-full max-w-4xl px-6 md:px-6 py-3 mx-auto flex items-center justify-between relative">
           <div>
             <h1 className="p-0 rounded-full flex gap-5 border-[#ffffff20]">
               <a href="https://bichitrabehera-blue.vercel.app"><img src={logoBG} alt="" className="h-10 w-10 rounded-full " /></a>

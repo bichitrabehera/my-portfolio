@@ -28,7 +28,7 @@ export default function Home() {
 
       <section
         id="home"
-        className="pt-32 md:px-6 max-w-4xl px-8 mx-auto text-black dark:text-white"
+        className="pt-32 md:px-6 max-w-4xl px-6 mx-auto text-black dark:text-white"
       >
         <motion.div
           initial={{ opacity: 0, y: 25 }}
@@ -73,7 +73,7 @@ export default function Home() {
             {/* Heading */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-snug text-white">
               Hi, I'm <span className="text-gray-100 dark:text-gray-200">Bichitra</span> — <br />
-              <span className="text-gray-600 dark:text-gray-300">
+              <span className="text-gray-600 dark:text-gray-300 font-[Cursor]">
                 A Full Stack web developer.
               </span>
             </h1>

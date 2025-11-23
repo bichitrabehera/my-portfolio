@@ -146,7 +146,7 @@ function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="skills-cursor-area pt-20 max-w-4xl mx-auto px-8 md:px-6 text-white relative"
+      className="skills-cursor-area pt-20 max-w-4xl mx-auto px-6 md:px-6 text-white relative"
     >
       {/* Section heading */}
       <div className="text-center mb-16">
