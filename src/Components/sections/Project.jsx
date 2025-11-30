@@ -7,7 +7,7 @@ import SynapseImage from "/src/assets/synapse.jpg";
 import ClearSpend from "/src/assets/clearspend.png";
 
 // === Import icons ===
-import { FaReact, FaNodeJs } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaTerminal } from "react-icons/fa";
 import {
   SiTailwindcss,
   SiJavascript,
@@ -15,22 +15,20 @@ import {
   SiRedis,
   SiClerk,
 } from "react-icons/si";
-import { FaTerminal } from "react-icons/fa";
 
-// === Map tech names to icons ===
+// === Map tech names to icons (DARK-MODE SAFE) ===
 const iconMap = {
   React: <FaReact className="text-sky-400 text-xl" />,
-  "React Native": <FaReact className="text-sky-400 text-xl" />, // 👈 replaced SiReactnative
+  "React Native": <FaReact className="text-sky-400 text-xl" />,
   Nodejs: <FaNodeJs className="text-green-500 text-xl" />,
   "Node.js": <FaNodeJs className="text-green-500 text-xl" />,
-  Express: <SiExpress className="text-gray-300 text-xl" />,
+  Express: <SiExpress className="text-foreground text-xl" />,   // << updated
   Tailwindcss: <SiTailwindcss className="text-cyan-400 text-xl" />,
   "Tailwind CSS": <SiTailwindcss className="text-cyan-400 text-xl" />,
   JavaScript: <SiJavascript className="text-yellow-400 text-xl" />,
   Redis: <SiRedis className="text-red-500 text-xl" />,
   Clerk: <SiClerk className="text-purple-400 text-xl" />,
 };
-
 
 // === Project Data ===
 const projects = [
@@ -68,19 +66,18 @@ function Project() {
   const isInView = useInView(ref, { triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section id="projects" ref={ref} className="py-0 mx-auto bg-black">
+    <section
+      id="projects"
+      ref={ref}
+      className="py-0 mx-auto bg-background text-foreground"
+    >
       <div className="max-w-4xl mx-auto px-6 md:px-6">
 
-        <div className="text-center mb-16">
-          <h2 className="text-3xl text-left underline text-white">Projects</h2>
+        <div className="text-center mb-10">
+          <h2 className="text-3xl text-left underline text-foreground">Projects</h2>
         </div>
 
-        <motion.p
-          // initial={{ opacity: 0, x: -20 }}
-          // animate={isInView ? { opacity: 1, x: 0 } : {}}
-          // transition={{ duration: 1 }}
-          className="text-gray-300 text-left max-w-5xl mx-auto text-[16px]"
-        >
+        <motion.p className="text-foreground/70 text-left max-w-5xl mx-auto text-[16px]">
           Here you’ll find some of my featured projects — focused on frontend
           development, design precision, and clean user experiences.
         </motion.p>
@@ -90,28 +87,30 @@ function Project() {
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
-              // initial={{ opacity: 0, y: 30 }}
-              // animate={isInView ? { opacity: 1, y: 0 } : {}}
-              // transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="flex flex-col bg-[#202020] border border-[#222] rounded-2xl overflow-hidden
-                 shadow-[0_0_20px_rgba(255,255,255,0.03)]"
+              className="flex flex-col
+                       bg-background/80
+                       border border-border
+                       rounded-2xl overflow-hidden
+                       shadow-[0_0_20px_rgba(0,0,0,0.15)]"
             >
-              {/* === Image Section (always on top) === */}
+              {/* === Image Section === */}
               <div className="relative w-full group overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.name}
                   className="w-full h-52 sm:h-54 object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent
-                        opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+
               </div>
 
               {/* === Description Section === */}
               <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-3">{project.name}</h3>
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  {project.name}
+                </h3>
 
-                <p className="text-gray-400 mb-4 leading-snug text-[15px]">
+                <p className="text-foreground/70 mb-4 leading-snug text-[15px]">
                   {project.description}
                 </p>
 
@@ -120,23 +119,29 @@ function Project() {
                   {project.techStack.map((tech, i) => (
                     <div
                       key={i}
-                      className="relative group flex items-center justify-center bg-[#1a1a1a] border border-[#333]
-             rounded-lg p-2 w-10 h-10 hover:scale-110 transition-transform duration-200 cursor-pointer"
+                      className="relative group flex items-center justify-center
+                                 bg-background
+                                 border border-border
+                                 rounded-lg p-2 w-10 h-10
+                                 hover:scale-110 transition-transform duration-200 cursor-pointer"
                     >
                       {/* Icon */}
-                      {iconMap[tech] || <span className="text-gray-300 text-xs">{tech}</span>}
+                      {iconMap[tech] || (
+                        <span className="text-foreground/60 text-xs">{tech}</span>
+                      )}
 
                       {/* Tooltip */}
                       <span
-                        className="absolute -top-10 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100
-               bg-black text-white text-xs px-2 py-1 rounded-md shadow-lg
-               transition-all duration-300 whitespace-nowrap pointer-events-none
-               border border-white/10"
+                        className="absolute -top-10 left-1/2 -translate-x-1/2
+                                   opacity-0 group-hover:opacity-100
+                                   bg-foreground/10 text-foreground text-xs
+                                   px-2 py-1 rounded-md shadow-lg
+                                   transition-all duration-300 whitespace-nowrap pointer-events-none
+                                   border border-foreground/20 backdrop-blur-sm"
                       >
                         {tech}
                       </span>
                     </div>
-
                   ))}
                 </div>
 
@@ -146,17 +151,17 @@ function Project() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 mt-2
-                     text-white px-5 py-2 rounded hover:bg-white hover:text-black
-                     transition-all duration-200"
+                             text-foreground px-5 py-2 rounded
+                             hover:bg-foreground hover:text-background
+                             transition-all duration-200 border border-border"
                 >
-                  <FaTerminal className="text-gray-300 text-lg" />
+                  <FaTerminal className="text-foreground/100 text-lg" />
                   <span className="text-sm tracking-wide">View Project</span>
                 </a>
               </div>
             </motion.div>
           ))}
         </div>
-
 
       </div>
     </section>

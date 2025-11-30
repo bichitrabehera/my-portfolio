@@ -7,8 +7,22 @@ import { motion } from "framer-motion";
 export default function GithubActivity() {
     const [total, setTotal] = useState(null);
     const [isError, setIsError] = useState(false);
+    const [isDark, setIsDark] = useState(false);
 
-    // Fetch total contributions (GitHub API does not expose this directly)
+    // Detect theme change
+    useEffect(() => {
+        const updateTheme = () => {
+            setIsDark(document.documentElement.classList.contains("dark"));
+        };
+
+        updateTheme();
+        const observer = new MutationObserver(updateTheme);
+        observer.observe(document.documentElement, { attributes: true });
+
+        return () => observer.disconnect();
+    }, []);
+
+    // Fetch total contributions
     useEffect(() => {
         async function fetchData() {
             try {
@@ -37,20 +51,15 @@ export default function GithubActivity() {
     }, []);
 
     return (
-        <section className="py-10 max-w-5xl mx-auto text-white">
-            <motion.div
-                // initial={{ opacity: 0, y: 20 }}
-                // whileInView={{ opacity: 1, y: 0 }}
-                // transition={{ duration: 0.8 }}
-                className="space-y-5"
-            >
+        <section className="pt-10 max-w-5xl mx-auto text-foreground">
+            <motion.div className="space-y-5">
                 {/* Header */}
-                <h3 className="text-2xl underline">GitHub Activity</h3>
+                <h3 className="text-3xl underline text-foreground">GitHub Activity</h3>
 
                 {/* Total Contributions */}
-                <p className="text-gray-300 ">
+                <p className="text-foreground/70">
                     Total contributions:{" "}
-                    <span className="font-semibold text-white">
+                    <span className="font-semibold text-foreground">
                         {total ?? "--"}
                     </span>
                 </p>
@@ -60,16 +69,14 @@ export default function GithubActivity() {
                     <div className="mt-6">
                         <GitHubCalendar
                             username="bichitrabehera"
-                            blockSize={14}
+                            blockSize={12}
                             blockMargin={5}
                             fontSize={12}
-                            hideTotalCount
-                            hideColorLegend
-                            colorScheme="dark"
+                            colorScheme={isDark ? "dark" : "light"}  // << theme-aware calendar
                         />
                     </div>
                 ) : (
-                    <p className="text-gray-500 text-sm italic opacity-60 mt-4">
+                    <p className="text-foreground/60 text-sm italic mt-4">
                         GitHub activity unavailable.
                     </p>
                 )}

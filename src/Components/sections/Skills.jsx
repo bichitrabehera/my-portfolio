@@ -146,10 +146,10 @@ function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="skills-cursor-area pt-20 max-w-4xl mx-auto px-6 md:px-6 text-white relative"
+      className="skills-cursor-area pt-20 max-w-4xl mx-auto px-6 md:px-6 text-foreground relative"
     >
       {/* Section heading */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-10">
         <h2 className="text-3xl text-left underline">Skills</h2>
       </div>
 
@@ -158,7 +158,7 @@ function Skills() {
         // initial={{ opacity: 0, y: 10 }}
         // animate={isInView ? { opacity: 1, y: 0 } : {}}
         // transition={{ duration: 0.8 }}
-        className="text-left mx-auto text-gray-400 mb-10 fon"
+        className="text-left mx-auto text-foreground mb-10 fon"
       >
         I constantly strive to improve exploring new technologies, solving challenges, and building meaningful projects that make an impact.
       </motion.p>
@@ -166,7 +166,7 @@ function Skills() {
 
       {/* Render each category */}
       {skillCategories.map((cat, i) => (
-        <div key={i} className="mb-16 max-w-5xl mx-auto md:px-0">
+        <div key={i} className="mb-6 max-w-5xl mx-auto md:px-0">
           <h4 className="text-xl sm:text-2xl font-semibold mb-6">{cat.category}</h4>
           <motion.div
             initial="hidden"
@@ -181,8 +181,8 @@ function Skills() {
               <motion.div
                 key={index}
                 className="relative group flex flex-col items-center justify-center
-                 rounded-xl bg-[#141414] border border-[#222]
-                 w-15 h-15 md:w-20 md:h-20
+                 rounded-xl bg-background border border-[#858585]
+                 w-14 h-14 md:w-16 md:h-16
                  "
                 whileHover={{
                   scale: 1,
@@ -197,8 +197,8 @@ function Skills() {
                 <span
                   className="absolute top-[-33px] left-1/2 -translate-x-1/2
                    opacity-0 group-hover:opacity-100 group-hover:translate-y-1
-                   text-xs px-3 py-1 rounded-md bg-white/10 backdrop-blur
-                   border border-white/20 text-white transition-all duration-300
+                   text-xs px-3 py-1 rounded-md backdrop-blur
+                   border border-white/20 text-foreground transition-all duration-300
                    pointer-events-none whitespace-nowrap"
                 >
                   {skill.name}

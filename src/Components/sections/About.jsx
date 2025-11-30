@@ -40,20 +40,17 @@ function About() {
   }, []);
 
   return (
-    <section id="about" ref={ref} className="pt-20 text-white">
+    <section id="about" ref={ref} className="pt-20 text-foreground">
       <div className="max-w-4xl mx-auto px-6 md:px-6">
 
         {/* =================== Title =================== */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl text-left underline">About Me</h2>
+        <div className="text-center mb-10">
+          <h2 className="text-3xl text-left underline text-foreground">About Me</h2>
         </div>
 
         {/* =================== Content =================== */}
         <motion.div
-          // initial={{ opacity: 0, y: 20 }}
-          // animate={isInView ? { opacity: 1, y: 0 } : {}}
-          // transition={{ duration: 1 }}
-          className="text-gray-300 space-y-6 leading-relaxed"
+          className="text-foreground/80 space-y-6 leading-relaxed"
         >
           <p>
             I'm a <span className="text-[#06B6D4] font-semibold">full-stack developer</span> focused on building fast,

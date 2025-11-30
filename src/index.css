@@ -1,25 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
-
 @import "tailwindcss";
-
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+/* ========================================================= */
+/* 🔤 Base Font & Page Reset */
+/* ========================================================= */
 
 body {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "Font1";
   margin: 0;
-  background-color: #020202;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
 
 @font-face {
+  font-family: "Font1";
+  src: url("./fonts/9d5a263311222317-s.p.woff2");
+}
+
+@font-face {
   font-family: "pixel";
-  src: url("./fonts/goksH6L8FkdnROln8XBjTEqi.woff2");
+  src: url("./fonts/6478875d07fffe171f339617_PPNeueMachina-InktrapMedium.woff2");
 }
 
 @font-face {
@@ -27,78 +28,18 @@ body {
   src: url("./fonts/675b1d2a87da9195e8ccefb3_brockmann-regular-webfont.woff2");
 }
 
-@font-face {
-  font-family: "WebsiteFont";
-  src: url("./fonts/797e433ab948586e-s.p.dbea232f.woff2");
-}
-
 ::-webkit-scrollbar {
   display: none;
 }
-
-/* body { */
-/* cursor: none; */
-/* } */
 
 html {
   font-size: 16px;
 }
 
-/* From Uiverse.io by vinodjangid07 */
-.btn {
-  width: 130px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(15, 15, 15);
-  color: white;
-  font-weight: 600;
-  gap: 8px;
-  /* cursor: pointer; */
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
-  position: relative;
-  overflow: hidden;
-  transition-duration: 0.3s;
-  border: 1px solid rgb(153, 153, 153);
-  border-radius: 10px;
-}
+/* ========================================================= */
+/* ✨ Scroll Styles (Locomotive Scroll) */
+/* ========================================================= */
 
-.btn::before {
-  width: 130px;
-  height: 130px;
-  position: absolute;
-  content: "";
-  background-color: white;
-  border-radius: 50%;
-  left: -100%;
-  top: 0;
-  transition-duration: 0.3s;
-  mix-blend-mode: difference;
-}
-
-.btn:hover::before {
-  transition-duration: 0.3s;
-  transform: translate(100%, -50%);
-  border-radius: 0;
-}
-
-.btn:active {
-  transform: translate(5px, 5px);
-  transition-duration: 0.3s;
-}
-footer {
-  background-position: center;
-  background-size: cover;
-  margin: 60px auto;
-}
-
-input,
-textarea {
-  outline: none;
-}
-
-/*! locomotive-scroll v4.1.3 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
 html.has-scroll-smooth {
   overflow: hidden;
 }
@@ -169,17 +110,19 @@ html.has-scroll-dragging {
   width: 7px;
   border-radius: 10px;
   margin: 2px;
-  cursor: -webkit-grab;
   cursor: grab;
 }
 .has-scroll-dragging .c-scrollbar_thumb {
-  cursor: -webkit-grabbing;
   cursor: grabbing;
 }
 [data-scroll-direction="horizontal"] .c-scrollbar_thumb {
   right: auto;
   bottom: 0;
 }
+
+/* ========================================================= */
+/* ✨ Shine Text Hover */
+/* ========================================================= */
 
 .btn-shine {
   position: relative;
@@ -191,7 +134,6 @@ html.has-scroll-dragging {
   transition: color 0.3s ease;
 }
 
-/* ✨ Shine appears only on hover */
 .btn-shine:hover {
   background: linear-gradient(
     to right,
@@ -208,7 +150,6 @@ html.has-scroll-dragging {
   animation: shine 2.5s linear infinite;
 }
 
-/* 🔁 Smooth shine animation */
 @keyframes shine {
   0% {
     background-position: 0% center;
@@ -218,112 +159,46 @@ html.has-scroll-dragging {
   }
 }
 
+/* ========================================================= */
+/* 🎨 Theme Variables */
+/* ========================================================= */
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 :root {
   --radius: 0.625rem;
+
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
+
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
 }
 
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
+
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
 }
+
+/* ========================================================= */
+/* 🌐 Tailwind Base Layer */
+/* ========================================================= */
 
 @layer base {
   * {
@@ -333,3 +208,59 @@ html.has-scroll-dragging {
     @apply bg-background text-foreground;
   }
 }
+
+/* ========================================================= */
+/* 🚀 BUTTON (Moved to bottom as requested) */
+/* ========================================================= */
+/* ---- MODERN THEME-AWARE BUTTON ---- */
+.btn {
+  width: 140px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Use your theme colors (auto light/dark) */
+  background-color: var(--foreground);
+  color: var(--background);
+
+  font-weight: 600;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+
+  position: relative;
+  overflow: hidden;
+
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.12);
+}
+
+/* Shine layer */
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 140%;
+  height: 140%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(255,255,255,0.45) 50%,
+    transparent 100%
+  );
+  transform: skewX(-20deg);
+  transition: 0.5s ease;
+}
+
+/* Hover effect (no scale as requested) */
+.btn:hover::before {
+  left: 150%;
+}
+
+/* Press effect */
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+
