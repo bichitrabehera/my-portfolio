@@ -57,7 +57,7 @@ export default function Home() {
             {/* Tooltip */}
             <span
               className="
-               absolute bottom-12 right-0 opacity-0 group-hover:opacity-100
+               absolute bottom-12 -right-12 opacity-0 group-hover:opacity-100
                group-hover:-translate-y-1 transition-all duration-300
                bg-foreground/10 backdrop-blur-sm text-foreground text-xs px-2 py-1 rounded-md
                border border-foreground/20 pointer-events-none
@@ -119,8 +119,8 @@ export default function Home() {
                       absolute -top-8 left-1/2 -translate-x-1/2
                       opacity-0 group-hover:opacity-100
                       translate-y-1 group-hover:translate-y-0
-                      bg-foreground/10 px-2 py-1 text-xs rounded-md
-                      text-foreground border border-foreground/20
+                       px-2 py-1 text-xs rounded-md
+                      text-background bg-foreground border border-foreground/20
                       backdrop-blur
                       transition-all duration-300
                       pointer-events-none

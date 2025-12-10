@@ -134,7 +134,7 @@ function Project() {
                       <span
                         className="absolute -top-10 left-1/2 -translate-x-1/2
                                    opacity-0 group-hover:opacity-100
-                                   bg-foreground/10 text-foreground text-xs
+                                   bg-foreground text-background z-999 text-xs
                                    px-2 py-1 rounded-md shadow-lg
                                    transition-all duration-300 whitespace-nowrap pointer-events-none
                                    border border-foreground/20 backdrop-blur-sm"
@@ -155,7 +155,7 @@ function Project() {
                              hover:bg-foreground hover:text-background
                              transition-all duration-200 border border-border"
                 >
-                  <FaTerminal className="text-foreground/100 text-lg" />
+                  <FaTerminal className="text-foreground text-lg" />
                   <span className="text-sm tracking-wide">View Project</span>
                 </a>
               </div>
